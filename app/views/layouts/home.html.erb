@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Football Website Template</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "home" %>
+</head>
+<body>
+  <div class="background">
+    <div class="page">
+      <%= render "shared/home/header" %>
+      <div class="body home">
+        <div>
+          <%= yield %>
+        </div>
+        <%= render "shared/home/sidebar" %>
+      </div>
+      <%= render "shared/home/footer" %>
+    </div>
+  </div>
+</body>
+</html>

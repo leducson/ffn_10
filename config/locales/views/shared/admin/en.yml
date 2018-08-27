@@ -1,0 +1,8 @@
+en:
+  shared:
+    admin:
+      footer:
+        copyright: "Le Duc Son & Ho Viet Hieu, Football Bets"
+      left_menu:
+        footbal_bet: "Football Bets"
+        dashboard: "Dashboard"
