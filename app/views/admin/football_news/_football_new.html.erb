@@ -1,0 +1,15 @@
+<tr>
+  <td><%= count_index_list football_new_counter %></td>
+  <td><%= image_tag football_new.image.thumb.url, class: "image_cicle" if football_new.image.present? %></td>
+  <td><%= football_new.title %></td>
+  <td><%= format_time football_new.created_at %></td>
+  <td class="td-actions text-right">
+    <%= link_to edit_admin_football_news_path(football_new), class: "btn btn-success btn-link btn-xs", title: t(".edit") do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_football_news_path(football_new), class: "btn btn-danger btn-link btn-xs", title: t(".remove"),
+      method: :delete, data: {confirm: t(".are_you_sure")} do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </td>
+</tr>

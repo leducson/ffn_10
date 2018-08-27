@@ -10,3 +10,4 @@ development:
   port: "587"
 sessions:
   remember_me: "1"
+football_new_per: 15

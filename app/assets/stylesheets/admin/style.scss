@@ -1,6 +1,9 @@
 //Google fonts
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700,200");
-@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,200');
+@import 'froala_editor.min';
+@import 'froala_style.min';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 //setup font face
 @font-face {
@@ -290,4 +293,16 @@
 }
 .full-page-background{
     background-image: image-url('admin/full-screen-image-3.jpg')
+}
+
+.submit_button{
+  text-align: center;
+}
+
+.image_cicle{
+  border-radius: 50%;
+}
+
+.right{
+  float: right;
 }

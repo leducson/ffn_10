@@ -1,0 +1,26 @@
+<%= form_for @football_new, url: url do |f| %>
+  <%= render "shared/admin/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label t ".title", class: "control-label" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".content", class: "control-label" %>
+    <%= f.text_area :content, class: "form-control froalaEditor", cols: 15 %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".image_upload", class: "control-label" %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
+
+  <% if @football_new.image.present? %>
+    <div class="form-group">
+      <%= f.label t ".image", class: "control-label" %>
+      <%= image_tag @football_new.image.medium.url, class: "image_cicle" %>
+    </div>
+  <% end %>
+
+  <div class="form-group submit_button">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

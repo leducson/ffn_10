@@ -20,3 +20,6 @@
 //= require admin/light-bootstrap-dashboard
 //= require admin/demo
 //= require toastr/toastr
+//= require froala_editor.min.js
+//= require admin/froala_script
+//= require admin/custom

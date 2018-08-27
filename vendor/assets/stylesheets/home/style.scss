@@ -12,7 +12,7 @@
 /*------------------------- Layout styles ------------------------*/
 body {
   margin:0;
-  background:url(bg.jpg);
+  background: image-url('home/bg.jpg');
   font-family:Arial, Helvetica, sans-serif;
 }
 a {
@@ -23,7 +23,7 @@ a img {
   display:block;
 }
 .background {
-  background:url(home/bg.jpg) no-repeat;
+  background: image-url('home/bg.jpg') no-repeat;
 }
 .page {
   width:960px;
@@ -80,7 +80,7 @@ a img {
 
 /*------------------------- Body ---------------------------*/
 .body {
-  background:url(bg.jpg) no-repeat;
+  background: image-url('home/bg.png') no-repeat;
   margin:0 0 12px;
   min-height:1188px;
   padding:12px 10px 10px;
