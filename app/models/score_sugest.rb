@@ -1,0 +1,2 @@
+class ScoreSugest < ApplicationRecord
+end

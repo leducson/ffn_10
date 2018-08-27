@@ -1,0 +1,2 @@
+class FootballNew < ApplicationRecord
+end
