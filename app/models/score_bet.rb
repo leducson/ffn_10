@@ -1,0 +1,2 @@
+class ScoreBet < ApplicationRecord
+end
