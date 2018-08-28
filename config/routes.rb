@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboard#index"
   end
-
   get "/signup", to: "users#signup"
   post "/signup", to: "users#create"
   get "/login", to: "sessions#login"
@@ -13,5 +12,5 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   resources :account_activations, only: :edit
-
+  resources :password_resets, except: :destroy
 end

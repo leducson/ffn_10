@@ -1,3 +1,4 @@
 en:
   user_mailer:
-    mailer: "Account activation"
+    mailer: "Account activation!"
+    pass_reset: "Reset Password!"

@@ -5,11 +5,8 @@ user:
   maximum_fullname: 50
   maximum_email: 255
   minimum_pass: 8
-
+  expire: 2
 development:
   port: "587"
-
 sessions:
   remember_me: "1"
-
-

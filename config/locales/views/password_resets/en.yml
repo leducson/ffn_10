@@ -1,0 +1,14 @@
+en:
+  password_resets:
+    new:
+      title: "Forgot password"
+      email: "Email"
+      email_place: "Enter Your Email"
+      submit: "Submit"
+    edit:
+      title: "Reset password"
+      pass: "Password"
+      pass_place: "Enter Your Password"
+      confirm: "Confirmation"
+      confirm_place: "Enter Your Password Confirmation"
+      submit: "Submit"

@@ -33,18 +33,22 @@ class User < ApplicationRecord
       reset_sent_at: Time.zone.now
   end
 
-  def activate
-    update_columns activated: true, activated_at: Time.zone.now
-  end
-
   def authenticated? attribute, token
     digest = send("#{attribute}_digest")
     return false if digest.nil?
     BCrypt::Password.new(digest).is_password?(token)
   end
 
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
+  end
+
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
   end
 
   def remember
@@ -54,6 +58,10 @@ class User < ApplicationRecord
 
   def forget
     update_attribute :remember_me_digest, nil
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.user.expire.hours.ago
   end
 
   private

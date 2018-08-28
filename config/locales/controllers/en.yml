@@ -6,3 +6,14 @@ en:
     edit:
       activated: "Account activated!"
       link_invalid: "Invalid activation link"
+  password_resets:
+    create:
+      sent_email: "Email sent with password reset instructions!!!"
+      not_address: "Email address not found!!!"
+    update:
+      pass_blank: "can't blank"
+      success_reset: "Success password reset!!!"
+    edit:
+      user_exist: "User not exists!"
+      user_valid: "User not valid!"
+      reset_expire: "password reset has been expire!"
