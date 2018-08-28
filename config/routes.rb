@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   end
 
   root "home#index"
+
+  get "/signup", to: "users#signup"
+  post "/signup", to: "users#create"
+
+  resources :account_activations, only: :edit
 end

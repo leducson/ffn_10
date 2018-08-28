@@ -1,0 +1,4 @@
+en:
+  shared:
+    error_messages:
+      the_error: "The form contains"

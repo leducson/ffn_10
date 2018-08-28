@@ -1,2 +1,10 @@
 available_locales: ["en"]
 default_locale: "en"
+
+user:
+  maximum_fullname: 50
+  maximum_email: 255
+  minimum_pass: 8
+development:
+  port: "587"
+

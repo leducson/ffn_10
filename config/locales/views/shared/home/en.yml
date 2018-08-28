@@ -8,11 +8,13 @@ en:
         rank: "Ranks"
         copyright: "&#169; Football Bets. All Rights Reserved"
       header:
-        logo: "Football Bets"
         home: "Home"
         team: "Teams"
         league: "Leagues"
         rank: "Ranks"
         login: "Login"
+        signup: "Signup"
+        new: "News"
+        alt: "Football bet"
       sidebar:
         latest_new: "Latest News"

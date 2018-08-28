@@ -1,0 +1,7 @@
+en:
+  user_mailer:
+    account_activation:
+      title: "Football bet"
+      link_activated: "Welcome to the Football bet! Click on the link below to activate your account:"
+      activate: "Activate"
+      hi: "Hi"

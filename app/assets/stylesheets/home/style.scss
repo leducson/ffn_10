@@ -12,7 +12,7 @@
 /*------------------------- Layout styles ------------------------*/
 body {
   margin:0;
-  background: image-url('home/bg-body.png') repeat-x left top #003155;
+  background: image-url(home/bg.jpg);
   font-family:Arial, Helvetica, sans-serif;
 }
 a {
@@ -23,7 +23,7 @@ a img {
   display:block;
 }
 .background {
-  background: image-url('home/bg-background.jpg') no-repeat center top;
+  background: image-url(home/bg.jpg) no-repeat;
 }
 .page {
   width:960px;
@@ -33,23 +33,25 @@ a img {
 /*------------------------- Header -------------------------*/
 .header {
   background:none #030303;
-  height:70px;
+  height: 180px;
   margin:0 10px;
-  padding:25px 0 0 33px;
 }
 .header a#logo {
   display:block;
   float:left;
   font-family:bevanregular;
-  height:42px;
-  width:320px;
+  width: 100%;
+  padding-top: 10px;
+}
+.header a#logo>img{
+  width: 100%;
 }
 .header ul {
   float:right;
   list-style:none;
-  margin:0;
   overflow:hidden;
-  padding:9px 33px 0 0;
+  padding-top: 60px;
+  margin-right: 40px;
 }
 .header ul li:first-child {
   margin:0;
@@ -73,7 +75,7 @@ a img {
 }
 /*------------------------- Body ---------------------------*/
 .body {
-  background: image-url('home/bg-content.png') no-repeat left bottom #fbfbf4;
+  background: image-url(home/bg.png) no-repeat;
   margin:0 0 12px;
   min-height:1188px;
   padding:12px 10px 10px;
@@ -90,8 +92,6 @@ a img {
   width:700px;
 }
 .body.home div:first-child .featured {
-  background: image-url('home/featured.jpg') no-repeat;
-  /*background:url(../images/featured.jpg) no-repeat;*/
   border:0;
   float:none;
   height:450px;
@@ -101,7 +101,7 @@ a img {
   width:700px;
 }
 .body.home div:first-child .featured div:first-child {
-  background:url(../images/bg-transparent.png);
+  background:url(home/bg.png);
   border:0;
   bottom:11px;
   height:120px;
@@ -186,7 +186,7 @@ a img {
   padding:10px 0 0;
 }
 .body.home div:first-child div div h3 {
-  background:url(../images/icons.png) no-repeat 0 -31px;
+  background:url(home/bg.jpg) no-repeat 0 -31px;
   color:#030303;
   display:block;
   float:left;
