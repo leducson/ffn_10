@@ -6,9 +6,13 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by email: params[:session][:email].downcase
     if user&.authenticate(params[:session][:password])
-      log_in user
-      rememberable user
-      after_sign_in_path user
+      if user.activated?
+        log_in user
+        rememberable user
+        after_sign_in_path user
+      else
+        check_activation
+      end
     else
       flash.now[:danger] = t ".error"
       render :login
@@ -28,5 +32,10 @@ class SessionsController < ApplicationController
     else
       forget user
     end
+  end
+
+  def check_activation
+    flash[:danger] = t ".check_email"
+    redirect_to login_path
   end
 end

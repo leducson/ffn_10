@@ -18,8 +18,8 @@
             <%= t ".account" %> <b class="caret"></b>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to t(".profile"), "#" %></li>
-            <li><%= link_to t(".setting"), "#" %></li>
+            <li><%= link_to t(".profile"), profile_path(current_user) %></li>
+            <li><%= link_to t(".setting"), edit_profile_path(current_user) %></li>
             <li class="divider"></li>
             <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
           </ul>
