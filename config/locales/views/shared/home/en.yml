@@ -1,0 +1,18 @@
+en:
+  shared:
+    home:
+      footer:
+        home: "Home"
+        team: "Teams"
+        league: "Leagues"
+        rank: "Ranks"
+        copyright: "&#169; Football Bets. All Rights Reserved"
+      header:
+        logo: "Football Bets"
+        home: "Home"
+        team: "Teams"
+        league: "Leagues"
+        rank: "Ranks"
+        login: "Login"
+      sidebar:
+        latest_new: "Latest News"

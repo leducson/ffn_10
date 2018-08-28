@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Football Bets</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport" />
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "admin" %>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <%= render "shared/admin/left_menu" %>
+      <div class="main-panel">
+        <%= render "shared/admin/top_menu" %>
+        <div class="content">
+          <% if notice.present? %>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="alert alert-primary" role="alert"><%= notice %></div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <div class="container-fluid">
+            <%= yield %>
+          </div>
+
+        </div>
+        <%= render "shared/admin/footer" %>
+      </div>
+    </div>
+    <%= javascript_include_tag "admin" %>
+  </body>
+</html>
