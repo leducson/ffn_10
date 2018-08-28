@@ -99,33 +99,32 @@ body{
 
      /*---------- for Input type--------*/
 .col-xs-4.male{
-   color: white;
-     font-size: 13px;
-     margin-top: 9px;
-     padding-bottom: 16px;
+  color: white;
+  font-size: 13px;
+  margin-top: 9px;
+  padding-bottom: 16px;
 }
 .col-xs-4.female {
-     color: white;
-     font-size: 13px;
-     margin-top: 9px;
-     padding-bottom: 16px;
-   padding-right: 80px;
+  color: white;
+  font-size: 13px;
+  margin-top: 9px;
+  padding-bottom: 16px;
 }
 
 /*------------For submit button---------*/
 .sbutton{
    color: white;
-     font-size: 20px;
-     border: 1px solid white;
-     background-color: #080808;
-     width: 32%;
-     margin-left: 41%;
-     margin-top: 16px;
+   font-size: 20px;
+   border: 1px solid white;
+   background-color: #080808;
+   width: 32%;
+   margin-left: 41%;
+   margin-top: 16px;
    box-shadow: 0px 2px 2px 0px white;
 
    }
 .btn.btn-warning:hover {
-    box-shadow: 2px 1px 2px 3px #99ccff;
+  box-shadow: 2px 1px 2px 3px #99ccff;
   background:#5900a6;
   color:#fff;
   transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
@@ -135,6 +134,7 @@ body{
 #error_explanation>ul>li{
   color: red;
   margin-left: 0;
+  font-weight: bold;
 }
 .alert-danger{
   color: red !important;

@@ -2,9 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Football Website Template</title>
+  <title>Football Bet</title>
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag "home" %>
+  <%= stylesheet_link_tag "home", media: "all", "data-turbolinks-track": "reload" %>
+  <%= javascript_include_tag "home", "data-turbolinks-track": "reload" %>
   <%= render "layouts/shim" %>
 </head>
 <body>

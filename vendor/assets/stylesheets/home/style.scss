@@ -12,7 +12,7 @@
 /*------------------------- Layout styles ------------------------*/
 body {
   margin:0;
-  background: image-url(home/bg.jpg);
+  background:url(bg.jpg);
   font-family:Arial, Helvetica, sans-serif;
 }
 a {
@@ -23,7 +23,7 @@ a img {
   display:block;
 }
 .background {
-  background: image-url(home/bg.jpg) no-repeat;
+  background:url(home/bg.jpg) no-repeat;
 }
 .page {
   width:960px;
@@ -49,12 +49,8 @@ a img {
 .header ul {
   float:right;
   list-style:none;
-  overflow:hidden;
   padding-top: 60px;
   margin-right: 40px;
-}
-.header ul li:first-child {
-  margin:0;
 }
 .header ul li {
   float:left;
@@ -73,9 +69,18 @@ a img {
 .header ul li.selected a, .header ul li a:hover {
   color:#ff7500;
 }
+
+/*------------------------- Dropdown-menu ---------------------------*/
+.dropdown-menu{
+  background: #708090;
+}
+.dropdown-menu li{
+  padding: 0;
+}
+
 /*------------------------- Body ---------------------------*/
 .body {
-  background: image-url(home/bg.png) no-repeat;
+  background:url(home/bg.jpg) no-repeat;
   margin:0 0 12px;
   min-height:1188px;
   padding:12px 10px 10px;
@@ -101,7 +106,7 @@ a img {
   width:700px;
 }
 .body.home div:first-child .featured div:first-child {
-  background:url(home/bg.png);
+  background:url(home/bg.jpg);
   border:0;
   bottom:11px;
   height:120px;
@@ -137,7 +142,7 @@ a img {
   margin-bottom:14px;
 }
 .body.home div:first-child div div:first-child h3 {
-  background:url(../images/icons.png) no-repeat;
+  background:url(icons.png) no-repeat;
   color:#030303;
   display:block;
   float:left;
@@ -264,7 +269,7 @@ a img {
   width:716px;
 }
 .body.news div:first-child span {
-  background:url(../images/icons.png) no-repeat 20px -373px #030303;
+  background:url(icons.png) no-repeat 20px -373px #030303;
   color:#ff7500;
   display:block;
   font-family:bevanregular;
@@ -372,7 +377,7 @@ a img {
   width:716px;
 }
 .body.news-single div:first-child span:first-child {
-  background:url(../images/icons.png) no-repeat scroll 20px -373px #030303;
+  background:url(icons.png) no-repeat scroll 20px -373px #030303;
   color:#FF7500;
   display:block;
   font-family:bevanregular;
@@ -628,7 +633,7 @@ a img {
   width:716px;
 }
 .body.videos div:first-child span {
-  background:url(../images/icons.png) no-repeat scroll 20px -458px #030303;
+  background:url(icons.png) no-repeat scroll 20px -458px #030303;
   color:#FF7500;
   display:block;
   font-family:bevanregular;
@@ -719,7 +724,7 @@ a img {
   width:716px;
 }
 .body.schedule div:first-child span:first-child {
-  background:url(../images/icons.png) no-repeat scroll 20px -502px #030303;
+  background:url(icons.png) no-repeat scroll 20px -502px #030303;
   color:#FF7500;
   display:block;
   font-family:bevanregular;
@@ -734,7 +739,7 @@ a img {
   padding:0;
 }
 .body.schedule div:first-child div .section {
-  background:url(../images/bg-schedule.jpg) no-repeat -3px 0;
+  background:url(bg-schedule.jpg) no-repeat -3px 0;
   border-style:none none none solid;
   float:none;
   height:168px;
@@ -871,7 +876,7 @@ a img {
   border:0;
 }
 .body.home div.sidebar .news span, .body.news div.sidebar .news span, .body.news-single div.sidebar .news span, .body.team div.sidebar .news span:first-child, .body.team-single div.sidebar .news span, .body.videos div.sidebar .news span, .body.about div.sidebar .news span:first-child, .body.schedule div.sidebar .news span {
-  background:url(../images/icons.png) no-repeat 19px -60px #ff7500;
+  background:url(icons.png) no-repeat 19px -60px #ff7500;
   color:#1f1f1f;
   display:block;
   font-family:bevanregular;
@@ -887,16 +892,16 @@ a img {
   padding:0 0 1px;
 }
 .body.home div.sidebar .news ul li:hover, .body.home div.sidebar .section ul li:hover, .body.news div.sidebar .news ul li:hover, .body.news div.sidebar .section ul li:hover, .body.news-single div.sidebar .news ul li:hover, .body.news-single div.sidebar .section ul li:hover, .body.team div.sidebar .news ul li:hover, .body.team div.sidebar .section ul li:hover, .body.team-single div.sidebar .news ul li:hover, .body.team-single div.sidebar .section ul li:hover, .body.videos div.sidebar .news ul li:hover, .body.videos div.sidebar .section ul li:hover, .body.about div.sidebar .news ul li:hover, .body.about div.sidebar .section ul li:hover, .body.schedule div.sidebar .news ul li:hover, .body.schedule div.sidebar .section ul li:hover {
-  background:url(../images/bg-list-hover.png) repeat-x;
+  background:url(bg-list-hover.png) repeat-x;
 }
 .body.home div.sidebar .news ul li, .body.news div.sidebar .news ul li, .body.news-single div.sidebar .news ul li, .body.team div.sidebar .news ul li, .body.team-single div.sidebar .news ul li, .body.videos div.sidebar .news ul li, .body.about div.sidebar .news ul li, .body.schedule div.sidebar .news ul li {
-  background:url(../images/bg-list.png) repeat-x left bottom;
+  background:url(bg-list.png) repeat-x left bottom;
   height:54px;
   padding:0 20px;
   border:0;
 }
 .body.home div.sidebar .news ul li a, .body.news div.sidebar .news ul li a, .body.news-single div.sidebar .news ul li a, .body.team div.sidebar .news ul li a, .body.team-single div.sidebar .news ul li a, .body.videos div.sidebar .news ul li a, .body.about div.sidebar .news ul li a, .body.schedule div.sidebar .news ul li a {
-  background:url(../images/icon-arrow-right.png) no-repeat left 6px;
+  background:url(icon-arrow-right.png) no-repeat left 6px;
   color:#fff;
   display:inline-block;
   float:none;
@@ -939,7 +944,7 @@ a img {
   width:220px;
 }
 .body.home div.sidebar .section span, .body.news div.sidebar .section span, .body.news-single div.sidebar .section span, .body.team div.sidebar .section span, .body.team-single div.sidebar .section span, .body.videos div.sidebar .section span, .body.about div.sidebar .section span, .body.schedule div.sidebar .section span {
-  background:url(../images/icons.png) no-repeat scroll 19px -100px #FF7500;
+  background:url(icons.png) no-repeat scroll 19px -100px #FF7500;
   color:#1F1F1F;
   display:block;
   font-family:bevanregular;
@@ -955,7 +960,7 @@ a img {
   padding:0 0 5px;
 }
 .body.home div.sidebar .section ul li, .body.news div.sidebar .section ul li, .body.news-single div.sidebar .section ul li, .body.team div.sidebar .section ul li, .body.team-single div.sidebar .section ul li, .body.videos div.sidebar .section ul li, .body.about div.sidebar .section ul li, .body.schedule div.sidebar .section ul li {
-  background:url(../images/bg-list.png) repeat-x scroll left bottom transparent;
+  background:url(bg-list.png) repeat-x scroll left bottom transparent;
   height:54px;
   padding:0 20px;
 }
@@ -983,7 +988,7 @@ a img {
   text-transform:none;
 }
 .body.home div.sidebar div span, .body.news div.sidebar div span, .body.news-single div.sidebar div span, .body.team div.sidebar div span, .body.team-single div.sidebar div span, .body.videos div.sidebar div span, .body.about div.sidebar div span, .body.schedule div.sidebar div span {
-  background:url(../images/icons.png) no-repeat scroll 19px -137px #FF7500;
+  background:url(icons.png) no-repeat scroll 19px -137px #FF7500;
   color:#1F1F1F;
   display:block;
   font-family:bevanregular;
@@ -999,15 +1004,15 @@ a img {
   padding:0;
 }
 .body.home div.sidebar div ul li:hover, .body.news div.sidebar div ul li:hover, .body.news-single div.sidebar div ul li:hover, .body.team div.sidebar div ul li:hover, .body.team-single div.sidebar div ul li:hover, .body.videos div.sidebar div ul li:hover, .body.about div.sidebar div ul li:hover, .body.schedule div.sidebar div ul li:hover {
-  background:url(../images/bg-list-hover.png) repeat-x left bottom #2b2b2b;
+  background:url(bg-list-hover.png) repeat-x left bottom #2b2b2b;
 }
 .body.home div.sidebar div ul li, .body.news div.sidebar div ul li, .body.news-single div.sidebar div ul li, .body.team div.sidebar div ul li, .body.team-single div.sidebar div ul li, .body.videos div.sidebar div ul li, .body.about div.sidebar div ul li, .body.schedule div.sidebar div ul li {
-  background:url(../images/bg-list.png) repeat-x left bottom #1f1f1f;
+  background:url(bg-list.png) repeat-x left bottom #1f1f1f;
   height:auto;
   padding:0 20px;
 }
 .body.home div.sidebar div ul li p, .body.news div.sidebar div ul li p, .body.news-single div.sidebar div ul li p, .body.team div.sidebar div ul li p, .body.team-single div.sidebar div ul li p, .body.videos div.sidebar div ul li p, .body.about div.sidebar div ul li p, .body.schedule div.sidebar div ul li p {
-  background:url(../images/icon-arrow-right.png) no-repeat scroll left 17px transparent;
+  background:url(icon-arrow-right.png) no-repeat scroll left 17px transparent;
   color:#fff;
   font-size:12px;
   font-weight:700;
@@ -1082,7 +1087,7 @@ a img {
   width:716px;
 }
 .body.team div:first-child span:first-child, .body.team-single div:first-child span, .body.about div:first-child span:first-child {
-  background:url(../images/icons.png) no-repeat scroll 20px -417px #030303;
+  background:url(icons.png) no-repeat scroll 20px -417px #030303;
   color:#FF7500;
   display:block;
   font-family:bevanregular;
@@ -1180,26 +1185,26 @@ a img {
   width:23px;
 }
 .footer div.connect a#fb {
-  background:url(../images/icons.png) no-repeat 0 -184px;
+  background:url(icons.png) no-repeat 0 -184px;
 }
 .footer div.connect a#fb:hover {
-  background:url(../images/icons.png) no-repeat 0 -207px;
+  background:url(icons.png) no-repeat 0 -207px;
 }
 .footer div.connect a#twitter {
-  background:url(../images/icons.png) no-repeat 0 -230px;
+  background:url(icons.png) no-repeat 0 -230px;
 }
 .footer div.connect a#twitter:hover {
-  background:url(../images/icons.png) no-repeat 0 -253px;
+  background:url(icons.png) no-repeat 0 -253px;
 }
 .footer div.connect a#googleplus {
-  background:url(../images/icons.png) no-repeat 0 -276px;
+  background:url(icons.png) no-repeat 0 -276px;
 }
 .footer div.connect a#googleplus:hover {
-  background:url(../images/icons.png) no-repeat 0 -299px;
+  background:url(icons.png) no-repeat 0 -299px;
 }
 .footer div.connect a#contact {
-  background:url(../images/icons.png) no-repeat 0 -322px;
+  background:url(icons.png) no-repeat 0 -322px;
 }
 .footer div.connect a#contact:hover {
-  background:url(../images/icons.png) no-repeat 0 -345px;
+  background:url(icons.png) no-repeat 0 -345px;
 }

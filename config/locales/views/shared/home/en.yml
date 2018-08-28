@@ -16,5 +16,9 @@ en:
         signup: "Signup"
         new: "News"
         alt: "Football bet"
+        account: "Account"
+        profile: "Profile"
+        setting: "Settings"
+        logout: "Log out"
       sidebar:
         latest_new: "Latest News"

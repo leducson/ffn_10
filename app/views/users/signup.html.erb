@@ -1,3 +1,4 @@
+<% provide :title, t(".header") %>
 <header class="heading"><%= t ".header" %></header><hr></hr>
 <div class="row ">
   <%= form_for @user, url: signup_path do |f| %>
@@ -62,7 +63,7 @@
     </div>
   </div>
 
-  <div class="col-sm-12">
+  <div class="col-sm-12" id="padd-botom">
     <%= f.submit t(".submit"), class: "btn btn-warning" %>
   </div>
   <% end %>

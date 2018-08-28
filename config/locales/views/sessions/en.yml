@@ -1,0 +1,12 @@
+en:
+  sessions:
+    login:
+      title: "Login Form"
+      login: "Login"
+      email: "Enter Your Email"
+      pass: "Enter Your Password"
+      remember: "remember me"
+      forgot_pass: "Forgot password?"
+      signup_now: "Sign up now!"
+    create:
+      error: "Invalid email/password combination!!!"
