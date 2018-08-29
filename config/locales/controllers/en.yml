@@ -1,0 +1,8 @@
+en:
+  users:
+    create:
+      check_email: "Please check your email to activate your account!"
+  account_activations:
+    edit:
+      activated: "Account activated!"
+      link_invalid: "Invalid activation link"

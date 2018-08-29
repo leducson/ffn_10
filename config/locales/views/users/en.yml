@@ -1,0 +1,16 @@
+en:
+  users:
+    signup:
+      header: "Sign Up"
+      fullname: "Fullname"
+      email: "Email"
+      password: "Password"
+      confirm_pass: "Confirmation"
+      gender: "Gender"
+      male: "Male"
+      female: "Female"
+      submit: "Submit"
+      place_fullname: "Enter your Full Name"
+      place_email: "Enter your Email"
+      place_pass: "Enter your Password"
+      place_confirm_pass: "Enter your Confirmation Password"

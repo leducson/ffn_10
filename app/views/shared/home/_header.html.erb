@@ -1,22 +1,19 @@
-<div class="header">
-  <a href="index.html" id="logo">
-    <%= t ".logo" %>
-  </a>
-  <ul>
-    <li>
-      <a href="#"><%= t ".home" %></a>
-    </li>
-    <li>
-      <a href="#"><%= t ".team" %></a>
-    </li>
-    <li>
-      <a href="#"><%= t ".league" %></a>
-    </li>
-    <li>
-      <a href="#"><%= t ".rank" %></a>
-    </li>
-    <li>
-      <a href="#"><%= t ".login" %></a>
-    </li>
-  </ul>
+<% provide :title, t(".login") %>
+<div class="header row">
+  <div class="col-md-2">
+    <a href="index.html" id="logo">
+      <%= image_tag("home/logo.png", :alt => t(".alt")) %>
+    </a>
+  </div>
+  <div class="col-md-10">
+    <ul>
+      <li><%= link_to t(".home"), "#" %></li>
+      <li><%= link_to t(".new"), "#" %></li>
+      <li><%= link_to t(".team"), "#" %></li>
+      <li><%= link_to t(".rank"), "#" %></li>
+      <li><%= link_to t(".league"), "#" %></li>
+      <li><%= link_to t(".login"), "#" %></li>
+      <li><%= link_to t(".signup"), signup_path %></li>
+    </ul>
+  </div>
 </div>

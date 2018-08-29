@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "users", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "users", "data-turbolinks-track": "reload" %>
+    <%= render "layouts/shim" %>
+  </head>
+  <body>
+    <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </body>
+</html>
