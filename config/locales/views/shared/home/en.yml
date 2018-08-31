@@ -22,3 +22,5 @@ en:
         logout: "Log out"
       sidebar:
         latest_new: "Latest News"
+        previous: "Previous"
+        next: "Next"

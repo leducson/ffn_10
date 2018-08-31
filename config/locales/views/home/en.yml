@@ -1,0 +1,13 @@
+en:
+  home:
+    index:
+      schedule: "Schedule of the day"
+      date: "date"
+      date_time: "Date time"
+      match: "Matchs"
+      scored: "Scored"
+      ratio: "Ratio"
+      bet: "Place A Bet"
+      1st: "1st half"
+      2st: "2st half"
+
