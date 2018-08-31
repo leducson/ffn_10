@@ -40,4 +40,12 @@ module SessionsHelper
     cookies.delete :user_id
     cookies.delete :remember_token
   end
+
+  def after_sign_in_path user
+    if user.admin?
+      redirect_to admin_root_path
+    else
+      redirect_to root_path
+    end
+  end
 end

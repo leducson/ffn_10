@@ -1,4 +1,7 @@
 en:
+  notice:
+    require_login: "You are please login first."
+    login_notice: "You are not authorized. Please contact to Administrator."
   layouts:
     users:
       title: "Football bet"
