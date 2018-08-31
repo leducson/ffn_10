@@ -24,6 +24,7 @@ body{
      height: auto;
      margin-top: 166px;
 }
+
 /*--- for label of first and last name---*/
 .lastname{
    margin-left: 1px;
@@ -43,7 +44,6 @@ body{
    margin-top:5px;
 }
 
-
 /*---for heading-----*/
 .heading{
    text-decoration:bold;
@@ -52,11 +52,13 @@ body{
    color:#F96;
    padding-top:10px;
 }
+
 /*-------for email----------*/
   /*------label----*/
 #email{
     margin-top: 5px;
 }
+
 /*-----------for Password--------*/
      /*-------label-----*/
 .mail{
@@ -77,6 +79,7 @@ body{
 #password{
  margin-top: 6px;
 }
+
 /*------------for phone Number--------*/
       /*----------label--------*/
 .pno{
@@ -97,8 +100,8 @@ body{
      margin-top: 8px;
 }
 
-     /*---------- for Input type--------*/
-.col-xs-4.male{
+/*---------- for Input type--------*/
+.col-xs-4.male {
   color: white;
   font-size: 13px;
   margin-top: 9px;
@@ -109,10 +112,11 @@ body{
   font-size: 13px;
   margin-top: 9px;
   padding-bottom: 16px;
+  padding-right: 80px;
 }
 
 /*------------For submit button---------*/
-.sbutton{
+.sbutton {
    color: white;
    font-size: 20px;
    border: 1px solid white;
@@ -131,9 +135,9 @@ body{
 }
 
 /*------------Errors---------*/
-#error_explanation>ul>li{
+#error_explanation>ul{
   color: red;
-  margin-left: 0;
+  float: left;
   font-weight: bold;
 }
 .alert-danger{
@@ -155,4 +159,9 @@ p{
 }
 .checkbox{
   color: white;
+}
+
+/*------------Password_reset---------*/
+div#reset_pass {
+  padding: 10px;
 }

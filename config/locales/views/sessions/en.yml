@@ -8,5 +8,6 @@ en:
       remember: "remember me"
       forgot_pass: "Forgot password?"
       signup_now: "Sign up now!"
+      new_user: "New user?"
     create:
       error: "Invalid email/password combination!!!"
