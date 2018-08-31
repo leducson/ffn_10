@@ -24,3 +24,9 @@ en:
     create:
       comment_success: "Successful comment!"
       comment_error: "Successful't comment!"
+  score_bets:
+    create:
+      login: "You must are login first!"
+      current_amount: "The current amount is not enough!!!"
+      fail_bet: "Fails bet!!!"
+      success_bet: "Successfully bet!!!"

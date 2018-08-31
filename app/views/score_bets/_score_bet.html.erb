@@ -1,0 +1,18 @@
+<tr>
+  <td><small></small></td>
+  <td class="bg_match">
+    <small>
+      <%= score_bet.match.team1_name %><%= t ".dash" %><%= score_bet.match.team2_name %>
+    </small>
+  </td>
+  <td class="bg_scored">
+    <small>
+      <%= score_bet.score_sugest_score_win %><%= t ".dash" %><%= score_bet.score_sugest_score_lost %>
+    </small>
+  </td>
+  <td class="bg_ratio"><small><%= score_bet.score_sugest_ratio %></small></td>
+  <td class="bg_bet">
+    <small><%= number_to_currency(score_bet.price) %></small>
+  </td>
+  <td><small></small></td>
+</tr>

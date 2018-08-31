@@ -1,0 +1,7 @@
+en:
+  matches:
+    match:
+      score: "Score"
+      ratio: "Ratio"
+      bet_amount: "Bet Amount"
+      bet: "Bets"

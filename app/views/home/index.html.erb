@@ -6,15 +6,18 @@
   </div>
   <table border="1px">
     <tr class="table_menu">
+      <th rowspan="2"><%= t ".status" %></th>
       <th rowspan="2"><%= t ".date_time" %></th>
-      <th rowspan="2"><%= t ".match" %></th>
-      <th colspan="2"><%= t ".scored" %></th>
-      <th rowspan="2"><%= t ".ratio" %></th>
+      <th colspan="4"><%= t ".match" %></th>
       <th rowspan="2"><%= t ".bet" %></th>
     </tr>
     <tr class="table_menu">
-      <th><%= t ".1st" %></th>
-      <th><%= t ".2st" %></th>
+      <th class="team"><%= t ".team1" %></th>
+      <th class="scored"><%= t ".score" %></th>
+      <th class="scored"><%= t ".score" %></th>
+      <th class="team"><%= t ".team2" %></th>
     </tr>
+    <%= render @leagues %>
   </table>
+  <%= paginate @leagues %>
 </div>

@@ -27,26 +27,20 @@
           </div>
         </div>
         <div class="row">
-          <div class="match"><%= t ".match" %></div>
-        </div>
-        <div class="row">
           <div class="col-md-12">
-            <table class="table table-hover ">
+            <table class="table table-hover">
               <thead class="bg-light ">
                 <tr>
+                  <th><%= t ".match_stt" %></th>
+                  <th><%= t ".match" %></th>
                   <th><%= t ".scored" %></th>
                   <th><%= t ".ratio" %></th>
                   <th><%= t ".bet_amount" %></th>
+                  <th><%= t ".bet_stt" %></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="bg_scored"><small></small></td>
-                  <td class="bg_ratio"><small></small></td>
-                  <td class="bg_bet">
-                    <small><%= t ".currency" %></small>
-                  </td>
-                </tr>
+                <%= render @score_bets %>
               </tbody>
             </table>
           </div>

@@ -31,8 +31,13 @@ en:
       gender: "Gender"
       email: "Email"
       amount: "Current Amount"
-      match: "Team A - Team B"
       scored: "Scored"
       ratio: "Ratio"
-      bet_amount: "Bet amount"
+      bet_amount: "Bet Amount"
       currency: "$"
+      match_stt: "Match Status"
+      bet_stt: "Bet Status"
+      match: "Matchs"
+  score_bets:
+    score_bet:
+      dash: " - "

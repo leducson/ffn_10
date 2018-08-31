@@ -9,4 +9,7 @@ class Match < ApplicationRecord
 
   validates :team1_id, presence: true
   validates :team2_id, presence: true
+
+  delegate :name, to: :team1, prefix: true
+  delegate :name, to: :team2, prefix: true
 end

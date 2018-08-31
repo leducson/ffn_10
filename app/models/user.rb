@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :notifies, dependent: :destroy
   has_many :credits, dependent: :destroy
+  has_many :score_bets, dependent: :destroy
 
   validates :fullname, presence: true,
     length: {maximum: Settings.user.maximum_fullname}
@@ -68,6 +69,11 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < Settings.user.expire.hours.ago
+  end
+
+  def deduction bet_amount
+    new_money = money - bet_amount
+    update_attribute :money, new_money
   end
 
   private

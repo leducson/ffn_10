@@ -29,4 +29,5 @@ Rails.application.routes.draw do
   resources :profiles, only: [:show, :edit, :update]
   resources :football_news, only: [:index, :show]
   resources :comment, only: :create
+  resources :score_bets, only: :create
 end

@@ -25,3 +25,5 @@ gender: ["Male", "Female"]
 league_number_min: 0
 error: "error"
 success: "success"
+limit: 5
+leagues: 2

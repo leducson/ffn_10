@@ -2,12 +2,12 @@ en:
   home:
     index:
       schedule: "Schedule of the day"
-      date: "date"
+      date: "Date"
       date_time: "Date time"
       match: "Matchs"
-      scored: "Scored"
-      ratio: "Ratio"
       bet: "Place A Bet"
-      1st: "1st half"
-      2st: "2st half"
+      status: "Status"
+      team1: "Team 1"
+      team2: "Team 2"
+      score: "Scored"
 
