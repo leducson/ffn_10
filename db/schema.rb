@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_27_143010) do
+ActiveRecord::Schema.define(version: 2018_08_31_055242) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "type"
+    t.string "credit_type"
     t.float "amount"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "match_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "message"
+    t.integer "minutes"
+    t.integer "type_info"
+    t.bigint "match_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["match_id"], name: "index_match_infos_on_match_id"
+  end
+
   create_table "match_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "score_win"
     t.integer "score_lost"
@@ -61,9 +71,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
     t.integer "lost_team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["lost_team_id"], name: "index_match_results_on_lost_team_id", unique: true
     t.index ["match_id"], name: "index_match_results_on_match_id"
-    t.index ["win_team_id"], name: "index_match_results_on_win_team_id", unique: true
   end
 
   create_table "matches", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,13 +79,11 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
     t.integer "extra_time1"
     t.integer "extra_time2"
     t.integer "time"
-    t.integer "team_id1"
-    t.integer "team_id2"
+    t.integer "team1_id"
+    t.integer "team2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["team_id1", "team_id2"], name: "index_matches_on_team_id1_and_team_id2", unique: true
-    t.index ["team_id1"], name: "index_matches_on_team_id1"
-    t.index ["team_id2"], name: "index_matches_on_team_id2"
+    t.index ["team1_id", "team2_id"], name: "index_matches_on_team1_id_and_team2_id", unique: true
   end
 
   create_table "notifies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -100,6 +106,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "number"
     t.index ["team_id"], name: "index_player_infos_on_team_id"
   end
 
@@ -154,6 +161,8 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
     t.string "continents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "league_id"
+    t.index ["league_id"], name: "index_teams_on_league_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -177,6 +186,7 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
   add_foreign_key "comments", "football_news", column: "football_new_id"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "users"
+  add_foreign_key "match_infos", "matches"
   add_foreign_key "match_results", "matches"
   add_foreign_key "notifies", "score_bets"
   add_foreign_key "notifies", "users"
@@ -189,4 +199,5 @@ ActiveRecord::Schema.define(version: 2018_08_27_143010) do
   add_foreign_key "score_bets", "score_sugests"
   add_foreign_key "score_bets", "users"
   add_foreign_key "score_sugests", "matches"
+  add_foreign_key "teams", "leagues"
 end
