@@ -17,3 +17,6 @@ en:
       user_exist: "User not exists!"
       user_valid: "User not valid!"
       reset_expire: "password reset has been expire!"
+  profiles:
+    update:
+      update_user: "Success setting user!"

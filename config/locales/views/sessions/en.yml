@@ -11,3 +11,4 @@ en:
       new_user: "New user?"
     create:
       error: "Invalid email/password combination!!!"
+      check_email: "check your email to activation account!"

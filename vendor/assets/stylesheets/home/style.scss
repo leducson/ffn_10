@@ -80,7 +80,7 @@ a img {
 
 /*------------------------- Body ---------------------------*/
 .body {
-  background: image-url('home/bg.png') no-repeat;
+  background:url(bg.jpg) no-repeat;
   margin:0 0 12px;
   min-height:1188px;
   padding:12px 10px 10px;
@@ -187,7 +187,6 @@ a img {
   margin:0 0 11px;
 }
 .body.home div:first-child div div {
-  border-top:4px solid #1f1f1f;
   padding:10px 0 0;
 }
 .body.home div:first-child div div h3 {
@@ -1207,4 +1206,124 @@ a img {
 }
 .footer div.connect a#contact:hover {
   background:url(icons.png) no-repeat 0 -345px;
+}
+
+/*------------------------- profiles -------------------------*/
+.border-right {
+  background: #ff7500;
+  color: white;
+}
+.border-right>h5 {
+  text-align: center;
+}
+.name {
+  background: #ff7500;
+  color: white;
+  height: 40px;
+}
+.name>h5 {
+  margin-left: 20px;
+}
+.amount {
+  background: green;
+  height: 40px;
+}
+.match {
+  background: #ff7500;
+  text-align: center;
+  color: white;
+}
+tbody>tr>td>small {
+  font-size: 15px;
+  font-weight: bold;
+}
+/*----------------------- Settings--------------------------------------*/
+.firstname{
+  margin-left: 1px;
+  font-family: sans-serif;
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  float: left;
+  font-weight: bold;
+}
+#lname{
+   margin-top:5px;
+}
+.heading{
+   text-decoration:bold;
+   text-align : center;
+   font-size:30px;
+   color:#F96;
+   padding-top:10px;
+}
+#email{
+    margin-top: 5px;
+}
+.mail{
+  margin-left: 44px;
+  font-family: sans-serif;
+  color: white;
+  font-size: 14px;
+  margin-top: 13px;
+  float: left;
+  font-weight: bold;
+}
+.pass{
+  color: white;
+  margin-top: 9px;
+  font-size: 14px;
+  font-family: sans-serif;
+  margin-left: 6px;
+  margin-top: 9px;
+}
+#password{
+ margin-top: 6px;
+}
+.pno{
+   font-size: 18px;
+     margin-left: -13px;
+     margin-top: 10px;
+     color: #ff9;
+
+}
+.gender {
+  color: white;
+  font-family: sans-serif;
+  font-size: 14px;
+  margin-left: 28px;
+  margin-top: 8px;
+  float: left;
+  font-weight: bold;
+}
+.male{
+  color: white;
+  font-size: 13px;
+  margin-top: 9px;
+  padding-bottom: 16px;
+}
+.female {
+  color: white;
+  font-size: 13px;
+  margin-top: 9px;
+  padding-bottom: 16px;
+  padding-right: 95px;
+}
+.btn.btn-warning:hover {
+  box-shadow: 2px 1px 2px 3px #99ccff;
+  background:#5900a6;
+  color:#fff;
+  transition: background-color 1.15s ease-in-out,border-color 1.15s ease-in-out,box-shadow 1.15s ease-in-out;
+}
+.container{
+  background-image:url(https://image.freepik.com/free-vector/dark-blue-blurred-background_1034-589.jpg);
+  text-align: center;
+  opacity: 0.8;
+  background-size:cover;
+  height: auto;
+}
+
+/*-------------------error---------------*/
+#error_explanation {
+  width: 50%;
 }
