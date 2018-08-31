@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
   def not_found?
     render file: "#{Rails.root}/public/404.html", status: 403, layout: false
   end
+
+  private
+
+  def logged_in_user
+    return if logged_in?
+    flash[:danger] = t "notice.require_login"
+    redirect_to login_path
+  end
 end

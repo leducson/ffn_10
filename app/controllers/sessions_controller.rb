@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       log_in user
       rememberable user
-      redirect_to root_path
+      after_sign_in_path user
     else
       flash.now[:danger] = t ".error"
       render :login
