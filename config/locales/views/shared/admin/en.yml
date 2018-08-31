@@ -6,3 +6,8 @@ en:
       left_menu:
         footbal_bet: "Football Bets"
         dashboard: "Dashboard"
+        football_new: "Football News"
+      error_messages:
+        errors_count:
+          one: "The form contains %{count} error."
+          other: "The form contains %{count} errors."

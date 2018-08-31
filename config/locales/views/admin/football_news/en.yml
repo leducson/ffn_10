@@ -1,0 +1,22 @@
+en:
+  admin:
+    football_news:
+      index:
+        football_news: "Football News"
+        add_new: "Add Football New"
+        image: "Image"
+        title: "Title"
+        time: "Time"
+        action: "Action"
+      football_new:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+      new:
+        new_title: "Add Football New"
+      form:
+        title: "Title"
+        content: "Content"
+        image: "Image"
+        image_upload: "Upload Images"
+        submit: "Save Changes"

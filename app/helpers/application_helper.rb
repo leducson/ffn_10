@@ -7,4 +7,12 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
+
+  def format_time time
+    time.strftime("%d/%m/%Y %H:%M")
+  end
+
+  def count_index_list index
+    index + 1
+  end
 end

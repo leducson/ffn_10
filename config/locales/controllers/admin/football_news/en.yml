@@ -1,0 +1,12 @@
+en:
+  admin:
+    football_news:
+      create:
+        create_success: "Created football new successfully"
+        create_error: "Failed to create football new"
+      update:
+        update_success: "Updated football new successfully"
+        update_error: "Failed to update football new"
+      destroy:
+        destroy_success: "Deleted football new successfully"
+        destroy_error: "Failed to delete football new"
