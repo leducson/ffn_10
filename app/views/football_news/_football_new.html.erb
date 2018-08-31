@@ -1,0 +1,10 @@
+<div class="row border_bottom">
+  <div class="col-md-4">
+    <%= image_tag football_new.image.medium.url, class: "image" if football_new.image.present? %>
+  </div>
+  <div class="col-md-8 news_left">
+    <%= link_to football_new.title, football_news_path(football_new) %>
+    <p class="date_post"><%= t".post_date", date: format_time_post(football_new.created_at) %></p>
+    <p class="new_text"><%= new_content football_new.content %></p>
+  </div>
+</div>

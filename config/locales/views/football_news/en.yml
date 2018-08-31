@@ -1,0 +1,15 @@
+en:
+  football_news:
+    index:
+      header: "News"
+    football_new:
+        post_date: "Posted on %{date}"
+    show:
+      post_date: "Posted on %{date}"
+      header: "New"
+      comment: "Comment"
+      add_comment: "Add A Comment"
+      place_msg: "message..."
+    comment:
+      comment_date: "Commented on %{date}"
+      author: "- %{author} -"

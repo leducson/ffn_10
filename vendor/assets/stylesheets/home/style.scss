@@ -30,6 +30,9 @@ a img {
   margin:0 auto;
   padding:97px 0 35px;
 }
+.body.home.football_new {
+  min-height: auto;
+}
 /*------------------------- Header -------------------------*/
 .header {
   background:none #030303;
@@ -89,12 +92,14 @@ a img {
   min-height:0!important;
 }
 .body.home {
-  background:none #fbfbf4;
   overflow:hidden;
 }
 .body.home div:first-child {
   float:left;
-  width:700px;
+  width: 100%;
+}
+.auto {
+  margin: 0 auto;
 }
 .body.home div:first-child .featured {
   border:0;
@@ -103,10 +108,9 @@ a img {
   margin:0 0 15px;
   padding:0;
   position:relative;
-  width:700px;
+  width: 100%;
 }
 .body.home div:first-child .featured div:first-child {
-  background:url(bg.jpg);
   border:0;
   bottom:11px;
   height:120px;
@@ -185,9 +189,6 @@ a img {
 }
 .body.home div:first-child div {
   margin:0 0 11px;
-}
-.body.home div:first-child div div {
-  padding:10px 0 0;
 }
 .body.home div:first-child div div h3 {
   background:url(bg.jpg) no-repeat 0 -31px;
@@ -1229,13 +1230,47 @@ a img {
   height: 40px;
 }
 .match {
-  background: #ff7500;
+  background: #800000;
   text-align: center;
-  color: white;
+  color: #FFB80C;
+  line-height: 40px;
+  font-weight: bold;
 }
 tbody>tr>td>small {
   font-size: 15px;
   font-weight: bold;
+}
+tbody>tr>td {
+  text-align: center;
+}
+.user_info {
+  background: cadetblue;
+}
+.bg-light {
+  background: #f04a3c!important;
+}
+thead>tr>th {
+  color: white;
+  text-align: center;
+}
+tbody>tr .bg_bet {
+  background: #26bf4b;
+  color: #8B0000;
+}
+tbody>tr .bg_ratio {
+  background: #FFB80C;
+  color: #8B0000;
+}
+tbody>tr .bg_scored {
+  background: #800000;
+  color: #FFB80C;
+}
+.card-body {
+  background: #1E1E1E;
+}
+.card_border {
+  border-top: 1px solid #D2691E;
+  border-bottom: 1px solid #D2691E;
 }
 /*----------------------- Settings--------------------------------------*/
 .firstname{
@@ -1281,11 +1316,10 @@ tbody>tr>td>small {
  margin-top: 6px;
 }
 .pno{
-   font-size: 18px;
-     margin-left: -13px;
-     margin-top: 10px;
-     color: #ff9;
-
+  font-size: 18px;
+  margin-left: -13px;
+  margin-top: 10px;
+  color: #ff9;
 }
 .gender {
   color: white;
@@ -1326,4 +1360,92 @@ tbody>tr>td>small {
 /*-------------------error---------------*/
 #error_explanation {
   width: 50%;
+}
+
+/*-------------------Football News---------------*/
+.football_new {
+  background: #F0FFFF!important;
+  width: 100%;
+}
+.image_tag {
+  width: 100%;
+  height: 300px;
+}
+.image {
+  width: 100%;
+  height: 200px;
+}
+.border_bottom {
+  border-bottom: 1px solid #000;
+}
+.news_left {
+  padding: 0 10px;
+}
+.news_left>a {
+  color: #FF8C00;
+  font-size: 18px;
+  font-weight: bold;
+}
+.news_left>a:hover {
+  text-decoration: none;
+}
+a.highlights {
+  color: #FF8C00;
+  font-size: 25px;
+  font-weight: bold;
+}
+.date_post {
+  color: #B8860B;
+}
+.new_text {
+  font-size: 15px;
+}
+
+/*-----------------Show Football News-----------------*/
+.photo_tag {
+  width: 100%;
+  padding: 5px 100px;
+  height: 300px;
+}
+form>h5 {
+  background: #FF8C00;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 180px;
+  font-weight: bold;
+}
+.football_new form {
+  padding: 10px 20px;
+}
+.comment {
+  padding: 10px 20px;
+}
+.comment>h5 {
+  background: #FF8C00;
+  line-height: 40px;
+  padding: 0 10px;
+  width: 120px;
+  font-weight: bold;
+}
+.title_show {
+  color: #FF8C00;
+  font-size: 25px;
+  font-weight: bold;
+}
+.comment_right>h4 {
+  font-size: 15px;
+}
+.comment_right {
+  padding: 0 20px;
+}
+.message {
+  color: #2F4F4F;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: #ccc solid 1px;
+  width: 55%;
+  background: #F8F8FF;
+}
+.hr {
+  background: #FF8C00;
 }

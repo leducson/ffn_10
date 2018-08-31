@@ -1,52 +1,54 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-9">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <table class="table table-hover ">
-                <thead class="bg-light ">
-                  <tr>
-                    <th><%= t ".fullname" %></th>
-                    <th><%= t ".gender" %></th>
-                    <th><%= t ".email" %></th>
-                    <th><%= t ".amount" %></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><small><%= @user.fullname %></small></td>
-                    <td><small><%= @user.gender %></small></td>
-                    <td><small><%= @user.email %></small></td>
-                    <td><small></small></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+    <div class="card_border">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover user_info">
+              <thead class="bg-light ">
+                <tr>
+                  <th><%= t ".fullname" %></th>
+                  <th><%= t ".gender" %></th>
+                  <th><%= t ".email" %></th>
+                  <th><%= t ".amount" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><small><%= @user.fullname %></small></td>
+                  <td><small><%= @user.gender %></small></td>
+                  <td><small><%= @user.email %></small></td>
+                  <td>
+                    <small><%= "#{@user.money}#{t(".currency")}" %></small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-          <div class="row match">
-            <%= t ".match" %>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <table class="table table-hover ">
-                <thead class="bg-light ">
-                  <tr>
-                    <th><%= t ".scored" %></th>
-                    <th><%= t ".ratio" %></th>
-                    <th><%= t ".bet_amount" %></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                    <td><small></small></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        </div>
+        <div class="row">
+          <div class="match"><%= t ".match" %></div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <table class="table table-hover ">
+              <thead class="bg-light ">
+                <tr>
+                  <th><%= t ".scored" %></th>
+                  <th><%= t ".ratio" %></th>
+                  <th><%= t ".bet_amount" %></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="bg_scored"><small></small></td>
+                  <td class="bg_ratio"><small></small></td>
+                  <td class="bg_bet">
+                    <small><%= t ".currency" %></small>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

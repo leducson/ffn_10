@@ -1,0 +1,10 @@
+<div class="comment_right">
+  <p class="message"><%= comment.message %></p>
+  <h4>
+    <i>
+      <%= t ".author", author: comment.get_user %>
+      <small><%= t ".comment_date", date: format_time_post(comment.created_at) %></small>
+    </i>
+  </h4>
+</div>
+<hr class="hr">

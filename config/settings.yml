@@ -7,6 +7,9 @@ user:
   minimum_pass: 8
   expire: 2
   min_length: 1
+football_news:
+  cols: "50"
+  rows: "5"
 development:
   port: "587"
 sessions:

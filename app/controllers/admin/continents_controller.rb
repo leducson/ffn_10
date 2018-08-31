@@ -4,7 +4,7 @@ class Admin::ContinentsController < Admin::BaseController
   def load_countries
     @countries = @continent.countries.pluck(:name, :id) || []
     respond_to do |format|
-      format.json {render json: @countries}
+      format.json{render json: @countries}
     end
   end
 

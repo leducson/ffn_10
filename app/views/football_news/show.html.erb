@@ -1,0 +1,31 @@
+<% provide :title, t(".header") %>
+<div class="football_new">
+  <div>
+    <div class="photo">
+      <%= image_tag @football_new.image.large.url, class: "photo_tag" if @football_new.image.present? %>
+    </div>
+    <div class="news_left border_bottom">
+      <p class="title_show"><%= @football_new.title %></p>
+      <p class="date_post">
+        <%= t".post_date", date: format_time_post(@football_new.created_at) %>
+      </p>
+      <p class="new_text">
+        <%= raw @football_new.content %>
+      </p>
+    </div>
+
+    <div class="comment border_bottom">
+      <h5><%= t ".comment" %></h5>
+      <%= render @comments %>
+    </div>
+
+    <%= form_for @football_new.comments.build, url: comment_index_path do |f| %>
+      <h5><%= t ".add_comment" %></h5>
+      <%= f.hidden_field :football_new_id, value: @football_new.id %>
+      <%= f.text_area :message, placeholder: t(".place_msg"), id: "message", cols: Settings.football_news.cols, rows: Settings.football_news.rows %>
+      <div>
+        <%= f.submit t ".comment" %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -48,4 +48,8 @@ module SessionsHelper
       redirect_to profile_path user
     end
   end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
+  end
 end
