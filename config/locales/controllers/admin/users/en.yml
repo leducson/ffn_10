@@ -1,0 +1,12 @@
+en:
+  admin:
+    users:
+      create:
+        create_success: "Created user successfully"
+        create_error: "Failed to create user"
+      update:
+        update_success: "Updated user successfully"
+        update_error: "Failed to update user"
+      destroy:
+        destroy_success: "Deleted user successfully"
+        destroy_error: "Failed to delete user"

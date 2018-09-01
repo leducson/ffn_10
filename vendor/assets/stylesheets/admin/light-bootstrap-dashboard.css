@@ -1847,7 +1847,7 @@ fieldset[disabled] .form-control {
     position: relative;
     cursor: pointer;
     padding-left: 35px;
-    line-height: 26px;
+    line-height: 18px;
     margin-bottom: 0;
 }
 
@@ -1862,7 +1862,7 @@ fieldset[disabled] .form-control {
     height: 19px;
     margin-top: -12px;
     margin-left: -23px;
-    font-size: 21px;
+    font-size: 25px;
     cursor: pointer;
     -webkit-transition: opacity 0.3s linear;
     -moz-transition: opacity 0.3s linear;

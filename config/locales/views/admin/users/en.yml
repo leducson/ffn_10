@@ -1,0 +1,32 @@
+en:
+  admin:
+    users:
+      index:
+        new_user: "New User"
+        users: "Users"
+        email: "Email"
+        fullname: "Name"
+        gender: "Gender"
+        activated: "Activated"
+        money: "Money"
+        admin: "Admin"
+        time: "Time"
+        action: "Action"
+      user:
+        are_you_sure: "Are you sure?"
+        edit: "Edit"
+        remove: "Remove"
+      new:
+        new_title: "New User"
+      edit:
+        new_title: "Edit User"
+      form:
+        email: "Email"
+        fullname: "FullName"
+        activated: "Activated"
+        admin: "Admin"
+        password: "Password"
+        gender: "Gender"
+        money: "Money"
+        money_unit: "$"
+        submit: "Save Changes"

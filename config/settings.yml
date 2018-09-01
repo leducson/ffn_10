@@ -11,3 +11,5 @@ development:
 sessions:
   remember_me: "1"
 football_new_per: 15
+user_per: 15
+gender: ["Male", "Female"]
