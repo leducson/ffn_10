@@ -17,6 +17,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.user.minimum_pass}, allow_nil: true
   has_secure_password
 
+  scope :newest, ->{order created_at: :desc}
+
   def self.digest string
     cost =
       if ActiveModel::SecurePassword.min_cost

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboard#index"
     resources :football_news
+    resources :users
   end
 
   root "home#index"

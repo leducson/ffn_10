@@ -7,6 +7,7 @@ en:
         footbal_bet: "Football Bets"
         dashboard: "Dashboard"
         football_new: "Football News"
+        user: "Users"
       error_messages:
         errors_count:
           one: "The form contains %{count} error."
