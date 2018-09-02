@@ -1,6 +1,10 @@
 en:
   shared:
     admin:
+      top_menu:
+        dashboard: "Dashboard"
+        welcome_back: "Welcome back: %{user}"
+        logout: "Logout"
       footer:
         copyright: "Le Duc Son & Ho Viet Hieu, Football Bets"
       left_menu:

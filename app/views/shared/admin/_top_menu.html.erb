@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg " color-on-scroll="500">
   <div class=" container-fluid  ">
-    <a class="navbar-brand" href="#pablo"><%= t ".dashboard" %></a>
     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-bar burger-lines"></span>
       <span class="navbar-toggler-bar burger-lines"></span>
       <span class="navbar-toggler-bar burger-lines"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navigation">
+      <span class="text-secondary"><%= t ".welcome_back", user: current_user.email %></span>
       <ul class="nav navbar-nav mr-auto">
         <li class="nav-item">
           <a href="#" class="nav-link" data-toggle="dropdown">
@@ -15,11 +15,11 @@
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
-        <!--<li class="nav-item">
-          <a class="nav-link" href="#">
+        <li class="nav-item">
+          <a class="nav-link" href="<%= logout_path%>" data-method="delete">
             <span class="no-icon"><%= t ".logout" %></span>
           </a>
-        </li>-->
+        </li>
       </ul>
     </div>
   </div>
