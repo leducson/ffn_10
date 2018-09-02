@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_31_055242) do
+ActiveRecord::Schema.define(version: 2018_09_03_034620) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -83,6 +83,8 @@ ActiveRecord::Schema.define(version: 2018_08_31_055242) do
     t.integer "team2_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "round_id"
+    t.index ["round_id"], name: "index_matches_on_round_id"
     t.index ["team1_id", "team2_id"], name: "index_matches_on_team1_id_and_team2_id", unique: true
   end
 
@@ -123,11 +125,9 @@ ActiveRecord::Schema.define(version: 2018_08_31_055242) do
   create_table "rounds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.bigint "league_id"
-    t.bigint "match_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["league_id"], name: "index_rounds_on_league_id"
-    t.index ["match_id"], name: "index_rounds_on_match_id"
   end
 
   create_table "score_bets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -188,13 +188,13 @@ ActiveRecord::Schema.define(version: 2018_08_31_055242) do
   add_foreign_key "credits", "users"
   add_foreign_key "match_infos", "matches"
   add_foreign_key "match_results", "matches"
+  add_foreign_key "matches", "rounds"
   add_foreign_key "notifies", "score_bets"
   add_foreign_key "notifies", "users"
   add_foreign_key "player_infos", "teams"
   add_foreign_key "rankings", "leagues"
   add_foreign_key "rankings", "teams"
   add_foreign_key "rounds", "leagues"
-  add_foreign_key "rounds", "matches"
   add_foreign_key "score_bets", "matches"
   add_foreign_key "score_bets", "score_sugests"
   add_foreign_key "score_bets", "users"

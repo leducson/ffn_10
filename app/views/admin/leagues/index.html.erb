@@ -1,0 +1,33 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".leagues" %>
+          <%= link_to t(".add_new"), new_admin_league_path, class: "btn btn-primary btn-xs right" %>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".country" %></th>
+            <th><%= t ".start_date" %></th>
+            <th><%= t ".end_date" %></th>
+            <th><%= t ".matchs" %></th>
+            <th><%= t ".teams" %></th>
+            <th><%= t ".rounds" %></th>
+            <th><%= t ".times" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @leagues %>
+          </tbody>
+        </table>
+        <%= paginate @leagues %>
+      </div>
+    </div>
+  </div>
+</div>
