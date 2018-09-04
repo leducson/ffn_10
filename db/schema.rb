@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_03_034620) do
+ActiveRecord::Schema.define(version: 2018_09_04_042501) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2018_09_03_034620) do
     t.datetime "updated_at", null: false
     t.index ["football_new_id"], name: "index_comments_on_football_new_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "continents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.bigint "continent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["continent_id"], name: "index_countries_on_continent_id"
   end
 
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -41,16 +55,16 @@ ActiveRecord::Schema.define(version: 2018_09_03_034620) do
 
   create_table "leagues", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "country"
     t.datetime "start_date"
     t.datetime "end_date"
-    t.string "continents"
     t.integer "number_of_match"
     t.integer "number_of_team"
     t.integer "match_time"
     t.integer "number_of_round"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "continent_id"
+    t.integer "country_id"
   end
 
   create_table "match_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -155,13 +169,13 @@ ActiveRecord::Schema.define(version: 2018_09_03_034620) do
 
   create_table "teams", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "country"
     t.string "address"
     t.datetime "establish_year"
-    t.string "continents"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "league_id"
+    t.integer "continent_id"
+    t.integer "country_id"
     t.index ["league_id"], name: "index_teams_on_league_id"
   end
 
@@ -185,6 +199,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_034620) do
 
   add_foreign_key "comments", "football_news", column: "football_new_id"
   add_foreign_key "comments", "users"
+  add_foreign_key "countries", "continents"
   add_foreign_key "credits", "users"
   add_foreign_key "match_infos", "matches"
   add_foreign_key "match_results", "matches"
