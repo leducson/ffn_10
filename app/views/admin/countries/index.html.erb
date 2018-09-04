@@ -1,0 +1,28 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= t ".countries" %>
+          <%= link_to t(".add_new"), new_admin_country_path, class: "btn btn-primary btn-xs right" %>
+        </h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".continent" %></th>
+            <th><%= t ".time" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @countries %>
+          </tbody>
+        </table>
+        <%= paginate @countries %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<tr>
+  <td><%= count_index_list country_counter %></td>
+  <td><%= country.name %></td>
+  <td><%= country.continent_name %></td>
+  <td><%= format_time country.created_at %></td>
+  <td class="td-actions text-right">
+    <%= link_to edit_admin_country_path(country), class: "btn btn-success btn-link btn-xs", title: t(".edit") do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_country_path(country), class: "btn btn-danger btn-link btn-xs", title: t(".remove"),
+      method: :delete, data: {confirm: t(".are_you_sure")} do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </td>
+</tr>
