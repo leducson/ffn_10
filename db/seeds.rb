@@ -31,12 +31,21 @@ end
     football_new_id: FootballNew.all.sample.id)
 end
 
+["Africa", "Asia", "Europe", "North America", "South America", "Antarctica", "Australia", "Oceania"].each do |con|
+  Continent.create!(name: con)
+end
+
+["England", "France", "Portugal", "Spain", "Russia", "Belgium", "Netherlands", "Croatia", "Switzerland", "Sweden", "Germany", "Argentina", "Brasil", "Uruguay", "South Korea"].each do |c|
+  Country.create!(name: c, continent_id: Continent.all.sample.id)
+end
+
 10.times do |n|
   League.create!(name: Faker::Team.name,
-    country:Faker::Address.country,
+    country_id: Country.all.sample.id,
     start_date: Date.today + (n + 10).days,
     end_date: Date.today + 40.days,
-    continents: "", number_of_match: rand(10..40),
+    continent_id: Continent.all.sample.id,
+    number_of_match: rand(10..40),
     number_of_team: rand(5..20),
     match_time: 90,
     number_of_round: rand(3..10))
@@ -44,10 +53,10 @@ end
 
 30.times do |n|
   Team.create!(name: Faker::WorldCup.team,
-    country: Faker::Address.country,
+    country_id: Country.all.sample.id,
     address: Faker::Address.full_address,
     establish_year: Faker::Date.between(2.days.ago, 10.year.ago),
-    continents: "",
+    continent_id: Continent.all.sample.id,
     league_id: League.all.sample.id)
 end
 
