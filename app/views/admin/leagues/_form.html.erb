@@ -1,0 +1,48 @@
+
+<%= form_for @league, url: url do |f| %>
+  <%= render "shared/admin/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label t ".name", class: "control-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".continents", class: "control-label" %>
+    <%= f.select(:continent_id, League.load_continents, {:prompt => t(".blank_option")}, {class: "form-control", data:{id: @league.country_id}}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".country", class: "control-label" %>
+    <%= f.select(:country_id, @league.continent.countries.pluck(:name, :id), {}, {class: "form-control"}) %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".start_date", class: "control-label" %>
+    <%= f.date_field :start_date, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".end_date", class: "control-label" %>
+    <%= f.date_field :end_date, class: "form-control" %>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".number_of_match", class: "control-label" %>
+      <%= f.number_field :number_of_match, class: "form-control", min: Settings.league_number_min %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".number_of_team", class: "control-label" %>
+      <%= f.number_field :number_of_team, class: "form-control", min: Settings.league_number_min %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".number_of_round", class: "control-label" %>
+      <%= f.number_field :number_of_round, class: "form-control", min: Settings.league_number_min %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".match_time", class: "control-label" %>
+      <%= f.number_field :match_time, class: "form-control", min: Settings.league_number_min %>
+    </div>
+  </div>
+
+  <div class="form-group submit_button">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

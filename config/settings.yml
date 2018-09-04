@@ -16,3 +16,4 @@ user_per: 15
 league_per: 15
 country_per: 15
 gender: ["Male", "Female"]
+league_number_min: 0
