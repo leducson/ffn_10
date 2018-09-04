@@ -1,0 +1,20 @@
+en:
+  admin:
+    leagues:
+      index:
+        leagues: "Leagues"
+        title: "Leagues Managements"
+        add_new: "New League"
+        name: "Name"
+        country: "Country"
+        start_date: "Start Date"
+        end_date: "End Date"
+        matchs: "Matchs"
+        teams: "Teams"
+        rounds: "Rounds"
+        times: "Match Time"
+        action: "Action"
+      league:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"

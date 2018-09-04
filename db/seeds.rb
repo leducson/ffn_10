@@ -51,19 +51,11 @@ end
     league_id: League.all.sample.id)
 end
 
-30.times do |n|
-  Match.create!(date_of_match: Date.today + (rand(10..20)).days,
-    extra_time1: nil,
-    extra_time2: nil,
-    time: nil,
-    team1_id: n + 1,
-    team2_id: rand(2..30))
-end
+
 
 leagues = League.order(:created_at)
 30.times do |n|
-  leagues.each {|league| league.rounds.create!(name: Faker::Team.name,
-    match_id: Match.all.sample.id)}
+  leagues.each {|league| league.rounds.create!(name: Faker::Team.name)}
 end
 
 leagues.each do |league|
@@ -71,6 +63,16 @@ leagues.each do |league|
     league.rankings.create!(team_id: league.teams.sample.id,
       rank: (0..league.number_of_team.to_i))
   end
+end
+
+30.times do |n|
+  Match.create!(date_of_match: Date.today + (rand(10..20)).days,
+    extra_time1: nil,
+    extra_time2: nil,
+    time: nil,
+    team1_id: n + 1,
+    team2_id: rand(2..30),
+    round_id: Round.all.sample.id)
 end
 
 teams = Team.order(:created_at)

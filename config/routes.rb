@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :football_news
     resources :users
+    resources :leagues
   end
 
   root "home#index"

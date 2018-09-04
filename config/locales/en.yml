@@ -1,4 +1,9 @@
 en:
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
   number:
     currency:
       format:

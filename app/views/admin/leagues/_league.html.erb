@@ -1,0 +1,20 @@
+<tr>
+  <td><%= count_index_list league_counter %></td>
+  <td><%= league.name %></td>
+  <td><%= league.country %></td>
+  <td><%= l league.start_date %></td>
+  <td><%= l league.end_date %></td>
+  <td><%= league.number_of_match %></td>
+  <td><%= league.number_of_team %></td>
+  <td><%= league.number_of_round %></td>
+  <td><%= league.match_time %></td>
+  <td class="td-actions text-right">
+    <%= link_to edit_admin_league_path(league), class: "btn btn-success btn-link btn-xs", title: t(".edit") do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_league_path(league), class: "btn btn-danger btn-link btn-xs", title: t(".remove"),
+      method: :delete, data: {confirm: t(".are_you_sure")} do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </td>
+</tr>

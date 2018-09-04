@@ -1,0 +1,12 @@
+en:
+  admin:
+    leagues:
+      create:
+        create_success: "Created league successfully"
+        create_error: "Failed to create league"
+      update:
+        update_success: "Updated league successfully"
+        update_error: "Failed to update league"
+      destroy:
+        destroy_success: "Deleted league successfully"
+        destroy_error: "Failed to delete league"

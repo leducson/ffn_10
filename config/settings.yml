@@ -6,10 +6,12 @@ user:
   maximum_email: 255
   minimum_pass: 8
   expire: 2
+  min_length: 1
 development:
   port: "587"
 sessions:
   remember_me: "1"
 football_new_per: 15
 user_per: 15
+league_per: 15
 gender: ["Male", "Female"]
