@@ -2,10 +2,11 @@ en:
   admin:
     football_news:
       index:
+        title: "Football News Managements"
         football_news: "Football News"
         add_new: "Add Football New"
         image: "Image"
-        title: "Title"
+        subject: "Title"
         time: "Time"
         action: "Action"
       football_new:
@@ -13,7 +14,10 @@ en:
         remove: "Remove"
         are_you_sure: "Are you sure?"
       new:
+        title: New Football News
         new_title: "Add Football New"
+      edit:
+        title: "Edit Football New"
       form:
         title: "Title"
         content: "Content"

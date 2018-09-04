@@ -2,6 +2,7 @@ en:
   admin:
     users:
       index:
+        title: "Users Managements"
         new_user: "New User"
         users: "Users"
         email: "Email"
@@ -17,9 +18,9 @@ en:
         edit: "Edit"
         remove: "Remove"
       new:
-        new_title: "New User"
+        title: "New User"
       edit:
-        new_title: "Edit User"
+        title: "Edit User"
       form:
         email: "Email"
         fullname: "FullName"
