@@ -13,6 +13,7 @@ en:
         football_new: "Football News"
         user: "Users"
         leagues: "Leagues"
+        countries: "Countries"
       error_messages:
         errors_count:
           one: "The form contains %{count} error."

@@ -1,0 +1,15 @@
+<%= form_for @country, url: url do |f| %>
+  <%= render "shared/admin/error_messages", object: f.object %>
+  <div class="form-group">
+    <%= f.label t ".name", class: "control-label" %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label t ".continent", class: "control-label" %>
+    <%= f.select(:continent_id, Country.load_continents, {}, {class: "form-control"}) %>
+  </div>
+
+  <div class="form-group submit_button">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

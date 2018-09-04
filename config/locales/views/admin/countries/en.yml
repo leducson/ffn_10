@@ -1,0 +1,23 @@
+en:
+  admin:
+    countries:
+      index:
+        title: "Countries Managements"
+        countries: Countries
+        add_new: New Country
+        name: "Name"
+        continent: "Continent"
+        time: "Date Created"
+        action: "Action"
+      country:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+      new:
+        title: "New Country"
+      edit:
+        title: "Edit Country"
+      form:
+        name: "Name"
+        continent: "Continent"
+        submit: "Save Changes"

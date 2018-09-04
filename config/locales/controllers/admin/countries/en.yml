@@ -1,0 +1,12 @@
+en:
+  admin:
+    countries:
+      create:
+        create_success: "Created country successfully"
+        create_error: "Failed to create country"
+      update:
+        update_success: "Updated country successfully"
+        update_error: "Failed to update country"
+      destroy:
+        destroy_success: "Deleted country successfully"
+        destroy_error: "Failed to delete country"

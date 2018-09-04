@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :football_news
     resources :users
     resources :leagues
+    resources :countries
   end
 
   root "home#index"
