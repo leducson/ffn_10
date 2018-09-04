@@ -18,3 +18,19 @@ en:
         edit: "Edit"
         remove: "Remove"
         are_you_sure: "Are you sure?"
+      new:
+        title: "New League"
+      edit:
+        title: "Edit League"
+      form:
+        name: "Name"
+        country: "Country"
+        continents: "Continents"
+        start_date: "Start Date"
+        end_date: "End Date"
+        number_of_match: "Number of Matchs"
+        number_of_team: "Number of Teams"
+        number_of_round: "Number of Rounds"
+        match_time: "Match Times"
+        blank_option: "Select Continent..."
+        submit: "Save Changes"

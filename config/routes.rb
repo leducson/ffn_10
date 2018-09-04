@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     resources :users
     resources :leagues
     resources :countries
+    resources :continents do
+      get "load_countries", on: :member
+    end
   end
 
   root "home#index"
