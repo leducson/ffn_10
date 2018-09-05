@@ -18,5 +18,7 @@ football_new_per: 15
 user_per: 15
 league_per: 15
 country_per: 15
+team_per: 5
+round_per: 5
 gender: ["Male", "Female"]
 league_number_min: 0

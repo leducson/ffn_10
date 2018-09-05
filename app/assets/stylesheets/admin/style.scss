@@ -4,6 +4,7 @@
 @import 'froala_style.min';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import 'colors';
 
 //setup font face
 @font-face {
@@ -305,4 +306,40 @@
 
 .right{
   float: right;
+}
+
+.team{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 10px;
+}
+
+.team li{
+  list-style-type: none;
+  padding: 5px 0px;
+  border-bottom: $gray solid 1px;
+}
+
+.team li:last-child{
+  border: none;
+}
+
+.team_name{
+  color: $blue;
+  float: left;
+}
+
+.team_action{
+  float: right;
+}
+
+.clear_both{
+  clear: both;
+}
+
+.team_info i{
+  color: $green_light;
+}
+.team_remove i{
+  color: $red_light;
 }

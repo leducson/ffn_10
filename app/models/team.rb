@@ -10,4 +10,15 @@ class Team < ApplicationRecord
   has_many :team2_matchs, class_name: Match.name,
     foreign_key: :team2_id,
     dependent: :destroy
+
+  scope :newest, ->{order created_at: :desc}
+
+  def self.load_continents
+    Continent.pluck(:name, :id)
+  end
+
+  def load_countries
+    return continent.countries.pluck(:name, :id) if id.present?
+    []
+  end
 end
