@@ -3,7 +3,9 @@ Rails.application.routes.draw do
     root "dashboard#index"
     resources :football_news
     resources :users
-    resources :leagues
+    resources :leagues do
+      resources :teams, except: :index
+    end
     resources :countries
     resources :continents do
       get "load_countries", on: :member

@@ -22,6 +22,9 @@ en:
         title: "New League"
       edit:
         title: "Edit League"
+        team: "Teams"
+        round: "Rounds"
+        add_new_team: "New Team"
       form:
         name: "Name"
         country: "Country"
@@ -33,4 +36,7 @@ en:
         number_of_round: "Number of Rounds"
         match_time: "Match Times"
         blank_option: "Select Continent..."
+        minutes: "Minutes"
         submit: "Save Changes"
+      team:
+        are_you_sure: "Are you sure?"

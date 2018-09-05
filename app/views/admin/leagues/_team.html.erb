@@ -1,0 +1,12 @@
+<li>
+  <span class="team_name"><%= team.name %></span>
+  <div class="team_action">
+    <a class="team_info" href="<%= edit_admin_league_team_path(@league, team) %>">
+      <i class="fa fa-info"></i>
+    </a>
+    <a class="team_remove" href="<%= admin_league_team_path(@league, team) %>" data-method="delete" data-confirm="<%= t ".are_you_sure" %>">
+      <i class="fa fa-times"></i>
+    </a>
+  </div>
+  <div class="clear_both"></div>
+</li>

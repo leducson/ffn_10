@@ -12,4 +12,9 @@ class League < ApplicationRecord
   def self.load_continents
     Continent.pluck(:name, :id)
   end
+
+  def load_countries
+    return continent.countries.pluck(:name, :id) if id.present?
+    []
+  end
 end

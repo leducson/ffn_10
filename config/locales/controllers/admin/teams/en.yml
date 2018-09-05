@@ -1,0 +1,12 @@
+en:
+  admin:
+    teams:
+      create:
+        create_success: "Created team successfully"
+        create_error: "Failed to create team"
+      update:
+        update_success: "Updated team successfully"
+        update_error: "Failed to update team"
+      destroy:
+        destroy_success: "Deleted team successfully"
+        destroy_error: "Failed to delete team"

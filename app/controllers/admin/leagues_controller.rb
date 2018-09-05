@@ -22,7 +22,12 @@ class Admin::LeaguesController < Admin::BaseController
     end
   end
 
-  def edit; end
+  def edit
+    @teams =
+      @league.teams.newest.page(params[:team_page]).per(Settings.team_per)
+    @rounds =
+      @league.rounds.newest.page(params[:round_page]).per(Settings.round_per)
+  end
 
   def update
     if @league.update league_params

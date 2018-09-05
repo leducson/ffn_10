@@ -1,0 +1,15 @@
+en:
+  admin:
+    teams:
+      new:
+        title: "New Team"
+      edit:
+        title: "Edit Team"
+      form:
+        name: "Name"
+        address: "Address"
+        establish_year: "Establish year"
+        continent: "Continent"
+        country: "Country"
+        blank_option: "Select Continents"
+        submit: "Save Changes"
