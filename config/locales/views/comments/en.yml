@@ -1,0 +1,5 @@
+en:
+  comments:
+    comment:
+      comment_date: "Commented on %{date}"
+      author: "- %{author} -"

@@ -10,6 +10,3 @@ en:
       comment: "Comment"
       add_comment: "Add A Comment"
       place_msg: "message..."
-    comment:
-      comment_date: "Commented on %{date}"
-      author: "- %{author} -"
