@@ -20,3 +20,8 @@ en:
   profiles:
     update:
       update_user: "Success setting user!"
+  comment:
+    create:
+      comment_success: "Successful comment!"
+      comment_error: "Successful't comment!"
+      notification_login: "You need to login before you want to comment!"

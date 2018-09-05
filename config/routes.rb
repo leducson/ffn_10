@@ -12,9 +12,6 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  namespace :admin do
-    root "dashboard#index"
-  end
   get "/signup", to: "users#signup"
   post "/signup", to: "users#create"
   get "/login", to: "sessions#login"
@@ -25,4 +22,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :password_resets, except: :destroy
   resources :profiles, only: [:show, :edit, :update]
+  resources :football_news, only: [:index, :show]
+  resources :comment, only: :create
 end

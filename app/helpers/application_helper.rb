@@ -12,6 +12,10 @@ module ApplicationHelper
     time.strftime("%d/%m/%Y %H:%M")
   end
 
+  def format_time_post time
+    time.strftime("%d %b %Y")
+  end
+
   def count_index_list index
     index + 1
   end
