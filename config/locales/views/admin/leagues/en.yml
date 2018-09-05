@@ -25,6 +25,7 @@ en:
         team: "Teams"
         round: "Rounds"
         add_new_team: "New Team"
+        add_new_round: "New Round"
       form:
         name: "Name"
         country: "Country"
@@ -42,6 +43,12 @@ en:
         are_you_sure: "Are you sure?"
         edit: "Edit"
         remove: "Remove"
+      round:
+        are_you_sure: "Are you sure?"
+        edit: "Edit"
+        save: "Save"
+        back: "Back"
+        remove: "Remove"
       new_team:
         title: "Teams"
         close: "Close"
@@ -57,3 +64,8 @@ en:
         select_country: "Select Countries"
         blank_option: "Select Teams ..."
         save_change: "Save Changes"
+      new_round:
+        title: "New Round"
+        name: "Name"
+        submit: "Save Changes"
+        close: "Close"
