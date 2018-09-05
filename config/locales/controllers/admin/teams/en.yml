@@ -2,11 +2,16 @@ en:
   admin:
     teams:
       create:
-        create_success: "Created team successfully"
-        create_error: "Failed to create team"
+        success: "Created team successfully"
+        error: "Failed to create team"
+        sizes: "Number teams of league is full"
       update:
-        update_success: "Updated team successfully"
-        update_error: "Failed to update team"
+        success: "Updated team successfully"
+        error: "Failed to update team"
       destroy:
-        destroy_success: "Deleted team successfully"
-        destroy_error: "Failed to delete team"
+        success: "Deleted team successfully"
+        error: "Failed to delete team"
+      set_league:
+        sizes: "Number teams of league is full"
+        success: "Set league is successfully"
+        error: "Failed to set league"

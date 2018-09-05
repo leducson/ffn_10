@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :league
+  belongs_to :league, optional: true
   has_many :player_infos, dependent: :destroy
   has_many :rankings, dependent: :destroy
   belongs_to :continent, class_name: Continent.name, foreign_key: :continent_id
@@ -13,6 +13,9 @@ class Team < ApplicationRecord
 
   scope :newest, ->{order created_at: :desc}
 
+  delegate :name, to: :continent, prefix: true
+  delegate :name, to: :country, prefix: true
+
   def self.load_continents
     Continent.pluck(:name, :id)
   end
@@ -20,5 +23,9 @@ class Team < ApplicationRecord
   def load_countries
     return continent.countries.pluck(:name, :id) if id.present?
     []
+  end
+
+  def self.load_leagues
+    League.newest.pluck(:name, :id)
   end
 end

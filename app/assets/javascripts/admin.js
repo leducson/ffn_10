@@ -23,3 +23,6 @@
 //= require froala_editor.min.js
 //= require admin/froala_script
 //= require admin/custom
+//= require i18n
+//= require i18n.js
+//= require i18n/translations

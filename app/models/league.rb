@@ -17,4 +17,8 @@ class League < ApplicationRecord
     return continent.countries.pluck(:name, :id) if id.present?
     []
   end
+
+  def self.load_teams
+    Team.where(league_id: nil).newest.pluck(:name, :id)
+  end
 end

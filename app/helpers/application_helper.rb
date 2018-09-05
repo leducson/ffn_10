@@ -19,4 +19,8 @@ module ApplicationHelper
   def count_index_list index
     index + 1
   end
+
+  def options data
+    options_for_select(data)
+  end
 end

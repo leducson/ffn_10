@@ -4,6 +4,7 @@ en:
       default: "%d/%m/%Y"
       long: "%d %B, %Y"
       short: "%d %b"
+      year: "%Y"
   number:
     currency:
       format:

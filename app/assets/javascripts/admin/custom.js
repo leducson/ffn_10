@@ -27,6 +27,58 @@ $(document).ready(function(){
     }
   });
 
+  $('.team_modal').on('click', function(){
+    $('#new_team').modal({
+      backdrop: 'static'
+    });
+  });
+
+  $('#new_team').on('hidden.bs.modal', function () {
+    location.reload();
+  })
+
+  $('.set_team').on("click", function(){
+    var team_id = $('.team_choice').val();
+    var league_id = $(this).attr('data-id');
+    if(team_id){
+      $.ajax({
+        url: "/admin/teams/" + team_id + "/set_league",
+        type: "PATCH",
+        data: {
+          id: team_id,
+          league_id: league_id
+        },
+        success: function(res){
+          if(res.type == "success"){
+            toastr.success('', res.message);
+            $('option:selected', '.team_choice').remove();
+          }else{
+            toastr.error('', res.message);
+          }
+        }
+      });
+    }else{
+      toastr.error('', I18n.t("js.select_team"));
+    }
+  });
+
+  $('#league_new_team').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: "json",
+      data: $(this).serialize(),
+      success: function(res){
+        if(res.type == "success"){
+          toastr.success('', res.message);
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+    return false;
+  });
+
 });
 
 function setActiveNavigation(){

@@ -17,7 +17,7 @@
       <div class="card-header">
         <h4 class="card-title">
           <%= t ".team" %>
-          <a class="btn btn-primary btn-xs right team_modal" href="<%= new_admin_league_team_path(@league) %>">
+          <a class="btn btn-primary btn-xs right team_modal">
             <%= t ".add_new_team" %>
           </a>
         </h4>
@@ -44,3 +44,4 @@
     </div>
   </div>
 </div>
+<%= render "new_team" %>

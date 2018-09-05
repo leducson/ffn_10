@@ -8,19 +8,26 @@
     <%= f.label t ".address", class: "control-label" %>
     <%= f.text_field :address, class: "form-control" %>
   </div>
-  <div class="form-group">
-    <%= f.label t ".establish_year", class: "control-label" %>
-    <%= f.date_field :establish_year, class: "form-control" %>
-  </div>
 
   <div class="row">
     <div class="form-group col-md-6">
       <%= f.label t ".continent", class: "control-label" %>
-      <%= f.select(:continent_id, League.load_continents, {:prompt => t(".blank_option")}, {class: "form-control"}) %>
+      <%= f.select(:continent_id, League.load_continents, {prompt: t(".blank_option")}, {class: "form-control"}) %>
     </div>
     <div class="form-group col-md-6">
       <%= f.label t ".country", class: "control-label" %>
       <%= f.select(:country_id, @team.load_countries, {}, {class: "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".establish_year", class: "control-label" %>
+      <%= f.date_field :establish_year, class: "form-control" %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".league", class: "control-label" %>
+      <%= f.select(:league_id, Team.load_leagues, {prompt: t(".blank_option_league")}, {class: "form-control"}) %>
     </div>
   </div>
 
