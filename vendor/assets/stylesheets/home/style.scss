@@ -1449,3 +1449,43 @@ form>h5 {
 .hr {
   background: #FF8C00;
 }
+
+/*------------------slider--------------------*/
+.carousel-item>img {
+  width: 100%;
+  height: 400px;
+}
+
+/*--------------------Show schedule-------------*/
+.schedule>table {
+  width: 100%;
+  border: 2px solid #8B0000;
+}
+.schedule>table th {
+  text-align: center!important;
+  color: white;
+}
+.schedule>table td {
+  text-align: center!important;
+  color: white;
+}
+.schedule {
+  background: #1E1E1E;
+}
+.schedule_day {
+  background: #FF8C00;
+  color: #8B0000;
+  padding: 10px 50px;
+}
+.date_day {
+  background: #8B0000;
+  color: white;
+  padding: 10px 10px;
+}
+.league {
+  background: #FF8C00;
+  color: #8B0000;
+}
+.table_menu {
+  background: #008f90;
+}

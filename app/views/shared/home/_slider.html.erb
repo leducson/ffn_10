@@ -1,14 +1,26 @@
-<div class="blueberry">
-  <ul class="slides">
-    <li><img src="home/slider.jpg" /></li>
-    <li><img src="home/slider.jpg" /></li>
-    <li><img src="home/slider.jpg" /></li>
-    <li><img src="home/slider.jpg" /></li>
-  </ul>
-  <ul class="pager">
-    <li><a href="#"><span></span></a></li>
-    <li><a href="#"><span></span></a></li>
-    <li><a href="#"><span></span></a></li>
-    <li><a href="#"><span></span></a></li>
-  </ul>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag "home/slider1.jpg" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "home/slider2.jpg" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "home/slider3.jpg" %>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only"><%= t ".previous" %></span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only"><%= t ".next" %></span>
+  </a>
 </div>
