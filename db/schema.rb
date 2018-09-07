@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_04_042501) do
+ActiveRecord::Schema.define(version: 2018_09_07_042701) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2018_09_04_042501) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "round_id"
+    t.integer "status"
     t.index ["round_id"], name: "index_matches_on_round_id"
     t.index ["team1_id", "team2_id"], name: "index_matches_on_team1_id_and_team2_id", unique: true
   end

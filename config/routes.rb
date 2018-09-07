@@ -14,6 +14,9 @@ Rails.application.routes.draw do
     resources :continents do
       get "load_countries", on: :member
     end
+    resources :matches do
+      get "load_rounds", on: :collection
+    end
   end
 
   root "home#index"

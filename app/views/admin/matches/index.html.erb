@@ -1,0 +1,31 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".title" %>
+          <%= link_to t(".new_match"), new_admin_match_path, class: "btn btn-primary btn-xs right" %>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th><%= t ".date_of_match" %></th>
+            <th><%= t ".time" %></th>
+            <th><%= t ".team1" %></th>
+            <th><%= t ".team2" %></th>
+            <th><%= t ".round" %></th>
+            <th><%= t ".league" %></th>
+            <th><%= t ".status" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @matches %>
+          </tbody>
+        </table>
+        <%= paginate @matches %>
+      </div>
+    </div>
+  </div>
+</div>

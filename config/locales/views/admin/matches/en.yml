@@ -1,0 +1,39 @@
+en:
+  admin:
+    matches:
+      index:
+        title: "Management Matches"
+        new_match: "New Match"
+        date_of_match: "Date"
+        extra_time1: "Extra Time1"
+        extra_time2: "Extra Time2"
+        time: "Minutes"
+        team1: "Team1"
+        team2: "Team2"
+        round: "Round"
+        league: "League"
+        status: "Status"
+        action: "Action"
+      match:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+      new:
+        title: "New Match"
+      edit:
+        title: "Edit Match"
+      form:
+        date_of_match: "Date of Match"
+        time: "Time"
+        extra_time1: "Extra Time1"
+        extra_time2: "Extra Time2"
+        league: "League"
+        round: "Round"
+        team1: "Team 1"
+        team2: "Team 2"
+        blank_option: "Select Leagues"
+        select_team1: "Select Team 1"
+        select_team2: "Select Team 2"
+        select_status: "Select Status"
+        status: "Status"
+        submit: "Save Changes"

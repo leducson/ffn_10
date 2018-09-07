@@ -27,6 +27,15 @@ $(document).ready(function(){
     }
   });
 
+  $('#league_id').on('change', function(){
+    var league_id = $(this).val();
+    if(league_id){
+      loadRoundsByLeague(league_id);
+    }else{
+      $('#match_round_id').empty();
+    }
+  });
+
   $('.team_modal').on('click', function(){
     $('#new_team').modal({
       backdrop: 'static'
@@ -41,7 +50,7 @@ $(document).ready(function(){
 
   $('#new_team, #new_round').on('hidden.bs.modal', function () {
     location.reload();
-  })
+  });
 
   $('.set_team').on("click", function(){
     var team_id = $('.team_choice').val();
@@ -169,6 +178,25 @@ function loadContryByContinent(continent_id, country_select){
       for(var i in res){
         var option = '<option value='+ res[i][1] +'>'+ res[i][0] +'</option>';
         country.append(option);
+      }
+    }
+  });
+}
+
+function loadRoundsByLeague(league_id){
+  $.ajax({
+    url: '/admin/matches/load_rounds',
+    type: 'GET',
+    dataType: 'JSON',
+    data: {
+      league_id: league_id
+    },
+    success: function(res){
+      var round = $('#match_round_id');
+      round.empty();
+      for(var i in res){
+        var option = '<option value='+ res[i][1] +'>'+ res[i][0] +'</option>';
+        round.append(option);
       }
     }
   });

@@ -1,0 +1,12 @@
+en:
+  admin:
+    matches:
+      create:
+        success: "Created matches successfully"
+        error: "Failed to create matches"
+      update:
+        success: "Updated matches successfully"
+        error: "Failed to update matches"
+      destroy:
+        success: "Deleted matches successfully"
+        error: "Failed to delete matches"

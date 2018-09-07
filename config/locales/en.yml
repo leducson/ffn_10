@@ -5,6 +5,7 @@ en:
       long: "%d %B, %Y"
       short: "%d %b"
       year: "%Y"
+      with_time: "%d/%m %H:%M"
   number:
     currency:
       format:
