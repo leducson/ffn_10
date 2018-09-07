@@ -35,4 +35,8 @@ class Match < ApplicationRecord
   def self.select_status
     statuses.map{|c| [c[0].titleize, c[0]]}
   end
+
+  def load_teams_match_infos
+    [[team1_name, team1_id], [team2_name, team2_id]]
+  end
 end

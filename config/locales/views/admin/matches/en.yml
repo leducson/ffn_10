@@ -22,6 +22,17 @@ en:
         title: "New Match"
       edit:
         title: "Edit Match"
+        match_infos: "Match Infos"
+        match_result: "Match Result"
+        score_sugests: "Score Sugest"
+        add_new_match_info: "New Match Info"
+        minutes: "Minutes"
+        message: "Message"
+        type: "Type"
+        team: "Team"
+        player: "Player"
+        time: "Time"
+        action: Action
       form:
         date_of_match: "Date of Match"
         time: "Time"
@@ -37,3 +48,13 @@ en:
         select_status: "Select Status"
         status: "Status"
         submit: "Save Changes"
+      new_match_info:
+        title: "New Match Info"
+        minutes: "Minutes"
+        message: "Message"
+        type: "Type"
+        team: "Team"
+        player: "Player"
+        select_teams: "Select Teams"
+        submit: "Save Changes"
+        close: "Close"

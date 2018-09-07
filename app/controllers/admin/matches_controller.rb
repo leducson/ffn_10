@@ -1,5 +1,5 @@
 class Admin::MatchesController < Admin::BaseController
-  before_action :load_match, only: %i(edit update destroy)
+  before_action :load_match, only: %i(edit update destroy load_infos)
 
   def index
     @matches = Match.newest.page(params[:page]).per Settings.match_per
@@ -20,7 +20,9 @@ class Admin::MatchesController < Admin::BaseController
     end
   end
 
-  def edit; end
+  def edit
+    load_infos
+  end
 
   def update
     if @match.update_attributes match_params
@@ -28,6 +30,7 @@ class Admin::MatchesController < Admin::BaseController
       redirect_to admin_matches_path
     else
       flash[:danger] = t ".error"
+      load_infos
       render :edit
     end
   end
@@ -50,6 +53,15 @@ class Admin::MatchesController < Admin::BaseController
 
   def load_match
     @match = Match.find params[:id]
+  end
+
+  def load_infos
+    @match_infos =
+      @match.match_infos.newest.page(params[:match_page]).per Settings.info_per
+    @score_sugests =
+      @match.score_sugests.newest.page(params[:sugest]).per Settings.sugest_per
+    @match_result = @match.match_result
+    @match_info = @match.match_infos.build
   end
 
   def match_params

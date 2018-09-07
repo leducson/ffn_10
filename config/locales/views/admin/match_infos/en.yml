@@ -1,0 +1,16 @@
+en:
+  admin:
+    match_infos:
+      match_info:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+      edit:
+        title: "Edit Match Info"
+        minutes: "Minutes"
+        message: "Message"
+        type: "Type"
+        submit: "Save Changes"
+        back: "Back to Match#%{match_id}"
+        team: "Teams"
+        player: "Players"
