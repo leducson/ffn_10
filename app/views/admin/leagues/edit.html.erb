@@ -33,10 +33,15 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header">
-        <h4 class="card-title"><%= t ".round" %></h4>
+        <h4 class="card-title">
+          <%= t ".round" %>
+          <a class="btn btn-primary btn-xs right round_modal">
+            <%= t ".add_new_round" %>
+          </a>
+        </h4>
       </div>
       <div class="card-body">
-        <ul class="team">
+        <ul class="team round">
           <%= render partial: "round", collection: @rounds %>
         </ul>
         <%= paginate @rounds, :param_name => "round_page" %>
@@ -45,3 +50,4 @@
   </div>
 </div>
 <%= render "new_team" %>
+<%= render "new_round"%>

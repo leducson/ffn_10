@@ -1,0 +1,13 @@
+en:
+  admin:
+    rounds:
+      create:
+        success: "Created round successfully"
+        error: "Failed to create round"
+        sizes: "Number rounds of league is full"
+      update:
+        success: "Updated round successfully"
+        error: "Failed to update round"
+      destroy:
+        success: "Deleted round successfully"
+        error: "Failed to delete round"

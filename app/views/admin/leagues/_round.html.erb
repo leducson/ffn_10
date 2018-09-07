@@ -1,12 +1,28 @@
-<li>
-  <span class="team_name left"><%= round.name %></span>
-  <div class="right">
-    <a class="team_info" href="#">
-      <i class="fa fa-info"></i>
-    </a>
-    <a class="team_remove" href="#">
+<li data-id="<%= round.id %>">
+  <div class="team_name left">
+    <span><%= round.name %></span>
+    <input type="text" value="<%= round.name %>" />
+  </div>
+
+  <div class="right edit-button">
+    <%= link_to "#", class: "team_info round_info", title: t(".edit") do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+
+    <%= link_to admin_round_path(round), class: "team_remove", title: t(".remove"),
+      data: {method: :delete, confirm: t(".are_you_sure")} do %>
       <i class="fa fa-times"></i>
-    </a>
+    <% end %>
+  </div>
+
+  <div class="right save-button">
+    <%= link_to "#", class: "save-round", title: t(".save") do %>
+      <i class="fa fa-refresh "></i>
+    <% end %>
+
+    <%= link_to "#", class: "undo-button", title: t(".back") do %>
+      <i class="fa fa-times"></i>
+    <% end %>
   </div>
   <div class="clear_both"></div>
 </li>

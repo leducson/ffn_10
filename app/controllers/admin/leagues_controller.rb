@@ -54,6 +54,7 @@ class Admin::LeaguesController < Admin::BaseController
     @rounds =
       @league.rounds.newest.page(params[:round_page]).per(Settings.round_per)
     @team = @league.teams.build
+    @round = @league.rounds.build
   end
 
   def load_league

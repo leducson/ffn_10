@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       resources :teams, only: [:create, :destroy]
     end
     resources :teams do
-      patch 'set_league', on: :member
+      patch "set_league", on: :member
     end
+    resources :rounds
     resources :countries
     resources :continents do
       get "load_countries", on: :member
