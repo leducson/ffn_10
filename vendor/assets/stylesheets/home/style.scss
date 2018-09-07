@@ -1,3 +1,4 @@
+@import 'colors';
 @font-face {
   font-family: 'bevanregular';
   src: url('fonts/bevan-webfont.eot');
@@ -1212,14 +1213,14 @@ a img {
 /*------------------------- profiles -------------------------*/
 .border-right {
   background: #ff7500;
-  color: white;
+  color: $whites;
 }
 .border-right>h5 {
   text-align: center;
 }
 .name {
   background: #ff7500;
-  color: white;
+  color: $whites;
   height: 40px;
 }
 .name>h5 {
@@ -1230,9 +1231,9 @@ a img {
   height: 40px;
 }
 .match {
-  background: #800000;
+  background: $reds;
   text-align: center;
-  color: #FFB80C;
+  color: $yellows;
   line-height: 40px;
   font-weight: bold;
 }
@@ -1244,26 +1245,26 @@ tbody>tr>td {
   text-align: center;
 }
 .user_info {
-  background: cadetblue;
+  background: $cadetblues;
 }
 .bg-light {
   background: #f04a3c!important;
 }
 thead>tr>th {
-  color: white;
+  color: $whites;
   text-align: center;
 }
 tbody>tr .bg_bet {
   background: #26bf4b;
-  color: #8B0000;
+  color: $reds;
 }
 tbody>tr .bg_ratio {
-  background: #FFB80C;
-  color: #8B0000;
+  background: $yellows;
+  color: $reds;
 }
 tbody>tr .bg_scored {
-  background: #800000;
-  color: #FFB80C;
+  background: $cadetblues;;
+  color: $whites;
 }
 .card-body {
   background: #1E1E1E;
@@ -1272,12 +1273,16 @@ tbody>tr .bg_scored {
   border-top: 1px solid #D2691E;
   border-bottom: 1px solid #D2691E;
 }
+.bg_match {
+  color: $yellows;
+  background: $reds;
+}
 /*----------------------- Settings--------------------------------------*/
 .firstname{
   margin-left: 1px;
   font-family: sans-serif;
   font-size: 14px;
-  color: white;
+  color: $whites;
   margin-top: 5px;
   float: left;
   font-weight: bold;
@@ -1298,14 +1303,14 @@ tbody>tr .bg_scored {
 .mail{
   margin-left: 44px;
   font-family: sans-serif;
-  color: white;
+  color: $whites;
   font-size: 14px;
   margin-top: 13px;
   float: left;
   font-weight: bold;
 }
 .pass{
-  color: white;
+  color: $whites;
   margin-top: 9px;
   font-size: 14px;
   font-family: sans-serif;
@@ -1322,7 +1327,7 @@ tbody>tr .bg_scored {
   color: #ff9;
 }
 .gender {
-  color: white;
+  color: $whites;
   font-family: sans-serif;
   font-size: 14px;
   margin-left: 28px;
@@ -1331,13 +1336,13 @@ tbody>tr .bg_scored {
   font-weight: bold;
 }
 .male{
-  color: white;
+  color: $whites;
   font-size: 13px;
   margin-top: 9px;
   padding-bottom: 16px;
 }
 .female {
-  color: white;
+  color: $whites;
   font-size: 13px;
   margin-top: 9px;
   padding-bottom: 16px;
@@ -1376,7 +1381,7 @@ tbody>tr .bg_scored {
   height: 200px;
 }
 .border_bottom {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $blacks;
 }
 .news_left {
   padding: 0 10px;
@@ -1459,33 +1464,88 @@ form>h5 {
 /*--------------------Show schedule-------------*/
 .schedule>table {
   width: 100%;
-  border: 2px solid #8B0000;
+  border: 2px solid $blacks;
 }
 .schedule>table th {
   text-align: center!important;
-  color: white;
+  color: $whites;
 }
 .schedule>table td {
   text-align: center!important;
-  color: white;
+  color: $whites;
 }
 .schedule {
   background: #1E1E1E;
 }
 .schedule_day {
   background: #FF8C00;
-  color: #8B0000;
+  color: $reds;
   padding: 10px 50px;
 }
 .date_day {
-  background: #8B0000;
-  color: white;
+  background: $reds;
+  color: $whites;
   padding: 10px 10px;
 }
 .league {
   background: #FF8C00;
-  color: #8B0000;
+  color: $reds;
 }
 .table_menu {
-  background: #008f90;
+  background: $blues;
+}
+.rounds {
+  background: $gray_light;
+}
+.team {
+  width: 200px;
+}
+.scored {
+  width: 50px;
+  background: $reds;
+  font-weight: bold;
+}
+
+/*--------------------Show Bets----------------------*/
+.dropbtn {
+  background-color: $greens;
+  color: $whites;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn:hover, .dropbtn:focus {
+  background-color: $light_green;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $light_white;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a {
+  color: $dark_black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+.show {display:block;}
+.list_bet {
+  color: $blacks;
+  width: 100%;
+}
+.left_impo {
+  margin-left: -318px !important;
+  width: 50%;
+}
+.ratio {
+  background: $light_black;
 }

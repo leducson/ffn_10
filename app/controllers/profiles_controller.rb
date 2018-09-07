@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   before_action :load_user, only: %i(show edit update)
 
   def show
+    @score_bets = current_user.score_bets
     render "users/profile"
   end
 

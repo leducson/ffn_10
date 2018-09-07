@@ -21,3 +21,5 @@ en:
   layouts:
     users:
       title: "Football bet"
+  js:
+    money_blank: "Money can not be empty or bigger!"

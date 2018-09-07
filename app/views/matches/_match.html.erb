@@ -1,0 +1,22 @@
+<tr>
+  <td></td>
+  <td class="date_day"><%= format_time match.date_of_match %></td>
+  <td><%= match.team1_name %></td>
+  <td class="scored"><%= match&.match_result&.score_win %></td>
+  <td class="scored"><%= match&.match_result&.score_lost %></td>
+  <td><%= match.team2_name %></td>
+  <td>
+    <button id="myBets" class="dropbtn" data-id="<%= match.id %>"><%= t ".bet" %></button>
+    <div id="myDropdown-<%= match.id %>" class="dropdown-content left_impo">
+      <table border="1px" class="list_bet">
+        <tr class="table_menu">
+          <th><%= t ".score" %></th>
+          <th><%= t ".ratio" %></th>
+          <th><%= t ".bet_amount" %></th>
+          <th><%= t ".bet" %></th>
+        </tr>
+        <%= render match.score_sugests.limit(Settings.limit) %>
+      </table>
+    </div>
+  </td>
+</tr>

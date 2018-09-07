@@ -1,0 +1,15 @@
+<tr class="event_bet" data-id="<%= score_sugest.id %>">
+  <td class="scored">
+    <%= score_sugest.score_win %>
+    <%= score_sugest.score_lost %>
+  </td>
+  <td class="ratio"><%= score_sugest.ratio %></td>
+  <td>
+    <input class="bet_amount_<%= score_sugest.id %>" type="text" name="price">
+  </td>
+  <td>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<%= score_sugest.id %>" id="btnBet">
+      <%= t ".bet" %>
+    </button>
+  </td>
+</tr>
