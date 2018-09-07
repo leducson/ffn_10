@@ -1,0 +1,59 @@
+<div class="modal fade" id="new_team" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-resize-top" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t ".title" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row border-modal">
+          <div class="col-md-6 border-right">
+            <%= form_for @team, url: admin_teams_path, html: {id: "league_new_team"} do |f| %>
+            <div class="form-group">
+              <%= f.text_field :name, class: "form-control", placeholder: t(".name") %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :address, class: "form-control", placeholder: t(".address") %>
+            </div>
+
+            <div class="form-group">
+              <%= f.text_field :establish_year, class: "form-control", placeholder: t(".establish_year"), onfocus: "(this.type='date')", onblur: "(this.type='text')" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.select(:continent_id, League.load_continents, {prompt: t(".select_continent")}, {class: "form-control"}) %>
+            </div>
+
+            <div class="form-group">
+              <%= f.select(:country_id, {}, {prompt: t(".select_country")}, {class: "form-control"}) %>
+            </div>
+
+            <div class="form-group">
+              <%= f.hidden_field :league_id, value: @league.id %>
+              <%= f.submit t(".create_team"), class: "btn btn-primary" %>
+            </div>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label><%= t ".choice_team" %></label>
+              <div class="form-select">
+                <%= select_tag :team_id, options(League.load_teams), {class: "form-control col-md-8 left team_choice", :prompt => t(".blank_option")} %>
+                <a class="btn btn-primary right set_team" data-id="<%= @league.id %>"><%= t ".set_team" %></a>
+                <div class="clear_both"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer margin-footer">
+        <button type="button" class="btn btn-secondary right" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

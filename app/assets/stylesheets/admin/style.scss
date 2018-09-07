@@ -308,6 +308,10 @@
   float: right;
 }
 
+.left{
+  float: left;
+}
+
 .team{
   margin-top: 0px;
   margin-bottom: 0px;
@@ -326,11 +330,6 @@
 
 .team_name{
   color: $blue;
-  float: left;
-}
-
-.team_action{
-  float: right;
 }
 
 .clear_both{
@@ -342,4 +341,23 @@
 }
 .team_remove i{
   color: $red_light;
+}
+
+.border-modal{
+  border-bottom: #ccc solid 1px;
+  border-top: #ccc solid 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.border-right{
+  border-right: #ccc solid 1px;
+}
+
+.modal-resize-top{
+  margin-top: -50px;
+}
+
+.margin-footer{
+  display: inline-block;
 }

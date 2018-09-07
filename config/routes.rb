@@ -4,7 +4,10 @@ Rails.application.routes.draw do
     resources :football_news
     resources :users
     resources :leagues do
-      resources :teams, except: :index
+      resources :teams, only: [:create, :destroy]
+    end
+    resources :teams do
+      patch 'set_league', on: :member
     end
     resources :countries
     resources :continents do

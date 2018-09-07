@@ -1,0 +1,30 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".title" %>
+          <%= link_to t(".new_team"), new_admin_team_path, class: "btn btn-primary btn-xs right" %>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>#</th>
+            <th><%= t ".name" %></th>
+            <th><%= t ".year" %></th>
+            <th><%= t ".continent" %></th>
+            <th><%= t ".country" %></th>
+            <th><%= t ".time" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @teams %>
+          </tbody>
+        </table>
+        <%= paginate @teams %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -23,10 +23,7 @@ class Admin::LeaguesController < Admin::BaseController
   end
 
   def edit
-    @teams =
-      @league.teams.newest.page(params[:team_page]).per(Settings.team_per)
-    @rounds =
-      @league.rounds.newest.page(params[:round_page]).per(Settings.round_per)
+    load_infos_edit
   end
 
   def update
@@ -35,6 +32,7 @@ class Admin::LeaguesController < Admin::BaseController
       redirect_to admin_leagues_path
     else
       flash[:danger] = t ".update_error"
+      load_infos_edit
       render :edit
     end
   end
@@ -49,6 +47,14 @@ class Admin::LeaguesController < Admin::BaseController
   end
 
   private
+
+  def load_infos_edit
+    @teams =
+      @league.teams.newest.page(params[:team_page]).per(Settings.team_lg_per)
+    @rounds =
+      @league.rounds.newest.page(params[:round_page]).per(Settings.round_per)
+    @team = @league.teams.build
+  end
 
   def load_league
     @league = League.find params[:id]
