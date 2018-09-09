@@ -17,7 +17,9 @@ class Admin::TeamsController < Admin::BaseController
     end
   end
 
-  def edit; end
+  def edit
+    load_edit_params
+  end
 
   def update
     if @team.update_attributes team_params
@@ -25,7 +27,8 @@ class Admin::TeamsController < Admin::BaseController
       redirect_to admin_teams_path
     else
       flash[:danger] = t ".error"
-      render :new
+      load_edit_params
+      render :edit
     end
   end
 
@@ -64,6 +67,12 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   private
+
+  def load_edit_params
+    @players =
+      @team.player_infos.page(params[:player_page]).per Settings.player_per
+    @player = @team.player_infos.build
+  end
 
   def save_team
     @team = Team.new team_params

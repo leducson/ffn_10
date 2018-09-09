@@ -1,0 +1,51 @@
+<%= form_for @player, url: url do |f| %>
+  <%= render "shared/admin/error_messages", object: f.object %>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".name", class: "control-label" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <input type="hidden" name="team_id" value="<%= params[:team_id] %>" />
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".date_of_birth", class: "control-label" %>
+      <%= f.date_field :date_of_birth, class: "form-control" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".weight", class: "control-label" %>
+      <%= f.number_field :weight, class: "form-control", min: Settings.number_min %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".height", class: "control-label" %>
+      <%= f.number_field :height, class: "form-control", min: Settings.number_min %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".gender", class: "control-label" %>
+      <%= f.select(:gender, PlayerInfo.load_genders, {}, {class: "form-control"}) %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".position", class: "control-label" %>
+      <%= f.select(:position, PlayerInfo.load_positions, {prompt: t(".select_position")}, {class: "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group col-md-6">
+      <%= f.label t ".number", class: "control-label" %>
+      <%= f.number_field :number, class: "form-control", min: Settings.number_min %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label t ".team", class: "control-label" %>
+      <%= f.select(:team_id, PlayerInfo.load_teams, {prompt: t(".select_team")}, {class: "form-control"}) %>
+    </div>
+  </div>
+
+  <div class="form-group submit_button">
+    <%= f.submit t(".submit"), class: "btn btn-primary" %>
+  </div>
+<% end %>

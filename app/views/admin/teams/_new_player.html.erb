@@ -1,0 +1,66 @@
+<div class="modal fade" id="new_player" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-resize-top" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%= t ".title" %></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row border-modal">
+          <div class="col-md-6 border-right">
+            <%= form_for @player, url: admin_team_player_infos_path(@team), html: {id: "team_new_player"} do |f| %>
+              <div class="form-group">
+                <%= f.text_field :name, class: "form-control", placeholder: t(".name") %>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <%= f.number_field :weight, class: "form-control", placeholder: t(".weight"), min: Settings.number_min %>
+                </div>
+                <div class="form-group col-md-6">
+                  <%= f.number_field :height, class: "form-control", placeholder: t(".height"), min: Settings.number_min %>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <%= f.select(:gender, PlayerInfo.load_genders, {prompt: t(".select_gender")}, {class: "form-control"}) %>
+                </div>
+                <div class="form-group col-md-6">
+                  <%= f.select(:position, PlayerInfo.load_positions, {prompt: t(".select_position")}, {class: "form-control"}) %>
+                </div>
+              </div>
+              <div class="form-group">
+                <%= f.date_field :date_of_birth, class: "form-control", placeholder: t(".dob") %>
+              </div>
+              <div class="form-group">
+                <%= f.number_field :number, class: "form-control", placeholder: t(".number"), min: Settings.number_min %>
+              </div>
+              <div class="form-group">
+                <%= f.hidden_field :team_id, value: @team.id %>
+                <%= f.submit t(".create_player"), class: "btn btn-primary" %>
+              </div>
+            <% end %>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label><%= t ".choice_player" %></label>
+              <div class="form-select">
+                <%= select_tag :player_id, options(Team.load_players), {class: "form-control col-md-8 left player_choice", prompt: t(".blank_option")} %>
+                <a class="btn btn-primary right set_player_info" data-id="<%= @team.id %>">
+                  <%= t ".set_player" %>
+                </a>
+                <div class="clear_both"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer margin-footer">
+        <button type="button" class="btn btn-secondary right" data-dismiss="modal">
+          <%= t ".close" %>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

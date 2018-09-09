@@ -29,4 +29,8 @@ class Team < ApplicationRecord
   def self.load_leagues
     League.newest.pluck(:name, :id)
   end
+
+  def self.load_players
+    PlayerInfo.where(team_id: nil).newest.pluck :name, :id
+  end
 end

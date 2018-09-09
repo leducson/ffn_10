@@ -1,0 +1,15 @@
+en:
+  admin:
+    player_infos:
+      create:
+        success: "Created player info successfully"
+        error: "Failed to create player info"
+      update:
+        success: "Updated player info successfully"
+        error: "Failed to update player info"
+      destroy:
+        success: "Deleted player info successfully"
+        error: "Failed to delete player info"
+      set_player_by_team:
+        success: "Set player is successfully"
+        error: "Failed to set player"
