@@ -1,6 +1,7 @@
 <tr>
   <td><%= count_index_list team_counter %></td>
   <td><%= team.name %></td>
+  <td><%= image_tag team.image.thumb.url, class: "image_cicle" if team.image.present? %></td>
   <td>
     <%= l team.establish_year, format: :year if team.establish_year.present? %>
   </td>

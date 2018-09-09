@@ -1,5 +1,5 @@
 <div class="col-md-7">
-<%= image_tag "home/team1.png", alt: t(".alt"), class: "img-fluid" %>
+<%= image_tag @team.image.large.url, alt: t(".alt"), class: "img-fluid" if @team.image.present? %>
 </div>
 <div class="col-md-5 bg_details">
   <h5 class="card-title"><%= t ".club" %><%= @team.name %></h5>

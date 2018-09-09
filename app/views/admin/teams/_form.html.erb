@@ -30,6 +30,10 @@
       <%= f.select(:league_id, Team.load_leagues, {prompt: t(".blank_option_league")}, {class: "form-control"}) %>
     </div>
   </div>
+  <div class="form-group">
+    <%= f.label t ".image", class: "control-label" %>
+    <%= f.file_field :image, class: "form-control" %>
+  </div>
 
   <div class="form-group submit_button">
     <%= f.submit t(".submit"), class: "btn btn-primary" %>

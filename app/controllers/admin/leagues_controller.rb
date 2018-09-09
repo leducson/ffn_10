@@ -70,6 +70,6 @@ class Admin::LeaguesController < Admin::BaseController
   def league_params
     params.require(:league).permit :name, :country_id, :start_date, :end_date,
       :continent_id, :number_of_match, :number_of_team,
-      :match_time, :number_of_round
+      :match_time, :number_of_round, :image
   end
 end

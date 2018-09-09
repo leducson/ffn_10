@@ -1,6 +1,6 @@
 <div class="col-md-4">
   <div class="card hoverable" id="country-<%= team.country_id %>">
-  <%= image_tag "home/team1.png", alt: t(".alt"), class: "img-fluid" %>
+  <%= image_tag team.image.large.url, alt: t(".alt"), class: "img-fluid" if team.image.present? %>
     <div class="card-body">
       <h4 class="card-title">
         <%= link_to team.name, details_teams_path(id: team.id) , class: "btn btn-primary btn-danger" %>

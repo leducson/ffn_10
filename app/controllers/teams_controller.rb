@@ -8,8 +8,7 @@ class TeamsController < ApplicationController
   end
 
   def search
-    @teams = Team.newest.by_country(params[:country_id]).
-      page(params[:page]).per(Settings.team_per)
+    @teams = Team.newest.by_country(params[:country_id]).page(params[:page]).per(Settings.team_per)
   end
 
   def details

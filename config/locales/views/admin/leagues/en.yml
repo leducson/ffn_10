@@ -14,6 +14,7 @@ en:
         rounds: "Rounds"
         times: "Match Time"
         action: "Action"
+        image: "Image"
       league:
         edit: "Edit"
         remove: "Remove"
@@ -41,6 +42,7 @@ en:
         match_time: "Match Times"
         blank_option: "Select Continent..."
         minutes: "Minutes"
+        image: "Image"
         submit: "Save Changes"
       team:
         are_you_sure: "Are you sure?"

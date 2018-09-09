@@ -3,7 +3,7 @@ en:
     show:
       continent: "Continent - "
       country: "Country - "
-      League: "League - "
+      league: "League - "
       number_round: "Number Of Round - "
       number_match: "Number Of Match - "
       number_team: "Number Of Team - "
