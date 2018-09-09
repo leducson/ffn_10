@@ -1,7 +1,7 @@
 <% provide :title, t(".login") %>
 <div class="header row">
   <div class="col-md-2">
-    <a href="index.html" id="logo">
+    <a href="<%= root_path %>" id="logo">
       <%= image_tag("home/logo.png", :alt => t(".alt")) %>
     </a>
   </div>
@@ -10,8 +10,7 @@
       <li><%= link_to t(".home"), root_path %></li>
       <li><%= link_to t(".new"), football_news_index_path %></li>
       <li><%= link_to t(".team"), teams_path %></li>
-      <li><%= link_to t(".rank"), "#" %></li>
-      <li><%= link_to t(".league"), "#" %></li>
+      <li><%= link_to t(".rank_league"), rankings_path %></li>
       <% if logged_in? %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">

@@ -8,6 +8,7 @@ class League < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
 
   delegate :name, to: :country, prefix: true
+  delegate :name, to: :continent, prefix: true
 
   def self.load_continents
     Continent.pluck(:name, :id)

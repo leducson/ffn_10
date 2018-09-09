@@ -1,0 +1,25 @@
+<div class="col-md-7">
+  <%= image_tag "home/team1.png", class: "img-fluid" %>
+</div>
+<div class="col-md-5 bg_details">
+  <h5 class="card-title"><%= t ".continent" %><%= @league.continent_name %></h5>
+  <h5 class="card-title"><%= t ".country" %><%= @league.country_name %></h5>
+  <h5 class="card-title"><%= t ".league" %><%= @league.name %></h5>
+  <h5 class="card-title"><%= t ".number_round" %><%= @league.number_of_round %></h5>
+  <h5 class="card-title"><%= t ".number_match" %><%= @league.number_of_match %></h5>
+  <h5 class="card-title"><%= t ".number_team" %><%= @league.number_of_team %></h5>
+  <p class="card-text"><%= t ".start_time" %><%= l @league.start_date, format: :long %></p>
+  <p class="card-text"><%= t ".end_time" %><%= l @league.end_date, format: :long %></p>
+</div>
+<div class="col-md-12 ranks">
+  <div class="flayer_info">
+    <h4 class="btn btn-primary btn-danger"><%= t ".rank" %></h4>
+  </div>
+  <table class="table table-hover user_info table_menu">
+    <tr>
+      <th><%= t ".team" %></th>
+      <th><%= t ".rank" %></th>
+    </tr>
+    <%= render partial: "ranking", collection: @rankings %>
+  </table>
+</div>

@@ -1,0 +1,7 @@
+<tr>
+  <td class="rank_team"><%= league.name %></td>
+  <td class="rank_team"><%= league.country_name %></td>
+  <td class="rank_team">
+  <%= link_to t(".detail"), ranking_path(id: league.id), class: "btn btn-primary btn-danger" %>
+  </td>
+</tr>

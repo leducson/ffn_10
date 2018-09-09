@@ -51,4 +51,5 @@ Rails.application.routes.draw do
     get "/search", to: "teams#search", on: :collection
     get "/details", to: "teams#details", on: :collection
   end
+  resources :rankings, only: [:index, :show]
 end

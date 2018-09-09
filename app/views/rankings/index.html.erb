@@ -1,0 +1,10 @@
+<div class="ranks">
+  <table class="table table-hover user_info table_menu">
+    <tr>
+      <th><%= t ".league" %></th>
+      <th><%= t ".country" %></th>
+      <th><%= t ".rank" %></th>
+    </tr>
+    <%= render partial: "league", collection: @leagues %>
+  </table>
+</div>

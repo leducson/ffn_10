@@ -58,7 +58,15 @@ a img {
 }
 .header ul li {
   float:left;
-  margin:0 0 0 36px;
+  margin:0 -8px 0 36px;
+  padding: 5px 10px;
+}
+.header ul li:hover {
+  background: $orange;
+  padding: 5px 10px;
+}
+.header ul li a:hover {
+  color: $whites !important;
 }
 .header ul li a {
   color:#fbfbf4;
@@ -76,7 +84,7 @@ a img {
 
 /*------------------------- Dropdown-menu ---------------------------*/
 .dropdown-menu{
-  background: #708090;
+  background: $light_black;
 }
 .dropdown-menu li{
   padding: 0;
@@ -1369,7 +1377,7 @@ tbody>tr .bg_scored {
 
 /*-------------------Football News---------------*/
 .football_new {
-  background: #F0FFFF!important;
+  background: $light_black!important;
   width: 100%;
 }
 .image_tag {
@@ -1381,7 +1389,7 @@ tbody>tr .bg_scored {
   height: 200px;
 }
 .border_bottom {
-  border-bottom: 1px solid $blacks;
+  border-bottom: 1px solid $whites;
 }
 .news_left {
   padding: 0 10px;
@@ -1404,6 +1412,7 @@ a.highlights {
 }
 .new_text {
   font-size: 15px;
+  color: $whites;
 }
 
 /*-----------------Show Football News-----------------*/
@@ -1426,7 +1435,6 @@ form>h5 {
   padding: 10px 20px;
 }
 .comment>h5 {
-  background: #FF8C00;
   line-height: 40px;
   padding: 0 10px;
   width: 120px;
@@ -1439,6 +1447,9 @@ form>h5 {
 }
 .comment_right>h4 {
   font-size: 15px;
+}
+.comment_right i {
+  color: $whites;
 }
 .comment_right {
   padding: 0 20px;
@@ -1493,6 +1504,7 @@ table th {
 }
 .table_menu {
   background: $blues;
+  width: 100%;
 }
 .rounds {
   background: $gray_light;
@@ -1608,4 +1620,21 @@ table th {
 }
 .bg_details .card-text {
   color: $cadetblues;
+}
+
+/*-----------------Ranks----------------*/
+.ranks {
+  background: $light_black;
+  padding: 20px 20px;
+}
+.ranks table {
+  border: 1px solid $whites;
+}
+.rank_team {
+  background: $light_black;
+  color: $whites;
+}
+.ranking {
+  background: $reds;
+  width: 200px;
 }

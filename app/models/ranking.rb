@@ -4,5 +4,5 @@ class Ranking < ApplicationRecord
 
   scope :newest, ->{order rank: :desc}
 
-  delegate :name, to: :team
+  delegate :name, to: :team, prefix: true
 end

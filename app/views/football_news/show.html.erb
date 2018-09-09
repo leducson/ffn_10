@@ -15,12 +15,12 @@
     </div>
 
     <div class="comment border_bottom">
-      <h5><%= t ".comment" %></h5>
+      <h5 class="btn-danger"><%= t ".comment" %></h5>
       <%= render @comments %>
     </div>
 
     <%= form_for @football_new.comments.build, url: comment_index_path do |f| %>
-      <h5><%= t ".add_comment" %></h5>
+      <h5 class="btn-danger"><%= t ".add_comment" %></h5>
       <%= f.hidden_field :football_new_id, value: @football_new.id %>
       <%= f.text_area :message, placeholder: t(".place_msg"), id: "message", cols: Settings.football_news.cols, rows: Settings.football_news.rows %>
       <div>
