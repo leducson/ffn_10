@@ -14,8 +14,8 @@ en:
       player_info: "Player Info"
       closest_match: "The Closest Matches"
       date_time: "Date Time"
-      team_a: "Team A"
-      team_b: "Team B"
+      team_a: "Home Team"
+      team_b: "Guest Team"
       score: "Scored"
       alt: "Colombia"
     team:
