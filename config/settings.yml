@@ -21,8 +21,10 @@ country_per: 15
 team_lg_per: 5
 team_per: 15
 round_per: 5
+match_per: 15
 gender: ["Male", "Female"]
 league_number_min: 0
+number_min: 0
 error: "error"
 success: "success"
 limit: 5

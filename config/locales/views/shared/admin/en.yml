@@ -15,6 +15,7 @@ en:
         leagues: "Leagues"
         countries: "Countries"
         teams: "Teams"
+        matches: "Matches"
       error_messages:
         errors_count:
           one: "The form contains %{count} error."
