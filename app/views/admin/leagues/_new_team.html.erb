@@ -41,7 +41,7 @@
             <div class="form-group">
               <label><%= t ".choice_team" %></label>
               <div class="form-select">
-                <%= select_tag :team_id, options(League.load_teams), {class: "form-control col-md-8 left team_choice", :prompt => t(".blank_option")} %>
+                <%= select_tag :team_id, options(League.load_teams), {class: "form-control col-md-8 left team_choice", prompt: t(".blank_option")} %>
                 <a class="btn btn-primary right set_team" data-id="<%= @league.id %>"><%= t ".set_team" %></a>
                 <div class="clear_both"></div>
               </div>

@@ -1,0 +1,34 @@
+<tr data-id="<%= score_sugest.id %>">
+  <td>
+    <span><%= score_sugest.score_win %></span>
+    <input type="number" class="form-control score_win" value="<%= score_sugest.score_win %>" />
+  </td>
+  <td>
+    <span><%= score_sugest.score_lost %></span>
+    <input type="number" class="form-control score_lost" value="<%= score_sugest.score_lost %>" />
+  </td>
+  <td>
+    <span><%= score_sugest.ratio %></span>
+    <input type="number" class="form-control ratio" value="<%= score_sugest.ratio %>" />
+  </td>
+  <td><%= l score_sugest.created_at %></td>
+  <td class="td-actions text-right">
+    <div class="edit-sugest">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs score_sugest_edit", title: t(".edit") do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
+      <%= link_to admin_score_sugest_path(score_sugest), class: "btn btn-danger btn-link btn-xs", title: t(".remove"),
+        method: :delete, data: {confirm: t(".are_you_sure")} do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    </div>
+    <div class="update-sugest">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs score_sugest_update", title: t(".update") do %>
+        <i class="fa fa-refresh"></i>
+      <% end %>
+      <%= link_to "#", class: "sugest-undo", title: t(".back") do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

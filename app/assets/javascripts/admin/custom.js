@@ -63,7 +63,13 @@ $(document).ready(function(){
     });
   });
 
-  $('#new_team, #new_round, #match_info_matches').on('hidden.bs.modal', function () {
+  $('.modal_new_score_sugest').on('click', function(){
+    $('#new_score_sugest').modal({
+      backdrop: 'static'
+    });
+  });
+
+  $('#new_team, #new_round, #match_info_matches, #new_score_sugest').on('hidden.bs.modal', function () {
     location.reload();
   });
 
@@ -143,6 +149,23 @@ $(document).ready(function(){
     return false;
   });
 
+  $('#match_new_score_sugest').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+    return false;
+  });
+
   $('body').on('click', '.round_info', function(){
     $(this).parents('li').find('.team_name span').hide();
     $(this).parents('li').find('.team_name input').show();
@@ -150,8 +173,45 @@ $(document).ready(function(){
     $(this).parents('li').find('.edit-button').hide();
   });
 
+  $('body').on('click', '.score_sugest_edit', function(){
+    $(this).parents('tr').find('.edit-sugest').hide();
+    $(this).parents('tr').find('.update-sugest').show();
+    $(this).parents('tr').find('span').hide();
+    $(this).parents('tr').find('input').show();
+  });
+
   $('body').on('click', '.undo-button', function(){
     reset_round_edit('undo-button');
+  });
+
+  $('.sugest-undo').on('click', function(){
+    $(this).parents('tr').find('.edit-sugest').show();
+    $(this).parents('tr').find('.update-sugest').hide();
+    $(this).parents('tr').find('span').show();
+    $(this).parents('tr').find('input').hide();
+  });
+
+  $('body').on('click', '.score_sugest_update', function(){
+    var id = $(this).parents('tr').attr('data-id');
+    $.ajax({
+      url: '/admin/score_sugests/' + id,
+      type: 'PATCH',
+      dataType: 'json',
+      data:{
+        'score_sugest[score_win]': $(this).parents('tr').find('input.score_win').val(),
+        'score_sugest[score_lost]': $(this).parents('tr').find('input.score_lost').val(),
+        'score_sugest[ratio]': $(this).parents('tr').find('input.ratio').val(),
+      },
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+          reset_sugest_edit('score_sugest_update');
+          $('.table_sugest').load(location.href + ' .table_sugest');
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
   });
 
   $('body').on('click', '.save-round', function(){
@@ -183,6 +243,13 @@ function reset_round_edit(button){
   $('.' + button).parents('li').find('.team_name input').hide();
   $('.' + button).parents('li').find('.edit-button').show();
   $('.' + button).parents('li').find('.save-button').hide();
+}
+
+function reset_sugest_edit(btn){
+  $('.' + btn).parents('tr').find('.edit-sugest').show();
+  $('.' + btn).parents('tr').find('.update-sugest').hide();
+  $('.' + btn).parents('tr').find('span').show();
+  $('.' + btn).parents('tr').find('input').hide();
 }
 
 function setActiveNavigation(){

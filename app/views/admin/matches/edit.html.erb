@@ -44,11 +44,27 @@
   <div class="col-md-6">
     <div class="card">
       <div class="card-header ">
-        <h4 class="card-title"><%= t ".score_sugests" %></h4>
+        <h4 class="card-title">
+          <%= t ".score_sugests" %>
+          <a class="btn btn-primary btn-xs right modal_new_score_sugest">
+            <%= t ".add_new_score_sugest" %>
+          </a>
+        </h4>
       </div>
       <div class="card-body ">
-        <ul class="team score_sugests">
-        </ul>
+        <table class="table table-hover table-striped table_sugest">
+          <thead>
+            <th><%= t ".score_win" %></th>
+            <th><%= t ".score_lost" %></th>
+            <th><%= t ".ratio" %></th>
+            <th><%= t ".time" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @score_sugests %>
+          </tbody>
+        </table>
+        <%= paginate @score_sugests, param_name: "sugest" %>
       </div>
     </div>
   </div>
@@ -66,3 +82,4 @@
 </div>
 
 <%= render "new_match_info" %>
+<%= render "new_score_sugest" %>

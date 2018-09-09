@@ -8,7 +8,7 @@
   <div class="row">
     <div class="form-group col-md-6">
       <%= f.label t ".continents", class: "control-label" %>
-      <%= f.select(:continent_id, League.load_continents, {:prompt => t(".blank_option")}, {class: "form-control"}) %>
+      <%= f.select(:continent_id, League.load_continents, {prompt: t(".blank_option")}, {class: "form-control"}) %>
     </div>
     <div class="form-group col-md-6">
       <%= f.label t ".country", class: "control-label" %>
