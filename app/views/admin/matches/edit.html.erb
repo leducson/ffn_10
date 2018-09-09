@@ -11,3 +11,58 @@
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".match_infos" %>
+          <a class="btn btn-primary btn-xs right match_info_modal">
+            <%= t ".add_new_match_info" %>
+          </a>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th><%= t ".minutes" %></th>
+            <th><%= t ".message" %></th>
+            <th><%= t ".type" %></th>
+            <th><%= t ".team" %></th>
+            <th><%= t ".player" %></th>
+            <th><%= t ".time" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @match_infos %>
+          </tbody>
+        </table>
+        <%= paginate @match_infos, param_name: "match_page" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title"><%= t ".score_sugests" %></h4>
+      </div>
+      <div class="card-body ">
+        <ul class="team score_sugests">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title"><%= t ".match_result" %></h4>
+      </div>
+      <div class="card-body ">
+        <ul class="team match_result">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "new_match_info" %>

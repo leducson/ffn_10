@@ -1,0 +1,40 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title"><%= t ".title" %></h4>
+      </div>
+      <div class="card-body ">
+        <%= form_for [:admin, @match_info] do |f| %>
+          <div class="form-group">
+            <%= f.label t(".minutes"), class: "control-label" %>
+            <%= f.number_field :minutes, class: "form-control", min: Settings.number_min %>
+          </div>
+          <div class="form-group">
+            <%= f.label t(".message"), class: "control-label" %>
+            <%= f.text_field :message, class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label t(".type"), class: "control-label" %>
+            <%= f.select(:type_info, MatchInfo.load_types, {}, {class: "form-control"}) %>
+          </div>
+          <div class="row">
+            <div class="form-group col-md-6">
+              <%= f.label t(".team"), class: "control-label" %>
+              <%= f.select(:team_id, @match_info.load_team_infos, {:prompt => t(".select_teams")}, {class: "form-control"}) %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= f.label t(".player"), class: "control-label" %>
+              <%= f.select(:player_info_id, @match_info.load_players, {}, {class: "form-control"}) %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.submit t(".submit"), class: "btn btn-primary" %>
+            <%= link_to t(".back", match_id: @match_info.match_id), edit_admin_match_path(@match_info.match), class: "btn btn-secondary right" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

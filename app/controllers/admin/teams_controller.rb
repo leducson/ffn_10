@@ -58,6 +58,11 @@ class Admin::TeamsController < Admin::BaseController
     end
   end
 
+  def load_players_by_team
+    @players = @team.player_infos.pluck :id, :name, :number
+    render json: @players
+  end
+
   private
 
   def save_team

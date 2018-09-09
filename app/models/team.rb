@@ -1,6 +1,7 @@
 class Team < ApplicationRecord
   belongs_to :league, optional: true
   has_many :player_infos, dependent: :destroy
+  has_many :match_infos
   has_many :rankings, dependent: :destroy
   belongs_to :continent, class_name: Continent.name, foreign_key: :continent_id
   belongs_to :country, class_name: Country.name, foreign_key: :country_id

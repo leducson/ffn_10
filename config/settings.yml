@@ -22,6 +22,8 @@ team_lg_per: 5
 team_per: 15
 round_per: 5
 match_per: 15
+info_per: 10
+sugest_per: 5
 gender: ["Male", "Female"]
 league_number_min: 0
 number_min: 0

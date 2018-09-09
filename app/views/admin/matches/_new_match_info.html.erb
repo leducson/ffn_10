@@ -1,0 +1,47 @@
+<div class="modal fade" id="match_info_matches" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xs modal-resize-top-match-info" role="document">
+    <div class="modal-content">
+      <%= form_for [:admin, @match_info], html: {id: "matches_match_info"} do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t ".title" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="border-modal">
+            <div class="form-group">
+              <%= f.label t(".minutes"), class: "control-label" %>
+              <%= f.number_field :minutes, class: "form-control", min: Settings.number_min %>
+              <%= f.hidden_field :match_id, value: @match.id %>
+            </div>
+            <div class="form-group">
+              <%= f.label t(".message"), class: "control-label" %>
+              <%= f.text_field :message, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label t(".type"), class: "control-label" %>
+              <%= f.select(:type_info, MatchInfo.load_types, {}, {class: "form-control"}) %>
+            </div>
+            <div class="row">
+              <div class="form-group col-md-6">
+                <%= f.label t(".team"), class: "control-label" %>
+                <%= f.select(:team_id, @match.load_teams_match_infos, {:prompt => t(".select_teams")}, {class: "form-control"}) %>
+              </div>
+              <div class="form-group col-md-6">
+                <%= f.label t(".player"), class: "control-label" %>
+                <%= f.select(:player_info_id, {}, {}, {class: "form-control"}) %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary save_match_info"><%= t ".submit" %></button>
+          <button type="button" class="btn btn-secondary right" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

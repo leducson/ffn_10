@@ -36,6 +36,15 @@ $(document).ready(function(){
     }
   });
 
+  $('#match_info_team_id').on('change', function(){
+    var team_id = $(this).val();
+    if(team_id){
+      load_players_by_team(team_id);
+    }else{
+      $('#match_info_player_info_id').empty();
+    }
+  });
+
   $('.team_modal').on('click', function(){
     $('#new_team').modal({
       backdrop: 'static'
@@ -48,7 +57,13 @@ $(document).ready(function(){
     })
   });
 
-  $('#new_team, #new_round').on('hidden.bs.modal', function () {
+  $('.match_info_modal').on('click', function(){
+    $('#match_info_matches').modal({
+      backdrop: 'static'
+    });
+  });
+
+  $('#new_team, #new_round, #match_info_matches').on('hidden.bs.modal', function () {
     location.reload();
   });
 
@@ -95,6 +110,23 @@ $(document).ready(function(){
   });
 
   $('#league_new_round').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('#matches_match_info').submit(function(){
     $.ajax({
       url: $(this).attr('action'),
       type: $(this).attr('method'),
@@ -197,6 +229,25 @@ function loadRoundsByLeague(league_id){
       for(var i in res){
         var option = '<option value='+ res[i][1] +'>'+ res[i][0] +'</option>';
         round.append(option);
+      }
+    }
+  });
+}
+
+function load_players_by_team(team_id){
+  $.ajax({
+    url: '/admin/teams/' + team_id + '/load_players_by_team',
+    type: 'GET',
+    dataType: 'JSON',
+    data: {
+      id: team_id
+    },
+    success: function(res){
+      var player = $('#match_info_player_info_id');
+      player.empty();
+      for(var i in res){
+        var option = '<option value=' + res[i][0] + '>' + res[i][1] + ' (' + res[i][2] + ')</option>';
+        player.append(option);
       }
     }
   });

@@ -1,0 +1,12 @@
+en:
+  admin:
+    match_infos:
+      create:
+        success: "Created match info successfully"
+        error: "Failed to create match info"
+      update:
+        success: "Updated match info successfully"
+        error: "Failed to update match info"
+      destroy:
+        success: "Deleted match info successfully"
+        error: "Failed to delete match info"

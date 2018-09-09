@@ -7,7 +7,10 @@ Rails.application.routes.draw do
       resources :teams, only: [:create, :destroy]
     end
     resources :teams do
-      patch "set_league", on: :member
+      member do
+        patch "set_league"
+        get "load_players_by_team"
+      end
     end
     resources :rounds
     resources :countries
@@ -17,6 +20,7 @@ Rails.application.routes.draw do
     resources :matches do
       get "load_rounds", on: :collection
     end
+    resources :match_infos, except: %i(index show new)
   end
 
   root "home#index"
