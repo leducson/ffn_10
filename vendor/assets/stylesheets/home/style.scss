@@ -1466,7 +1466,7 @@ form>h5 {
   width: 100%;
   border: 2px solid $blacks;
 }
-.schedule>table th {
+table th {
   text-align: center!important;
   color: $whites;
 }
@@ -1548,4 +1548,64 @@ form>h5 {
 }
 .ratio {
   background: $light_black;
+}
+.match_info {
+  margin-left: -410px !important;
+}
+
+/*-------------------Teams--------------------*/
+.card{
+   background-color: $white_gray;
+}
+.card .card-title{
+  color: $cadetblues;
+}
+.card .card-text{
+  font-size: 14px;
+  border:none;
+  color: $whites;
+}
+.search_form{
+  width: 100%;
+}
+.search_form .col-md-5, .search_form .col-md-2{
+  float: left;
+}
+
+/*-------------------Teams--------------------*/
+.player_info table {
+  width: 100%;
+  border-color: $whites;
+}
+.table_menu_details td {
+  color: $whites;
+  font-weight: bold;
+  background: $blues
+}
+.team_detail {
+  width: 250px;
+  background: $light_black;
+  color: $whites;
+  font-weight: bold;
+}
+.player_info_detail {
+  background: $gray_light;
+}
+.score_detail {
+  color: $whites;
+  font-weight: bold;
+  background: $reds;
+}
+.bg_details {
+  background: $light_black;
+  padding: 20px;
+}
+.bg_details .card-title {
+  color: $whites;
+}
+.bg_details .card-title:hover {
+  color: $cadetblues;
+}
+.bg_details .card-text {
+  color: $cadetblues;
 }

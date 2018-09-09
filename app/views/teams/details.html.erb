@@ -1,0 +1,49 @@
+<div class="col-md-7">
+<%= image_tag "home/team1.png", alt: t(".alt"), class: "img-fluid" %>
+</div>
+<div class="col-md-5 bg_details">
+  <h5 class="card-title"><%= t ".club" %><%= @team.name %></h5>
+  <h5 class="card-title"><%= t ".country" %><%= @team.country_name %></h5>
+  <h5 class="card-title"><%= t ".continent" %><%= @team.continent_name %></h5>
+  <p class="card-text"><%= t ".year" %><%= l @team.establish_year, format: :long %></p>
+</div>
+<div class="col-md-12 bg_details">
+  <div class="player_info">
+    <h4 class="btn btn-primary btn-danger"><%= t ".player_info" %></h4>
+    <table border="1px">
+      <tr class="table_menu">
+        <th><%= t ".name" %></th>
+        <th><%= t ".date" %></th>
+        <th><%= t ".gender" %></th>
+        <th><%= t ".weight" %></th>
+        <th><%= t ".height" %></th>
+        <th><%= t ".position" %></th>
+      </tr>
+      <%= render @player_infos %>
+    </table>
+  </div>
+</div>
+<div class="col-md-12 bg_details">
+  <div class="player_info">
+    <h4 class="btn btn-primary btn-danger"><%= t ".closest_match" %></h4>
+    <table border="1px">
+      <tr class="table_menu">
+        <th rowspan="2"><%= t ".date_time" %></th>
+        <th colspan="5"><%= t ".closest_match" %></th>
+      </tr>
+      <tr class="table_menu_details">
+        <td class="team_detail"><%= t ".team_a" %></td>
+        <td class="scored"><%= t ".score" %></td>
+        <td class="scored"><%= t ".score" %></td>
+        <td class="team_detail"><%= t ".team_b" %></td>
+      </tr>
+      <tr>
+        <td class="date_day"></td>
+        <td class="team_detail"></td>
+        <td class="score_detail"></td>
+        <td class="score_detail"></td>
+        <td class="team_detail"></td>
+      </tr>
+    </table>
+  </div>
+</div>

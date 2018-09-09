@@ -1,0 +1,20 @@
+<div class="col-md-12 teams">
+  <div class="row">
+    <%= form_tag search_teams_path, method: :GET, class: "search_form" do %>
+      <div class="col-md-5">
+        <%= select_tag "continent_id", options(Team.load_continents), {class: "form-control", prompt: "Continents"} %>
+      </div>
+      <div class="col-md-5">
+        <select id="country_id" class="form-control" name="country_id">
+        </select>
+      </div>
+      <div class="col-md-2">
+        <%= submit_tag t(".search"), id: "btnTeams", class: "btn btn-danger" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="row col-md-12">
+    <%= render @teams %>
+  </div>
+  <%= paginate @teams %>
+</div>
