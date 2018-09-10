@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :player_infos, path: "players" do
       patch "set_player_by_team", on: :member
     end
+    resources :rankings, only: :update
   end
 
   root "home#index"

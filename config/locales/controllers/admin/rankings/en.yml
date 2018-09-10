@@ -1,0 +1,6 @@
+en:
+  admin:
+    rankings:
+      update:
+        success: "Updated ranking successfully"
+        error: "Failed to update ranking"

@@ -24,6 +24,9 @@ en:
         title: "Edit League"
         team: "Teams"
         round: "Rounds"
+        team: "Team"
+        rank: "Rank"
+        action: "Action"
         add_new_team: "New Team"
         add_new_round: "New Round"
       form:

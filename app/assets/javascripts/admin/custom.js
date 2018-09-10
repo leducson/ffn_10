@@ -239,6 +239,17 @@ $(document).ready(function(){
     $(this).parents('tr').find('input').hide();
   });
 
+  $('.edit_button').on('click', function(){
+    $(this).parents('tr').find('span.rank_number').hide();
+    $(this).parents('tr').find('input.edit_rank').show();
+    $(this).parents('tr').find('.edit_rank_button').hide();
+    $(this).parents('tr').find('.update_rank_button').show();
+  });
+
+  $('.reset_button').on('click', function(){
+    reset_rank_edit('reset_button');
+  });
+
   $('body').on('click', '.score_sugest_update', function(){
     var id = $(this).parents('tr').attr('data-id');
     $.ajax({
@@ -284,6 +295,29 @@ $(document).ready(function(){
       }
     });
   });
+
+  $('body').on('click', '.update_button', function(){
+    var rank_id = $(this).parents('tr').attr('data-id');
+    var rank_number = $(this).parents('tr').find('input.edit_rank').val();
+    $.ajax({
+      url: '/admin/rankings/' + rank_id,
+      type: 'PATCH',
+      dataType: 'json',
+      data:{
+        'ranking[id]': rank_id,
+        'ranking[rank]': rank_number
+      },
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+          reset_rank_edit('reset_button');
+          $('.rankings').load(location.href + ' .rankings');
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+  });
 });
 
 function reset_round_edit(button){
@@ -298,6 +332,13 @@ function reset_sugest_edit(btn){
   $('.' + btn).parents('tr').find('.update-sugest').hide();
   $('.' + btn).parents('tr').find('span').show();
   $('.' + btn).parents('tr').find('input').hide();
+}
+
+function reset_rank_edit(btn){
+  $('.' + btn).parents('tr').find('span.rank_number').show();
+  $('.' + btn).parents('tr').find('input.edit_rank').hide();
+  $('.' + btn).parents('tr').find('.edit_rank_button').show();
+  $('.' + btn).parents('tr').find('.update_rank_button').hide();
 }
 
 function setActiveNavigation(){

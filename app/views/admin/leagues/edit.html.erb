@@ -26,7 +26,7 @@
         <ul class="team">
           <%= render partial: "team", collection: @teams %>
         </ul>
-        <%= paginate @teams, :param_name => "team_page" %>
+        <%= paginate @teams, param_name: "team_page" %>
       </div>
     </div>
   </div>
@@ -44,7 +44,29 @@
         <ul class="team round">
           <%= render partial: "round", collection: @rounds %>
         </ul>
-        <%= paginate @rounds, :param_name => "round_page" %>
+        <%= paginate @rounds, param_name: "round_page" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= t ".rankings" %>
+        </h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover table-striped rankings">
+          <thead>
+            <th><%= t ".team" %></th>
+            <th><%= t ".rank" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @rankings %>
+          </tbody>
+        </table>
+        <%= paginate @rankings, param_name: "rank_page" %>
       </div>
     </div>
   </div>
