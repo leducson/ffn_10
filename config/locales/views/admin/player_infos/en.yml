@@ -1,0 +1,36 @@
+en:
+  admin:
+    player_infos:
+      index:
+        title: "Player Infos"
+        new_player: "Add New Player"
+        name: "Name"
+        date_of_birth: "Date of Birth"
+        gender: "Gender"
+        weight: "Weight (kg)"
+        height: "Height (cm)"
+        position: "Position"
+        number: "Number"
+        team: "Team"
+        time: "Time"
+        action: "Action"
+      new:
+        title: "New Player"
+      edit:
+        title: "Edit Player"
+      form:
+        name: "Name"
+        date_of_birth: "Date of Birth"
+        gender: "Gender"
+        weight: "Weight (kg)"
+        height: "Height (cm)"
+        position: "Position"
+        number: "Number"
+        team: "Teams"
+        select_team: "Select Teams"
+        select_position: "Select Positions"
+        submit: "Save Changes"
+      player_info:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"

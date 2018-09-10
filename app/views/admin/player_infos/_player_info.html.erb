@@ -1,0 +1,20 @@
+<tr>
+  <td><%= player_info.name %></td>
+  <td><%= l player_info.date_of_birth %></td>
+  <td><%= player_info.gender&.titleize %></td>
+  <td><%= player_info.weight %></td>
+  <td><%= player_info.height %></td>
+  <td><%= player_info.position&.titleize %></td>
+  <td><%= player_info.number %></td>
+  <td><%= player_info.team_name %></td>
+  <td><%= l player_info.created_at %></td>
+  <td class="td-actions text-right">
+    <%= link_to edit_admin_player_info_path(player_info), class: "btn btn-success btn-link btn-xs", title: t(".edit") do %>
+      <i class="fa fa-edit"></i>
+    <% end %>
+    <%= link_to admin_player_info_path(player_info), class: "btn btn-danger btn-link btn-xs", title: t(".remove"),
+      method: :delete, data: {confirm: t(".are_you_sure")} do %>
+      <i class="fa fa-times"></i>
+    <% end %>
+  </td>
+</tr>

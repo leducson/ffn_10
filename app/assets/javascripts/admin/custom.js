@@ -69,7 +69,13 @@ $(document).ready(function(){
     });
   });
 
-  $('#new_team, #new_round, #match_info_matches, #new_score_sugest').on('hidden.bs.modal', function () {
+  $('.add_new_player').on('click', function(){
+    $('#new_player').modal({
+      backdrop: 'static'
+    })
+  });
+
+  $('#new_team, #new_round, #match_info_matches, #new_score_sugest, #new_player').on('hidden.bs.modal', function () {
     location.reload();
   });
 
@@ -95,6 +101,31 @@ $(document).ready(function(){
       });
     }else{
       toastr.error('', I18n.t("js.select_team"));
+    }
+  });
+
+  $('.set_player_info').click(function(){
+    var player_id = $('.player_choice').val();
+    var team_id = $(this).attr('data-id');
+    if(team_id){
+      $.ajax({
+        url: '/admin/players/' + player_id + '/set_player_by_team',
+        type: 'PATCH',
+        data: {
+          id: player_id,
+          team_id: team_id
+        },
+        success: function(res){
+          if(res.type == 'success'){
+            toastr.success('', res.message);
+            $('option:selected', '.player_choice').remove();
+          }else{
+            toastr.error('', res.message);
+          }
+        }
+      });
+    }else{
+      toastr.error('', I18n.t("js.select_player"));
     }
   });
 
@@ -150,6 +181,23 @@ $(document).ready(function(){
   });
 
   $('#match_new_score_sugest').submit(function(){
+    $.ajax({
+      url: $(this).attr('action'),
+      type: $(this).attr('method'),
+      dataType: 'json',
+      data: $(this).serialize(),
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+    return false;
+  });
+
+  $('#team_new_player').submit(function(){
     $.ajax({
       url: $(this).attr('action'),
       type: $(this).attr('method'),

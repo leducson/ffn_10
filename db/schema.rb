@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_155247) do
+ActiveRecord::Schema.define(version: 2018_09_09_124736) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -118,10 +118,10 @@ ActiveRecord::Schema.define(version: 2018_09_08_155247) do
   create_table "player_infos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "date_of_birth"
-    t.string "gender"
+    t.integer "gender"
     t.integer "weight"
     t.integer "height"
-    t.string "position"
+    t.integer "position"
     t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

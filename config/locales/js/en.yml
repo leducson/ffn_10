@@ -1,3 +1,4 @@
 en:
   js:
     select_team: "Please select team to set..."
+    select_player: "Please select player to set..."

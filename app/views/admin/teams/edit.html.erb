@@ -2,12 +2,45 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header ">
+      <div class="card-header">
         <h4 class="card-title"><%= t ".title" %></h4>
       </div>
-      <div class="card-body ">
+      <div class="card-body">
         <%= render partial: "form", locals: {url: admin_team_path(@team)} %>
       </div>
     </div>
   </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= t ".players" %>
+          <a class="btn btn-primary btn-xs right add_new_player">
+            <%= t ".add_new_player" %>
+          </a>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th><%= t ".name" %></th>
+            <th><%= t ".dob" %></th>
+            <th><%= t ".weight" %></th>
+            <th><%= t ".height" %></th>
+            <th><%= t ".gender" %></th>
+            <th><%= t ".postion" %></th>
+            <th><%= t ".number" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render partial: "player", collection: @players %>
+          </tbody>
+        </table>
+        <%= paginate @players, param_name: "player_page" %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render "new_player" %>
