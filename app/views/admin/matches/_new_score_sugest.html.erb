@@ -1,0 +1,37 @@
+<div class="modal fade" id="new_score_sugest" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xs modal-resize-top" role="document">
+    <div class="modal-content">
+      <%= form_for [:admin, @score_sugest], html: {id: "match_new_score_sugest"} do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t ".title" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row border-modal">
+            <div class="form-group col-md-12">
+              <%= f.label t(".score_win"), class: "control-label" %>
+              <%= f.number_field :score_win, class: "form-control", min: Settings.number_min %>
+              <%= f.hidden_field :match_id, value: @match.id %>
+            </div>
+            <div class="form-group col-md-12">
+              <%= f.label t(".score_lost"), class: "control-label" %>
+              <%= f.number_field :score_lost, class: "form-control", min: Settings.number_min %>
+            </div>
+            <div class="form-group col-md-12">
+              <%= f.label t(".ratio"), class: "control-label" %>
+              <%= f.number_field :ratio, class: "form-control", min: Settings.number_min %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary"><%= t ".submit" %></button>
+          <button type="button" class="btn btn-secondary right" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

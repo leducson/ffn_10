@@ -26,6 +26,7 @@ en:
         match_result: "Match Result"
         score_sugests: "Score Sugest"
         add_new_match_info: "New Match Info"
+        add_new_score_sugest: "New Score Sugest"
         minutes: "Minutes"
         message: "Message"
         type: "Type"
@@ -33,6 +34,9 @@ en:
         player: "Player"
         time: "Time"
         action: Action
+        score_win: "Score Win"
+        score_lost: "Score Lost"
+        ratio: "Ratio"
       form:
         date_of_match: "Date of Match"
         time: "Time"
@@ -56,5 +60,12 @@ en:
         team: "Team"
         player: "Player"
         select_teams: "Select Teams"
+        submit: "Save Changes"
+        close: "Close"
+      new_score_sugest:
+        title: "New Score Sugest"
+        score_win: "Score Win"
+        score_lost: "Score Lost"
+        ratio: "Ratio"
         submit: "Save Changes"
         close: "Close"

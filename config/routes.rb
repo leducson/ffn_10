@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get "load_rounds", on: :collection
     end
     resources :match_infos, except: %i(index show new)
+    resources :score_sugests, only: %i(create update destroy)
   end
 
   root "home#index"

@@ -1,0 +1,12 @@
+en:
+  admin:
+    score_sugests:
+      create:
+        success: "Created score sugest successfully"
+        error: "Failed to create score sugest"
+      update:
+        success: "Updated score sugest successfully"
+        error: "Failed to update score sugest"
+      destroy:
+        success: "Deleted score sugest successfully"
+        error: "Failed to delete score sugest"

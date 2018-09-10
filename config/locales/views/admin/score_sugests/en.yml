@@ -1,0 +1,9 @@
+en:
+  admin:
+    score_sugests:
+      score_sugest:
+        edit: "Edit"
+        remove: "Remove"
+        update: "Update"
+        back: "Reset"
+        are_you_sure: "Are you sure?"
