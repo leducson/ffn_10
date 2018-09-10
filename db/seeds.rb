@@ -69,7 +69,7 @@ end
 
 leagues.each do |league|
   league.number_of_team.to_i.times do |n|
-    league.rankings.create!(team_id: league.teams.sample.id,
+    league.rankings.create!(team_id: Team.all.sample.id,
       rank: (0..league.number_of_team.to_i))
   end
 end
@@ -97,13 +97,13 @@ end
 
 matchs = Match.order(:created_at).take(10)
 30.times do |n|
-  type = MatchInfo.types.to_a.sample
+  type = MatchInfo.type_infos.to_a.sample
   message = type.first.titleize
 
   matchs.each do |m|
     m.match_infos.create!(message: message,
       type_info: type[1],
-      minutes: n + 10)
+      minutes: n + 10, team_id: Team.all.sample.id, player_info_id: PlayerInfo.all.sample.id)
 
     m.create_match_result(score_win: rand(2..5),
       score_lost: rand(0..1),

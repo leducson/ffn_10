@@ -1,0 +1,26 @@
+en:
+  teams:
+    details:
+      club: "Football Club - "
+      country: "Country - "
+      continent: "Continent - "
+      year: "Establish Year - "
+      name: "Name"
+      date: "Date of birth"
+      gender: "Gender"
+      weight: "Weight"
+      height: "Height"
+      position: "Position"
+      player_info: "Player Info"
+      closest_match: "The Closest Matches"
+      date_time: "Date Time"
+      team_a: "Team A"
+      team_b: "Team B"
+      score: "Scored"
+      alt: "Colombia"
+    team:
+      alt: "Colombia"
+    search:
+      search: "Search"
+    index:
+      search: "Search"

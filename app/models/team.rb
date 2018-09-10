@@ -1,5 +1,4 @@
 class Team < ApplicationRecord
-  belongs_to :league, optional: true
   has_many :player_infos, dependent: :destroy
   has_many :match_infos
   has_many :rankings, dependent: :destroy
@@ -13,6 +12,7 @@ class Team < ApplicationRecord
     dependent: :destroy
 
   scope :newest, ->{order created_at: :desc}
+  scope :by_country, ->(country_id){where(country_id: country_id)}
 
   delegate :name, to: :continent, prefix: true
   delegate :name, to: :country, prefix: true
