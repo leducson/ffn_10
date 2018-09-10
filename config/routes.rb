@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     end
     resources :rankings, only: :update
     resources :score_bets, only: %i(index update)
+    resources :notifies, only: :index
   end
 
   root "home#index"

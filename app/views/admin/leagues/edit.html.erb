@@ -70,6 +70,28 @@
       </div>
     </div>
   </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= t ".rankings" %>
+        </h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover table-striped rankings">
+          <thead>
+            <th><%= t ".team" %></th>
+            <th><%= t ".rank" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @rankings %>
+          </tbody>
+        </table>
+        <%= paginate @rankings, :param_name => "rank_page" %>
+      </div>
+    </div>
+  </div>
 </div>
 <%= render "new_team" %>
 <%= render "new_round"%>
