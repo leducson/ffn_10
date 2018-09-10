@@ -29,6 +29,9 @@ Rails.application.routes.draw do
     resources :rankings, only: :update
     resources :score_bets, only: %i(index update)
     resources :notifies, only: :index
+    resources :credits do
+      patch "quick_set_type", on: :member
+    end
   end
 
   root "home#index"

@@ -29,6 +29,7 @@ player_per: 10
 rank_per: 10
 bet_per: 15
 notify_per: 15
+credit_per: 15
 gender: ["Male", "Female"]
 league_number_min: 0
 number_min: 0
