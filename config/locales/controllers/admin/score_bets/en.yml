@@ -1,0 +1,6 @@
+en:
+  admin:
+    score_bets:
+      update:
+        success: "Updated score bet successfully"
+        error: "Failed to update score bet"

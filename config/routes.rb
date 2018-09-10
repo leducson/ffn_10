@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       patch "set_player_by_team", on: :member
     end
     resources :rankings, only: :update
+    resources :score_bets, only: %i(index update)
   end
 
   root "home#index"
