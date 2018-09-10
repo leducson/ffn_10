@@ -36,4 +36,9 @@ class Team < ApplicationRecord
   def self.load_players
     PlayerInfo.where(team_id: nil).newest.pluck :name, :id
   end
+
+  def create_ranking
+    return unless league_id.present?
+    rankings.create!(league_id: league_id, rank: 1)
+  end
 end

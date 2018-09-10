@@ -34,9 +34,7 @@ class Admin::TeamsController < Admin::BaseController
 
   def destroy
     if params[:league_id].present?
-      @team.update_attributes(league_id: nil)
-      flash[:info] = t ".success"
-      redirect_to edit_admin_league_path(id: params[:league_id])
+      update_league_nil
     else
       if @team.destroy
         flash[:info] = t ".success"
@@ -53,12 +51,9 @@ class Admin::TeamsController < Admin::BaseController
       render json: {message: t(".sizes"), type: Settings.error}
       return
     end
-
-    if @team.update_attributes league_id: params[:league_id]
-      render json: {message: t(".success"), type: Settings.success}
-    else
-      render json: {message: t(".error"), type: Settings.error}
-    end
+    update_league_params @league
+  rescue ActiveRecord::RecordInvalid => ex
+    render json: {message: ex.record.errors, type: Settings.error}
   end
 
   def load_players_by_team
@@ -67,6 +62,34 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   private
+
+  def update_league_nil
+    update_attributes_league_nil
+    redirect_to edit_admin_league_path(id: params[:league_id])
+  rescue ActiveRecord::RecordInvalid => ex
+    flash[:danger] = ex.record.errors
+    redirect_to edit_admin_league_path(id: params[:league_id])
+  end
+
+  def update_attributes_league_nil
+    if @team.update_attributes(league_id: nil)
+      if @team.rankings.present?
+        @team.rankings.find_by(league_id: params[:league_id]).destroy
+      end
+      flash[:info] = t ".success"
+    else
+      flash[:info] = t ".error"
+    end
+  end
+
+  def update_league_params team
+    if team.update_attributes league_id: params[:league_id]
+      team.create_ranking
+      render json: {message: t(".success"), type: Settings.success}
+    else
+      render json: {message: t(".error"), type: Settings.error}
+    end
+  end
 
   def load_edit_params
     @players =
@@ -95,12 +118,18 @@ class Admin::TeamsController < Admin::BaseController
 
   def respond_to_save_team format
     if @team.save team_params
+      @team.create_ranking
       format.html{redirect_to admin_teams_path, flash: {info: t(".success")}}
       format.json{render json: {type: Settings.success, message: t(".success")}}
     else
       format.html{redirect_to new_admin_team_path, flash: {danger: t(".error")}}
       format.json{render json: {type: Settings.error, message: t(".error")}}
     end
+  rescue ActiveRecord::RecordInvalid => ex
+    format.html do
+      redirect_to new_admin_team_path, flash: {danger: ex.record.errors}
+    end
+    format.json{render json: {type: Settings.error, message: ex.record.errors}}
   end
 
   def load_team
