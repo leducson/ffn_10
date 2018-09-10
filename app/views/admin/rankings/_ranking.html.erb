@@ -1,0 +1,22 @@
+<tr data-id="<%= ranking.id %>">
+  <td><%= ranking.name %></td>
+  <td>
+    <span class="rank_number"><%= ranking.rank %></span>
+    <input type="number" class="form-control edit_rank" value="<%= ranking.rank %>" min="<%= Settings.number_min %>" />
+  </td>
+  <td class="td-actions text-right">
+    <div class="edit_rank_button">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs edit_button", title: t(".edit") do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
+    </div>
+    <div class="update_rank_button">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs update_button", title: t(".update") do %>
+        <i class="fa fa-refresh"></i>
+      <% end %>
+      <%= link_to "#", class: "reset_button", title: t(".reset") do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

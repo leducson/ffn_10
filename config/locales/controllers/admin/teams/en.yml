@@ -13,5 +13,5 @@ en:
         error: "Failed to delete team"
       set_league:
         sizes: "Number teams of league is full"
-        success: "Set league is successfully"
-        error: "Failed to set league"
+        success: "Set team to league is successfully"
+        error: "Failed to set team to league"
