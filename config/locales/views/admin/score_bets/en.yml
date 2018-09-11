@@ -1,0 +1,15 @@
+en:
+  admin:
+    score_bets:
+      index:
+        title: "Score Bets"
+        price: "Price"
+        user: "User"
+        team1: "Team1"
+        team2: "Team2"
+        score_sugest: "Score Sugest"
+        ratio: "Ratio"
+        status: "Status"
+        action: "Action"
+      score_bet:
+        edit: "Edit"

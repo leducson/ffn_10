@@ -1,0 +1,31 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".title" %>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped score_bets">
+          <thead>
+            <th>#</th>
+            <th><%= t ".price" %></th>
+            <th><%= t ".user" %></th>
+            <th><%= t ".team1" %></th>
+            <th><%= t ".team2" %></th>
+            <th><%= t ".score_sugest" %></th>
+            <th><%= t ".ratio" %></th>
+            <th><%= t ".status" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @bets %>
+          </tbody>
+        </table>
+        <%= paginate @bets %>
+      </div>
+    </div>
+  </div>
+</div>

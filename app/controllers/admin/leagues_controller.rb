@@ -53,6 +53,10 @@ class Admin::LeaguesController < Admin::BaseController
       @league.teams.newest.page(params[:team_page]).per(Settings.team_lg_per)
     @rounds =
       @league.rounds.newest.page(params[:round_page]).per(Settings.round_per)
+    load_build_and_rankings
+  end
+
+  def load_build_and_rankings
     @team = @league.teams.build
     @round = @league.rounds.build
     @rankings =

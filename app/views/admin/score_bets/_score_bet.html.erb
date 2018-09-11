@@ -1,0 +1,32 @@
+<tr data-id="<%= score_bet.id %>" class="score_bet_<%= score_bet.id %>">
+  <td><%= count_index_list score_bet_counter %></td>
+  <td>
+    <span class="score_bet_price">
+      <%= number_to_currency score_bet.price %>
+    </span>
+    <input type="number" class="form-control edit_price_bet" value="<%= score_bet.price %>" />
+  </td>
+  <td><%= score_bet.user_fullname %></td>
+  <td><%= score_bet.match.team1_name %></td>
+  <td><%= score_bet.match.team2_name %></td>
+  <td>
+    <%= "#{score_bet.score_sugest_score_win} - #{score_bet.score_sugest.score_lost}" %>
+  </td>
+  <td><%= score_bet.score_sugest.ratio %></td>
+  <td><%= score_bet.status %></td>
+  <td class="td-actions text-right">
+    <div class="edit_button_bet">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs edit_score_bet", title: t(".edit") do %>
+        <i class="fa fa-edit"></i>
+      <% end %>
+    </div>
+    <div class="update_button_bet">
+      <%= link_to "#", class: "btn btn-success btn-link btn-xs update_score_bet", title: t(".edit") do %>
+        <i class="fa fa-refresh"></i>
+      <% end %>
+      <%= link_to "#", class: "reset_score_bet", title: t(".edit") do %>
+        <i class="fa fa-times"></i>
+      <% end %>
+    </div>
+  </td>
+</tr>

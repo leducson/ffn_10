@@ -17,6 +17,7 @@ en:
         teams: "Teams"
         matches: "Matches"
         players: "Players Infos"
+        score_bets: "Score Bets"
       error_messages:
         errors_count:
           one: "The form contains %{count} error."

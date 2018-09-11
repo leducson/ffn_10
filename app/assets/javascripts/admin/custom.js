@@ -239,15 +239,26 @@ $(document).ready(function(){
     $(this).parents('tr').find('input').hide();
   });
 
-  $('.edit_button').on('click', function(){
+  $('.edit_button_rank').on('click', function(){
     $(this).parents('tr').find('span.rank_number').hide();
     $(this).parents('tr').find('input.edit_rank').show();
     $(this).parents('tr').find('.edit_rank_button').hide();
     $(this).parents('tr').find('.update_rank_button').show();
   });
 
-  $('.reset_button').on('click', function(){
-    reset_rank_edit('reset_button');
+  $('.edit_score_bet').on('click', function(){
+    $(this).parents('tr').find('span.score_bet_price').hide();
+    $(this).parents('tr').find('input.edit_price_bet').show();
+    $(this).parents('tr').find('.edit_button_bet').hide();
+    $(this).parents('tr').find('.update_button_bet').show();
+  });
+
+  $('.reset_score_bet').on('click', function(){
+    reset_score_bet('reset_score_bet');
+  });
+
+  $('.reset_button_rank').on('click', function(){
+    reset_rank_edit('reset_button_rank');
   });
 
   $('body').on('click', '.score_sugest_update', function(){
@@ -296,7 +307,7 @@ $(document).ready(function(){
     });
   });
 
-  $('body').on('click', '.update_button', function(){
+  $('body').on('click', '.update_button_rank', function(){
     var rank_id = $(this).parents('tr').attr('data-id');
     var rank_number = $(this).parents('tr').find('input.edit_rank').val();
     $.ajax({
@@ -310,8 +321,31 @@ $(document).ready(function(){
       success: function(res){
         if(res.type == 'success'){
           toastr.success('', res.message);
-          reset_rank_edit('reset_button');
+          reset_rank_edit('reset_button_rank');
           $('.rankings').load(location.href + ' .rankings');
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+  });
+
+  $('body').on('click', '.update_score_bet', function(){
+    var bet_id = $(this).parents('tr').attr('data-id');
+    var bet_price = $(this).parents('tr').find('input.edit_price_bet').val();
+    $.ajax({
+      url: '/admin/score_bets/' + bet_id,
+      type: 'PATCH',
+      dataType: 'json',
+      data:{
+        'score_bet[id]': bet_id,
+        'score_bet[price]': bet_price
+      },
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+          reset_score_bet('reset_score_bet');
+          $('.score_bets').load(location.href + ' .score_bets');
         }else{
           toastr.error('', res.message);
         }
@@ -339,6 +373,13 @@ function reset_rank_edit(btn){
   $('.' + btn).parents('tr').find('input.edit_rank').hide();
   $('.' + btn).parents('tr').find('.edit_rank_button').show();
   $('.' + btn).parents('tr').find('.update_rank_button').hide();
+}
+
+function reset_score_bet(btn){
+  $('.' + btn).parents('tr').find('span.score_bet_price').show();
+  $('.' + btn).parents('tr').find('input.edit_price_bet').hide();
+  $('.' + btn).parents('tr').find('.edit_button_bet').show();
+  $('.' + btn).parents('tr').find('.update_button_bet').hide();
 }
 
 function setActiveNavigation(){
