@@ -1,4 +1,6 @@
 <tr>
   <td class="scored"><%= match_info.minutes %></td>
-  <td class="ratio"><%= match_info.message %></td>
+  <td class="ratio">
+    <%= format_message match_info %>
+  </td>
 </tr>
