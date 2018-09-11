@@ -117,6 +117,15 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   def respond_to_save_team format
+    save_step_end format
+  rescue ActiveRecord::RecordInvalid => ex
+    format.html do
+      redirect_to new_admin_team_path, flash: {danger: ex.record.errors}
+    end
+    format.json{render json: {type: Settings.error, message: ex.record.errors}}
+  end
+
+  def save_step_end format
     if @team.save team_params
       @team.create_ranking
       format.html{redirect_to admin_teams_path, flash: {info: t(".success")}}
@@ -125,11 +134,6 @@ class Admin::TeamsController < Admin::BaseController
       format.html{redirect_to new_admin_team_path, flash: {danger: t(".error")}}
       format.json{render json: {type: Settings.error, message: t(".error")}}
     end
-  rescue ActiveRecord::RecordInvalid => ex
-    format.html do
-      redirect_to new_admin_team_path, flash: {danger: ex.record.errors}
-    end
-    format.json{render json: {type: Settings.error, message: ex.record.errors}}
   end
 
   def load_team

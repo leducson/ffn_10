@@ -1,12 +1,10 @@
 class MatchResult < ApplicationRecord
   belongs_to :match
+  belongs_to :team, class_name: Team.name, foreign_key: :team_id
 
-  validates :score_win, :score_lost, :win_team_id, :lost_team_id,
-    :match_id, presence: true
-  validate :score_lost_less_than_score_win
+  validates :team_id, :match_id, presence: true
 
-  def score_lost_less_than_score_win
-    return unless score_lost > score_win
-    errors.add(:score_lost, "should be less than score win")
-  end
+  scope :check_score, ->(match_id, team_id){where(match_id: match_id, team_id: team_id)}
+
+  delegate :name, to: :team, prefix: true, allow_nil: true
 end

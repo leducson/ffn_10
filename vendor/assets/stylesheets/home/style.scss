@@ -1638,3 +1638,44 @@ table th {
   background: $reds;
   width: 200px;
 }
+
+.minute_blink {
+  background-color: $blue_light;
+  border-radius: 5px;
+  color: $whites;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  padding: 7px 10px;
+}
+
+@-webkit-keyframes glowing {
+  0% { background-color: $red_light; -webkit-box-shadow: 0 0 3px $blue_light; }
+  50% { background-color: $blue_light; -webkit-box-shadow: 0 0 10px $blue_light; }
+  100% { background-color: $red_light; -webkit-box-shadow: 0 0 3px $blue_light; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: $red_light; -moz-box-shadow: 0 0 3px $blue_light; }
+  50% { background-color: $blue_light; -moz-box-shadow: 0 0 10px $blue_light; }
+  100% { background-color: $red_light; -moz-box-shadow: 0 0 3px $blue_light; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: $red_light; box-shadow: 0 0 3px $blue_light; }
+  50% { background-color: $blue_light; box-shadow: 0 0 10px $blue_light; }
+  100% { background-color: $red_light; box-shadow: 0 0 3px $blue_light; }
+}
+
+@keyframes glowing {
+  0% { background-color: $red_light; box-shadow: 0 0 3px $blue_light; }
+  50% { background-color: $blue_light; box-shadow: 0 0 10px $blue_light; }
+  100% { background-color: $red_light; box-shadow: 0 0 3px $blue_light; }
+}
+
+.minute_blink {
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}

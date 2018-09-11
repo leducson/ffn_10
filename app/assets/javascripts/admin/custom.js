@@ -75,7 +75,72 @@ $(document).ready(function(){
     })
   });
 
-  $('#new_team, #new_round, #match_info_matches, #new_score_sugest, #new_player').on('hidden.bs.modal', function () {
+  $('.modal_new_match_result').on('click', function(){
+    $('#new_match_result').modal({
+      backdrop: 'static'
+    });
+  });
+
+  $('body').on('click', '.submit_match_result', function(){
+    var team_id = $('#team_id option:selected').val();
+    var score = $(this).parents('div.form_new').find('#score').val();
+    var match_id = $(this).parents('div.form_new').find('#match_id').val();
+    if(team_id){
+      $.ajax({
+        url: '/admin/match_results',
+        type: 'POST',
+        data: {
+          'match_result[team_id]': team_id,
+          'match_result[score]': score,
+          'match_result[match_id]': match_id
+        },
+        success: function(res){
+          if(res.type == 'success'){
+            toastr.success('', res.message);
+            $('#team_id').val('');
+          }else{
+            toastr.error('', res.message);
+          }
+        }
+      });
+    }else{
+      toastr.error('', I18n.t("js.select_team"));
+    }
+  });
+
+  $('body').on('click', '.match_result_edit', function(){
+    $(this).parents('tr').find('span.score_result').hide();
+    $(this).parents('tr').find('input.input_match_result').show();
+    $(this).parents('tr').find('.edit_result').hide();
+    $(this).parents('tr').find('.update_result').show();
+  });
+
+  $('body').on('click', '.match_result_reset', function(){
+    reset_match_result_layout('match_result_reset');
+  });
+
+  $('body').on('click', '.match_result_update', function(){
+    var id = $(this).parents('tr').attr('data-id');
+    var score = $(this).parents('tr').find('input.input_match_result').val();
+    $.ajax({
+      url: '/admin/match_results/' + id,
+      type: 'PATCH',
+      data: {
+        'match_result[score]': score
+      },
+      success: function(res){
+        if(res.type == 'success'){
+          toastr.success('', res.message);
+          reset_match_result_layout('match_result_update');
+          $('.table_match_result').load(location.href + ' .table_match_result');
+        }else{
+          toastr.error('', res.message);
+        }
+      }
+    });
+  });
+
+  $('#new_team, #new_round, #match_info_matches, #new_score_sugest, #new_player,  #new_match_result').on('hidden.bs.modal', function () {
     location.reload();
   });
 
@@ -448,4 +513,11 @@ function load_players_by_team(team_id){
       }
     }
   });
+}
+
+function reset_match_result_layout(btn){
+  $('.' + btn).parents('tr').find('span.score_result').show();
+  $('.' + btn).parents('tr').find('input.input_match_result').hide();
+  $('.' + btn).parents('tr').find('.edit_result').show();
+  $('.' + btn).parents('tr').find('.update_result').hide();
 }

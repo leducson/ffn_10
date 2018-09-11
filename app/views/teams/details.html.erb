@@ -37,13 +37,7 @@
         <td class="scored"><%= t ".score" %></td>
         <td class="team_detail"><%= t ".team_b" %></td>
       </tr>
-      <tr>
-        <td class="date_day"></td>
-        <td class="team_detail"></td>
-        <td class="score_detail"></td>
-        <td class="score_detail"></td>
-        <td class="team_detail"></td>
-      </tr>
+      <%= render partial: "match", collection: @matchs %>
     </table>
   </div>
 </div>

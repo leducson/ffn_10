@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_073525) do
+ActiveRecord::Schema.define(version: 2018_09_11_132508) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -81,13 +81,11 @@ ActiveRecord::Schema.define(version: 2018_09_11_073525) do
   end
 
   create_table "match_results", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "score_win"
-    t.integer "score_lost"
     t.bigint "match_id"
-    t.integer "win_team_id"
-    t.integer "lost_team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "score"
+    t.integer "team_id"
     t.index ["match_id"], name: "index_match_results_on_match_id"
   end
 

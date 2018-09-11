@@ -37,6 +37,8 @@ en:
         score_win: "Score Win"
         score_lost: "Score Lost"
         ratio: "Ratio"
+        score: "Score"
+        add_new_match_result: "Add New Match Result"
       form:
         date_of_match: "Date of Match"
         time: "Time"
@@ -69,3 +71,10 @@ en:
         ratio: "Ratio"
         submit: "Save Changes"
         close: "Close"
+      new_match_result:
+        teams: "Teams"
+        score: "Score"
+        title: "New Match Result"
+        close: "Close"
+        submit: "Save Changes"
+        blank_option: "Select Teams"

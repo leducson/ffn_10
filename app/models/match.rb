@@ -6,7 +6,7 @@ class Match < ApplicationRecord
   belongs_to :round
   has_many :match_infos, dependent: :destroy
   has_many :score_sugests, dependent: :destroy
-  has_one :match_result, dependent: :destroy
+  has_many :match_results, dependent: :destroy
   has_many :score_bets, dependent: :destroy
 
   validates :team1_id, presence: true
@@ -38,5 +38,13 @@ class Match < ApplicationRecord
 
   def load_teams_match_infos
     [[team1_name, team1_id], [team2_name, team2_id]]
+  end
+
+  def get_score_team1
+    match_results.find_by team_id: team1_id
+  end
+
+  def get_score_team2
+    match_results.find_by team_id: team2_id
   end
 end

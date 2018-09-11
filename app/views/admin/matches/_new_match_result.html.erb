@@ -1,0 +1,33 @@
+<div class="modal fade" id="new_match_result" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xs modal-resize-top" role="document">
+    <div class="modal-content">
+      <div class="form_new">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><%= t ".title" %></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row border-modal">
+            <div class="form-group col-md-12">
+              <%= label_tag t ".teams" %>
+              <%= select_tag :team_id, options(@match.load_teams_match_infos), {class: "form-control", prompt: t(".blank_option")} %>
+              <%= hidden_field_tag "match_id", @match.id %>
+            </div>
+            <div class="form-group col-md-12">
+              <%= label_tag t ".score" %>
+              <%= number_field_tag :score, nil, class: "form-control", min: Settings.number_min %>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary submit_match_result"><%= t ".submit" %></button>
+          <button type="button" class="btn btn-secondary right" data-dismiss="modal">
+            <%= t ".close" %>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

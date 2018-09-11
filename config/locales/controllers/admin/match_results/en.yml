@@ -1,0 +1,13 @@
+en:
+  admin:
+    match_results:
+      create:
+        success: "Created match result successfully"
+        error: "Failed to create match result"
+        team_present: "Team is added on match results. Please select another team"
+      update:
+        success: "Updated match result successfully"
+        error: "Failed to update match result"
+      destroy:
+        success: "Deleted match result successfully"
+        error: "Failed to delete match result"

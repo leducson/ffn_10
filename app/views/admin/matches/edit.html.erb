@@ -2,10 +2,10 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header ">
+      <div class="card-header">
         <h4 class="card-title"><%= t ".title" %></h4>
       </div>
-      <div class="card-body ">
+      <div class="card-body">
         <%= render partial: "form", locals: {url: admin_match_path(@match)} %>
       </div>
     </div>
@@ -14,7 +14,7 @@
 <div class="row">
   <div class="col-md-12">
     <div class="card">
-      <div class="card-header ">
+      <div class="card-header">
         <h4 class="card-title">
           <%= t ".match_infos" %>
           <a class="btn btn-primary btn-xs right match_info_modal">
@@ -22,7 +22,7 @@
           </a>
         </h4>
       </div>
-      <div class="card-body ">
+      <div class="card-body">
         <table class="table table-hover table-striped">
           <thead>
             <th><%= t ".minutes" %></th>
@@ -43,7 +43,7 @@
   </div>
   <div class="col-md-6">
     <div class="card">
-      <div class="card-header ">
+      <div class="card-header">
         <h4 class="card-title">
           <%= t ".score_sugests" %>
           <a class="btn btn-primary btn-xs right modal_new_score_sugest">
@@ -51,7 +51,7 @@
           </a>
         </h4>
       </div>
-      <div class="card-body ">
+      <div class="card-body">
         <table class="table table-hover table-striped table_sugest">
           <thead>
             <th><%= t ".score_win" %></th>
@@ -70,12 +70,25 @@
   </div>
   <div class="col-md-6">
     <div class="card">
-      <div class="card-header ">
-        <h4 class="card-title"><%= t ".match_result" %></h4>
+      <div class="card-header">
+        <h4 class="card-title">
+          <%= t ".match_result" %>
+          <a class="btn btn-primary btn-xs right modal_new_match_result">
+            <%= t ".add_new_match_result" %>
+          </a>
+        </h4>
       </div>
-      <div class="card-body ">
-        <ul class="team match_result">
-        </ul>
+      <div class="card-body">
+        <table class="table table-hover table-striped table_match_result">
+          <thead>
+            <th><%= t ".team" %></th>
+            <th><%= t ".score" %></th>
+            <th><%= t ".action" %></th>
+          </thead>
+          <tbody>
+            <%= render @match_results %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
@@ -83,3 +96,4 @@
 
 <%= render "new_match_info" %>
 <%= render "new_score_sugest" %>
+<%= render "new_match_result" %>
