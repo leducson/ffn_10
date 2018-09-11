@@ -1,0 +1,15 @@
+en:
+  admin:
+    credits:
+      create:
+        success: "Created credit successfully"
+        error: "Failed to create credit"
+      update:
+        success: "Updated credit successfully"
+        error: "Failed to update credit"
+      destroy:
+        success: "Deleted credit successfully"
+        error: "Failed to delete credit"
+      quick_set_type:
+        success: "Updated credit successfully"
+        error: "Failed to update credit"

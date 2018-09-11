@@ -1,0 +1,24 @@
+en:
+  admin:
+    credits:
+      index:
+        title: "Credits"
+        add_new: "New Credit"
+        user: "User"
+        amount: "Amount"
+        type: "Type"
+        time: "Time"
+        action: "Action"
+      credit:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+      edit:
+        title: "Edit Credit"
+      new:
+        title: "New Credit"
+      form:
+        amount: "Amount ($)"
+        user: "Users"
+        type: "Types"
+        submit: "Save Changes"
