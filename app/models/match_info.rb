@@ -24,6 +24,10 @@ class MatchInfo < ApplicationRecord
   end
 
   def load_players
-    team.player_infos.map{|p| ["#{p.name} (#{p.number})", p.id]}
+    if team.present?
+      team.player_infos.map{|p| ["#{p.name} (#{p.number})", p.id]}
+    else
+      []
+    end
   end
 end

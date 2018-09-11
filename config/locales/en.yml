@@ -24,3 +24,5 @@ en:
       title: "Football bet"
   js:
     money_blank: "Money can not be empty or bigger!"
+  notifies:
+    message: "%{fullname} are bet score %{score} in match %{match_team}"

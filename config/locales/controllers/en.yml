@@ -30,3 +30,4 @@ en:
       current_amount: "The current amount is not enough!!!"
       fail_bet: "Fails bet!!!"
       success_bet: "Successfully bet!!!"
+      time_limit: "No match bets have been placed or have been completed"

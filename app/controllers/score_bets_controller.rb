@@ -4,7 +4,7 @@ class ScoreBetsController < ApplicationController
     @bet_amount = params[:price]
     @sugest = ScoreSugest.find params[:sugest_id]
     if params[:price].to_f <= current_user.money.to_f
-      create_score_bet
+      check_match_date
     else
       render json: {message: t(".current_amount"), type: "error"}
     end
@@ -17,12 +17,18 @@ class ScoreBetsController < ApplicationController
   end
 
   def create_score_bet
-    if current_user.score_bets.create!(price: params[:price].to_f,
-        match_id: @sugest.match_id, score_sugest_id: @sugest.id)
-      current_user.deduction params[:price].to_f
+    if @sugest.create_bet current_user, params[:price].to_f
       render json: {message: t(".success_bet"), type: "success"}
     else
       render json: {message: t(".fail_bet"), type: "error"}
+    end
+  end
+
+  def check_match_date
+    if @sugest.match.date_of_match >= Time.now
+      create_score_bet
+    else
+      render json: {message: t(".time_limit"), type: Settings.error}
     end
   end
 end

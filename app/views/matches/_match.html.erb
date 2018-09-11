@@ -1,5 +1,5 @@
 <tr>
-  <td></td>
+  <td><%= match.status.titleize if match.status.present? %></td>
   <td class="date_day"><%= format_time match.date_of_match %></td>
   <td><%= match.team1_name %></td>
   <td class="scored"><%= match&.match_result&.score_win %></td>
