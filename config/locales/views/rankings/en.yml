@@ -1,0 +1,19 @@
+en:
+  rankings:
+    show:
+      continent: "Continent - "
+      country: "Country - "
+      League: "League - "
+      number_round: "Number Of Round - "
+      number_match: "Number Of Match - "
+      number_team: "Number Of Team - "
+      start_time: "Start Time - "
+      end_time: "End Time - "
+      rank: "Rankings"
+      team: "Team"
+    index:
+      league: "Leagues"
+      country: "Countries"
+      rank: "Ranking"
+    league:
+      detail: "Details"
