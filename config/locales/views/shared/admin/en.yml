@@ -18,6 +18,7 @@ en:
         matches: "Matches"
         players: "Players Infos"
         score_bets: "Score Bets"
+        notifies: "Notifies"
       error_messages:
         errors_count:
           one: "The form contains %{count} error."

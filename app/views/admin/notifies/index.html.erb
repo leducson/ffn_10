@@ -1,0 +1,25 @@
+<% provide :title, t(".title") %>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header ">
+        <h4 class="card-title">
+          <%= t ".title" %>
+        </h4>
+      </div>
+      <div class="card-body ">
+        <table class="table table-hover table-striped">
+          <thead>
+            <th>#</th>
+            <th><%= t ".message" %></th>
+            <th><%= t ".time" %></th>
+          </thead>
+          <tbody>
+            <%= render @notifies %>
+          </tbody>
+        </table>
+        <%= paginate @notifies %>
+      </div>
+    </div>
+  </div>
+</div>

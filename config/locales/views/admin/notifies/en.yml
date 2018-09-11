@@ -1,0 +1,8 @@
+en:
+  admin:
+    notifies:
+      index:
+        title: "Notifies"
+        message: "Message"
+        score_bet: "Score Bet"
+        time: "Times"
