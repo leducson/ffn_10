@@ -88,7 +88,7 @@ teams = Team.order(:created_at)
 teams.each do |team|
   team.player_infos.create!(name: Faker::Name.name,
     date_of_birth: Faker::Date.birthday(18, 35),
-    gender: "Female",
+    gender: 1,
     weight: rand(50..90),
     height: rand(160..195),
     position: "",

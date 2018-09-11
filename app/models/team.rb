@@ -1,4 +1,6 @@
 class Team < ApplicationRecord
+  mount_uploader :image, ImageUploader
+
   has_many :player_infos, dependent: :destroy
   has_many :match_infos
   has_many :rankings, dependent: :destroy

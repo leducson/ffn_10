@@ -1,6 +1,9 @@
 <tr>
   <td><%= count_index_list league_counter %></td>
   <td><%= league.name %></td>
+  <td>
+    <%= image_tag league.image.thumb.url, class: "image_cicle" if league.image.present? %>
+  </td>
   <td><%= league.country_name %></td>
   <td><%= l league.start_date %></td>
   <td><%= l league.end_date %></td>

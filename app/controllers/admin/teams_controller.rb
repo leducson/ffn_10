@@ -108,7 +108,7 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   def team_params
-    params.require(:team).permit :name, :address, :establish_year,
+    params.require(:team).permit :name, :image, :address, :establish_year,
       :continent_id, :league_id, :country_id
   end
 end

@@ -43,19 +43,11 @@ class Admin::CreditsController < Admin::BaseController
   end
 
   def quick_set_type
-    begin
-      if @credit.recharge!
-        money = @credit.user.money.to_f
-        @credit.user.update_attributes money: (money + @credit.amount.to_f)
-        flash[:info] = t ".success"
-      else
-        flash[:danger] = t ".error"
-      end
-      redirect_to admin_credits_path
-    rescue ActiveRecord::RecordInvalid => ex
-      flash[:danger] = ex.record.errors
-      redirect_to admin_credits_path
-    end
+    recharge_credit
+    redirect_to admin_credits_path
+  rescue ActiveRecord::RecordInvalid => ex
+    flash[:danger] = ex.record.errors
+    redirect_to admin_credits_path
   end
 
   private
@@ -66,5 +58,15 @@ class Admin::CreditsController < Admin::BaseController
 
   def credit_params
     params.require(:credit).permit :credit_type, :amount, :user_id
+  end
+
+  def recharge_credit
+    if @credit.recharge!
+      money = @credit.user.money.to_f
+      @credit.user.update_attributes money: (money + @credit.amount.to_f)
+      flash[:info] = t ".success"
+    else
+      flash[:danger] = t ".error"
+    end
   end
 end

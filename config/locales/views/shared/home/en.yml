@@ -10,7 +10,7 @@ en:
       header:
         home: "Home"
         team: "Teams"
-        rank_league: "Ranks & Leagues"
+        rank_league: "Ranks"
         login: "Login"
         signup: "Signup"
         new: "News"
