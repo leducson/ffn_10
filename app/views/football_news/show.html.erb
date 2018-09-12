@@ -12,6 +12,9 @@
       <p class="new_text">
         <%= raw @football_new.content %>
       </p>
+      <p>
+        <%= social_share_button_tag(@football_new.title) %>
+      </p>
     </div>
 
     <div class="comment border_bottom">
@@ -24,7 +27,7 @@
       <%= f.hidden_field :football_new_id, value: @football_new.id %>
       <%= f.text_area :message, placeholder: t(".place_msg"), id: "message", cols: Settings.football_news.cols, rows: Settings.football_news.rows %>
       <div>
-        <%= f.submit t ".comment" %>
+        <%= f.submit t ".comment", class: "btn btn-danger" %>
       </div>
     <% end %>
   </div>

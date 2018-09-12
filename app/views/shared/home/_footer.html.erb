@@ -1,21 +1,19 @@
-<div class="footer">
-  <div>
+<div class="footer row">
+  <div class="copy_right">
     <ul>
       <li class="selected">
-        <a href="#"><%= t ".home" %></a>|
+        <%= link_to t(".home"), root_path %>
       </li>
       <li>
-        <a href="#"><%= t ".team" %></a>|
+        <%= link_to t(".new"), football_news_index_path %>
       </li>
       <li>
-        <a href="#"><%= t ".league" %></a>|
+        <%= link_to t(".team"), teams_path %>
       </li>
       <li>
-        <a href="#"><%= t ".rank" %></a>|
+        <%= link_to t(".rank"), rankings_path %>
       </li>
     </ul>
-    <p>
-      <%= raw t ".copyright" %>
-    </p>
+    <p><%= t ".copyright" %></p>
   </div>
 </div>

@@ -1,8 +1,7 @@
 <%= render "shared/home/slider" %>
 <div class="col-md-12 schedule">
   <div class="row">
-    <h5 class="col-md-8 schedule_day"><%= t ".schedule" %></h5>
-    <h5 class="col-md-4 date_day"><%= t ".date" %></h5>
+    <h5 class="schedule_day"><%= t ".schedule" %></h5>
   </div>
   <table border="1px">
     <tr class="table_menu">
@@ -14,8 +13,7 @@
     </tr>
     <tr class="table_menu">
       <th class="team"><%= t ".team1" %></th>
-      <th class="scored"><%= t ".score" %></th>
-      <th class="scored"><%= t ".score" %></th>
+      <th class="scored" colspan="2"><%= t ".score" %></th>
       <th class="team"><%= t ".team2" %></th>
     </tr>
     <%= render @leagues %>

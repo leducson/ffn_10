@@ -36,7 +36,7 @@ a img {
 }
 /*------------------------- Header -------------------------*/
 .header {
-  background:none #030303;
+  background:none $blacks;
   height: 180px;
   margin:0 10px;
 }
@@ -54,22 +54,19 @@ a img {
   float:right;
   list-style:none;
   padding-top: 60px;
-  margin-right: 40px;
+  float: left;
 }
 .header ul li {
   float:left;
-  margin:0 -8px 0 36px;
-  padding: 5px 10px;
-}
-.header ul li:hover {
-  background: $orange;
-  padding: 5px 10px;
+  padding: 5px 13px;
 }
 .header ul li a:hover {
   color: $whites !important;
+  background: $orange;
+  padding: 10px 10px;
 }
 .header ul li a {
-  color:#fbfbf4;
+  color: $light_white;
   font-family:bevanregular;
   font-size:14px;
   font-weight:400;
@@ -77,9 +74,12 @@ a img {
   line-height:30px;
   text-decoration:none;
   text-transform:uppercase;
+  padding: 10px 10px;
+  transition: 0.8s;
+  border-radius: 3px;
 }
 .header ul li.selected a, .header ul li a:hover {
-  color:#ff7500;
+  color: $light_orange;
 }
 
 /*------------------------- Dropdown-menu ---------------------------*/
@@ -142,7 +142,7 @@ a img {
   padding:18px 0 0;
 }
 .body.home div:first-child .featured div:first-child p {
-  color:#fbfbf4;
+  color: $light_white;
   float:right;
   font-family:Arial, Helvetica, sans-serif;
   font-size:16px;
@@ -294,7 +294,7 @@ a img {
   padding:00;
 }
 .body.news div:first-child ul li {
-  background:none #fbfbf4;
+  background:none $light_white;
   border-bottom:4px solid #030303;
   overflow:hidden;
   padding:24px 15px 13px;
@@ -477,7 +477,7 @@ a img {
   color:#5a5a5a;
 }
 .body.news-single div:first-child form {
-  background:none #fbfbf4;
+  background:none $light_white;
   padding:13px 20px 5px 17px;
 }
 .body.news-single div:first-child form span:first-child {
@@ -500,8 +500,8 @@ a img {
   height:35px;
 }
 .body.news-single div:first-child form label input {
-  background:none #fbfbf4;
-  border:1px solid #989797;
+  background:none $light_white;
+  border:1px solid $gray_light;
   cursor:auto;
   font-family:Arial, Helvetica, sans-serif;
   font-size:11px;
@@ -512,8 +512,8 @@ a img {
   width:188px;
 }
 .body.news-single div:first-child form textarea {
-  background:none #fbfbf4;
-  border:1px solid #989797;
+  background:none $light_white;
+  border:1px solid $gray_light;
   display:block;
   font-family:Arial, Helvetica, sans-serif;
   font-size:11px;
@@ -757,7 +757,7 @@ a img {
 }
 .body.schedule div:first-child div .section span {
   background:none repeat scroll 0 0 transparent;
-  color:#FBFBF4;
+  color: $light_white;
   display:block;
   float:left;
   font-size:26px;
@@ -774,7 +774,7 @@ a img {
   width:300px;
 }
 .body.schedule div:first-child div .section div p {
-  color:#FBFBF4;
+  color: $light_white;
   display:block;
   font-family:"Arial Black", Gadget, sans-serif;
   font-size:18px;
@@ -870,7 +870,7 @@ a img {
   text-decoration:underline;
 }
 .body.home div:first-child div div:first-child ul li p, .body.videos div:first-child div.section ul li p {
-  color:#fbfbf4;
+  color: $light_white;
   font-family:Arial, Helvetica, sans-serif;
   font-size:12px;
   line-height:18px;
@@ -1128,15 +1128,16 @@ a img {
 }
 /*------------------------- Footer -------------------------*/
 .footer {
-  background:none #090606;
-  height:67px;
-  margin:0 10px;
-  padding:0;
+  background:none $light_black;
+  min-height: auto;
 }
-.footer div:first-child {
-  float:left;
-  margin:0 0 0 20px;
-  overflow:hidden;
+.copy_right {
+  margin: 0 auto;
+}
+.copy_right p {
+  color: $whites!important;
+  padding: 20px 0;
+  margin-left: -30px!important;
 }
 .footer div:first-child ul {
   list-style:none;
@@ -1285,6 +1286,10 @@ tbody>tr .bg_scored {
   color: $yellows;
   background: $reds;
 }
+.status {
+  color: $whites;
+  background: $cadetblues;
+}
 /*----------------------- Settings--------------------------------------*/
 .firstname{
   margin-left: 1px;
@@ -1395,7 +1400,7 @@ tbody>tr .bg_scored {
   padding: 0 10px;
 }
 .news_left>a {
-  color: #FF8C00;
+  color: $orange;
   font-size: 18px;
   font-weight: bold;
 }
@@ -1403,7 +1408,7 @@ tbody>tr .bg_scored {
   text-decoration: none;
 }
 a.highlights {
-  color: #FF8C00;
+  color: $orange;
   font-size: 25px;
   font-weight: bold;
 }
@@ -1422,7 +1427,7 @@ a.highlights {
   height: 300px;
 }
 form>h5 {
-  background: #FF8C00;
+  background: $orange;
   line-height: 40px;
   padding: 0 10px;
   width: 180px;
@@ -1441,7 +1446,7 @@ form>h5 {
   font-weight: bold;
 }
 .title_show {
-  color: #FF8C00;
+  color: $orange;
   font-size: 25px;
   font-weight: bold;
 }
@@ -1463,7 +1468,7 @@ form>h5 {
   background: #F8F8FF;
 }
 .hr {
-  background: #FF8C00;
+  background: $orange;
 }
 
 /*------------------slider--------------------*/
@@ -1489,17 +1494,14 @@ table th {
   background: #1E1E1E;
 }
 .schedule_day {
-  background: #FF8C00;
+  background: $orange;
   color: $reds;
   padding: 10px 50px;
-}
-.date_day {
-  background: $reds;
-  color: $whites;
-  padding: 10px 10px;
+  border-radius: 5px;
+  border-bottom-right-radius: 30px;
 }
 .league {
-  background: #FF8C00;
+  background: $orange;
   color: $reds;
 }
 .table_menu {
@@ -1557,6 +1559,9 @@ table th {
 .left_impo {
   margin-left: -318px !important;
   width: 50%;
+}
+.dropdown-content {
+   z-index: 9999;
 }
 .ratio {
   background: $light_black;
@@ -1678,4 +1683,15 @@ table th {
   -moz-animation: glowing 1500ms infinite;
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
+}
+.btn-danger {
+  border-radius: 5px;
+}
+.btn_comment {
+  background: red !important;
+}
+.ssb-icon {
+  width: 30px !important;
+  height: 30px !important;
+  background-size: 30px 30px !important;
 }
