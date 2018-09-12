@@ -1,9 +1,11 @@
 <tr>
-  <td><%= match.status.titleize if match.status.present? %></td>
+  <td>
+    <%= raw format_match_ready match %>
+  </td>
   <td class="date_day"><%= format_time match.date_of_match %></td>
   <td><%= match.team1_name %></td>
-  <td class="scored"><%= match&.match_result&.score_win %></td>
-  <td class="scored"><%= match&.match_result&.score_lost %></td>
+  <td class="scored"><%= format_score match.get_score_team1 %></td>
+  <td class="scored"><%= format_score match.get_score_team2 %></td>
   <td><%= match.team2_name %></td>
   <td>
     <button id="myBets" class="dropbtn" data-id="<%= match.id %>"><%= t ".bet" %></button>

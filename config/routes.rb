@@ -32,6 +32,7 @@ Rails.application.routes.draw do
     resources :credits do
       patch "quick_set_type", on: :member
     end
+    resources :match_results, only: %i(create update destroy)
   end
 
   root "home#index"

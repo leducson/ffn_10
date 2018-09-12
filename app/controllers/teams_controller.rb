@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
   def details
     @team = Team.find params[:id]
     @player_infos = @team.player_infos.newest
+    @matchs = @team.team1_matchs + @team.team2_matchs
   end
 
   def load_countries

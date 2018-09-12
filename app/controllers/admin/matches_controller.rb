@@ -60,7 +60,7 @@ class Admin::MatchesController < Admin::BaseController
       @match.match_infos.newest.page(params[:match_page]).per Settings.info_per
     @score_sugests =
       @match.score_sugests.newest.page(params[:sugest]).per Settings.sugest_per
-    @match_result = @match.match_result
+    @match_results = @match.match_results
     @match_info = @match.match_infos.build
     @score_sugest = @match.score_sugests.build
   end

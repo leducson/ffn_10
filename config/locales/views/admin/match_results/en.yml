@@ -1,0 +1,9 @@
+en:
+  admin:
+    match_results:
+      match_result:
+        edit: "Edit"
+        remove: "Remove"
+        are_you_sure: "Are you sure?"
+        update: "Update"
+        reset: "Reset"

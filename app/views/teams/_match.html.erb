@@ -1,0 +1,17 @@
+<tr>
+  <td class="date_day">
+    <%= format_time match.date_of_match %>
+  </td>
+  <td class="team_detail">
+    <%= match.team1_name %>
+  </td>
+  <td class="score_detail">
+    <%= format_score match.get_score_team1 %>
+  </td>
+  <td class="score_detail">
+    <%= format_score match.get_score_team2 %>
+  </td>
+  <td class="team_detail">
+    <%= match.team2_name %>
+  </td>
+</tr>
