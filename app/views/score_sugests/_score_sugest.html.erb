@@ -1,11 +1,10 @@
 <tr class="event_bet" data-id="<%= score_sugest.id %>">
   <td class="scored">
-    <%= score_sugest.score_win %>
-    <%= score_sugest.score_lost %>
+    <%= format_score_sugest score_sugest %>
   </td>
   <td class="ratio"><%= score_sugest.ratio %></td>
   <td>
-    <input class="bet_amount_<%= score_sugest.id %>" type="text" name="price">
+    <input class="bet_amount_<%= score_sugest.id %>" type="number" name="price" min="<%= Settings.number_min %>">
   </td>
   <td>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="<%= score_sugest.id %>" id="btnBet">

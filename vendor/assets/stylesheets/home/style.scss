@@ -14,6 +14,8 @@
 body {
   margin:0;
   background: image-url('home/bg.jpg');
+  background-repeat: round;
+  background-attachment: fixed;
   font-family:Arial, Helvetica, sans-serif;
 }
 a {
@@ -48,7 +50,7 @@ a img {
   padding-top: 10px;
 }
 .header a#logo>img{
-  width: 100%;
+  width: 70%;
 }
 .header ul {
   float:right;
@@ -1492,6 +1494,7 @@ table th {
 }
 .schedule {
   background: #1E1E1E;
+  position: inherit;
 }
 .schedule_day {
   background: $orange;
@@ -1509,7 +1512,7 @@ table th {
   width: 100%;
 }
 .rounds {
-  background: $gray_light;
+  background: #c18d18;
 }
 .team {
   width: 200px;
@@ -1558,7 +1561,7 @@ table th {
 }
 .left_impo {
   margin-left: -318px !important;
-  width: 50%;
+  width: 30.6%;
 }
 .dropdown-content {
    z-index: 9999;
@@ -1568,6 +1571,7 @@ table th {
 }
 .match_info {
   margin-left: -410px !important;
+  width: 37%;
 }
 
 /*-------------------Teams--------------------*/
@@ -1684,14 +1688,41 @@ table th {
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
 }
+
 .btn-danger {
   border-radius: 5px;
 }
+
 .btn_comment {
   background: red !important;
 }
+
 .ssb-icon {
   width: 30px !important;
   height: 30px !important;
   background-size: 30px 30px !important;
+}
+
+.top-menu-home{
+  padding-top: 10px !important;
+}
+
+.menu-navigation{
+  height: 112px;
+  margin: 0px 0px;
+}
+
+.main-menu{
+  padding-top: 35px !important;
+  float: right !important;
+}
+
+.footer-style{
+  width: 100%;
+  margin: -12px 0px;
+  border-top: $red_light solid 1px;
+}
+
+.date_day{
+  color: $whites;
 }

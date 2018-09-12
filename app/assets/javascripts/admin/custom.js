@@ -297,32 +297,32 @@ $(document).ready(function(){
     reset_round_edit('undo-button');
   });
 
-  $('.sugest-undo').on('click', function(){
+  $('body').on('click', '.sugest-undo', function(){
     $(this).parents('tr').find('.edit-sugest').show();
     $(this).parents('tr').find('.update-sugest').hide();
     $(this).parents('tr').find('span').show();
     $(this).parents('tr').find('input').hide();
   });
 
-  $('.edit_button_rank').on('click', function(){
+  $('body').on('click', '.edit_button_rank', function(){
     $(this).parents('tr').find('span.rank_number').hide();
     $(this).parents('tr').find('input.edit_rank').show();
     $(this).parents('tr').find('.edit_rank_button').hide();
     $(this).parents('tr').find('.update_rank_button').show();
   });
 
-  $('.edit_score_bet').on('click', function(){
+  $('body').on('click', '.edit_score_bet', function(){
     $(this).parents('tr').find('span.score_bet_price').hide();
     $(this).parents('tr').find('input.edit_price_bet').show();
     $(this).parents('tr').find('.edit_button_bet').hide();
     $(this).parents('tr').find('.update_button_bet').show();
   });
 
-  $('.reset_score_bet').on('click', function(){
+  $('body').on('click', '.reset_score_bet', function(){
     reset_score_bet('reset_score_bet');
   });
 
-  $('.reset_button_rank').on('click', function(){
+  $('body').on('click', '.reset_button_rank', function(){
     reset_rank_edit('reset_button_rank');
   });
 

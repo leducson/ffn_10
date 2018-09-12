@@ -2,3 +2,4 @@ en:
   user_mailer:
     mailer: "Account activation!"
     pass_reset: "Reset Password!"
+    match_ended: "Match end Infomation."

@@ -1,6 +1,6 @@
 <div class="row border_bottom">
   <div class="col-md-4">
-    <%= image_tag football_new.image.medium.url, class: "image" if football_new.image.present? %>
+    <%= image_tag default_image_football_new(football_new), class: "image" %>
   </div>
   <div class="col-md-8 news_left">
     <%= link_to football_new.title, football_news_path(football_new) %>

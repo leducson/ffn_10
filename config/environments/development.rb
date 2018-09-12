@@ -40,12 +40,12 @@ Rails.application.configure do
   host = "localhost:3000"
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    address: ENV["address"],
+    address: ENV["ADDRESS"],
     port: Settings.development.port,
     authentication: :plain,
-    user_name: ENV["user_name"],
-    password: ENV["password"],
-    domain: ENV["domain"],
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    domain: ENV["DOMAIN"],
     enable_starttls_auto: true
   }
 end

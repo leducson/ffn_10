@@ -1,5 +1,5 @@
 <div class="col-md-7">
-  <%= image_tag @league.image.large.url, class: "img-fluid" if @league.image.present? %>
+  <%= image_tag default_image_league(@league), class: "img-fluid" %>
 </div>
 <div class="col-md-5 bg_details">
   <h5 class="card-title"><%= t ".continent" %><%= @league.continent_name %></h5>

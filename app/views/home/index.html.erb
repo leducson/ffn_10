@@ -16,7 +16,9 @@
       <th class="scored" colspan="2"><%= t ".score" %></th>
       <th class="team"><%= t ".team2" %></th>
     </tr>
-    <%= render @leagues %>
+    <% @matches.each do |round, match| %>
+      <%= render round %>
+      <%= render match %>
+    <% end %>
   </table>
-  <%= paginate @leagues %>
 </div>
