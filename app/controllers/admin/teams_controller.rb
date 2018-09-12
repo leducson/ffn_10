@@ -51,7 +51,7 @@ class Admin::TeamsController < Admin::BaseController
       render json: {message: t(".sizes"), type: Settings.error}
       return
     end
-    update_league_params @league
+    update_league_params
   rescue ActiveRecord::RecordInvalid => ex
     render json: {message: ex.record.errors, type: Settings.error}
   end
@@ -82,7 +82,7 @@ class Admin::TeamsController < Admin::BaseController
     end
   end
 
-  def update_league_params team
+  def update_league_params
     if @team.update_attributes league_id: params[:league_id]
       @team.create_ranking
       render json: {message: t(".success"), type: Settings.success}
