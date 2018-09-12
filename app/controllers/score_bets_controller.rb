@@ -1,20 +1,19 @@
 class ScoreBetsController < ApplicationController
   def create
-    check_login
-    @bet_amount = params[:price]
-    @sugest = ScoreSugest.find params[:sugest_id]
-    if params[:price].to_f <= current_user.money.to_f
-      check_match_date
+    if logged_in?
+      @bet_amount = params[:price]
+      @sugest = ScoreSugest.find params[:sugest_id]
+      if params[:price].to_f <= current_user.money.to_f
+        check_match_date
+      else
+        render json: {message: t(".current_amount"), type: "error"}
+      end
     else
-      render json: {message: t(".current_amount"), type: "error"}
+      render json: {message: t(".login"), type: "error"}
     end
   end
 
   private
-
-  def check_login
-    return render json: {message: t(".login"), type: "error"} unless logged_in?
-  end
 
   def create_score_bet
     if @sugest.create_bet current_user, params[:price].to_f
@@ -25,7 +24,7 @@ class ScoreBetsController < ApplicationController
   end
 
   def check_match_date
-    if @sugest.match.date_of_match >= Time.now
+    if @sugest.match.date_of_match >= Time.now && !@sugest.match.finish?
       create_score_bet
     else
       render json: {message: t(".time_limit"), type: Settings.error}

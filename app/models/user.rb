@@ -58,6 +58,10 @@ class User < ApplicationRecord
     UserMailer.password_reset(self).deliver_now
   end
 
+  def send_bet_info_match_info money_win, suguest, bet
+    UserMailer.match_info(money_win, suguest, bet, self).deliver_now
+  end
+
   def remember
     self.remember_token = User.new_token
     update_attribute :remember_me_digest, User.digest(remember_token)

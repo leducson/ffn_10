@@ -14,6 +14,7 @@ class Match < ApplicationRecord
   validates :round_id, presence: true
 
   scope :newest, ->{order date_of_match: :desc}
+  scope :ranger_date_match, ->(date){where("date_of_match <= ?", date)}
 
   delegate :name, to: :team1, prefix: true
   delegate :name, to: :team2, prefix: true
@@ -46,5 +47,29 @@ class Match < ApplicationRecord
 
   def get_score_team2
     match_results.find_by team_id: team2_id
+  end
+
+  def check_finish_match
+    return unless score_bets.present?
+    score_bets.each do |s|
+      sugest = [s.score_sugest_score_win, s.score_sugest_score_lost]
+      if sugest == format_score_match
+        send_mail_after_match_end s, sugest
+      else
+        s.lost!
+      end
+    end
+  end
+
+  def send_mail_after_match_end bet, sugest
+    bet.win!
+    money_win = (bet.score_sugest.ratio.to_i * bet.price.to_f)
+    new_money = bet.user.money.to_f + money_win
+    bet.user.update_attributes money: new_money
+    bet.user.send_bet_info_match_info money_win, sugest, bet
+  end
+
+  def format_score_match
+    [get_score_team1.score, get_score_team2.score]
   end
 end

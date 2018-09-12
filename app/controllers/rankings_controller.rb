@@ -17,6 +17,6 @@ class RankingsController < ApplicationController
   end
 
   def load_ranking_by_league
-    @rankings = @league.rankings
+    @rankings = @league.rankings.newest
   end
 end

@@ -12,3 +12,10 @@ en:
       link_expire: "This link will expire in two hours."
       ignore_reset: "If you did not request your password to be reset,
         please ignore this email and your password will stay as it is."
+    match_info:
+      title: "Hello %{email} ."
+      bet_infos: "You bet for a match between two teams %{teams},
+        the score are %{score}, the bet is %{price}$, the ratio are %{ratio}."
+      after_info: "This is information after the battle is over."
+      you_win: "You won this bet with a win amount of %{win_price}$"
+      thank_you: "Congratulation. Thank you for using our service"

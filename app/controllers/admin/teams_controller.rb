@@ -83,8 +83,8 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   def update_league_params team
-    if team.update_attributes league_id: params[:league_id]
-      team.create_ranking
+    if @team.update_attributes league_id: params[:league_id]
+      @team.create_ranking
       render json: {message: t(".success"), type: Settings.success}
     else
       render json: {message: t(".error"), type: Settings.error}

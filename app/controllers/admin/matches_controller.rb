@@ -25,7 +25,9 @@ class Admin::MatchesController < Admin::BaseController
   end
 
   def update
+    @old_status = @match.finish?
     if @match.update_attributes match_params
+      @match.check_finish_match if @old_status == false && @match.finish?
       flash[:info] = t ".success"
       redirect_to admin_matches_path
     else
@@ -33,6 +35,9 @@ class Admin::MatchesController < Admin::BaseController
       load_infos
       render :edit
     end
+  rescue ActiveRecord::RecordInvalid => ex
+    flash[:danger] = ex.record.errors
+    render :edit
   end
 
   def destroy
