@@ -37,3 +37,4 @@ error: "error"
 success: "success"
 limit: 5
 leagues: 2
+day: 10

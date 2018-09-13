@@ -57,6 +57,7 @@ class Match < ApplicationRecord
         send_mail_after_match_end s, sugest
       else
         s.lost!
+        s.user.send_match_info_lost sugest, s
       end
     end
   end

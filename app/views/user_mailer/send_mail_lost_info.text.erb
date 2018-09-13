@@ -1,0 +1,12 @@
+<%= t ".title", email: @user.email %>
+
+<%= t ".bet_infos", teams: @teams,
+  score: format_score_mailler(@bet),
+  price: @bet.price, ratio: @bet.score_sugest.ratio %>
+
+<%= t ".after_info" %>
+
+<%= format_display_on_mailler @bet %>
+<%= t ".lost_bet" %>
+
+<%= t ".lucky" %>

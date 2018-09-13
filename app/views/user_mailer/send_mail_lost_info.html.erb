@@ -1,0 +1,18 @@
+<h1><b><%= t ".title", email: @user.email %></b></h1>
+<h3>
+  <%= t ".bet_infos", teams: @teams,
+    score: format_score_mailler(@bet),
+    price: @bet.price, ratio: @bet.score_sugest.ratio %>
+</h3>
+<h3>
+  <%= t ".after_info" %>
+</h3>
+<h3>
+  <b>
+    <%= format_display_on_mailler @bet %>
+  </b>
+</h3>
+<h3>
+  <b><%= t ".lost_bet" %></b>
+</h3>
+<h3><%= t ".lucky" %></h3>

@@ -19,3 +19,10 @@ en:
       after_info: "This is information after the battle is over."
       you_win: "You won this bet with a win amount of %{win_price}$"
       thank_you: "Congratulation. Thank you for using our service"
+    send_mail_lost_info:
+      title: "Hello %{email}"
+      bet_infos: "You bet for a match between two teams %{teams},
+        the score are %{score}, the bet is %{price}$, the ratio are %{ratio}."
+      after_info: "This is information after the battle is over."
+      lost_bet: "You have lost at this bet."
+      lucky: "Thank you for using our service. Wish you luck next time."
