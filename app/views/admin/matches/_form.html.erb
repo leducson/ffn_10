@@ -45,7 +45,7 @@
     </div>
     <div class="form-group col-md-4">
       <%= f.label t ".status", class: "control-label" %>
-      <%= f.select(:status, Match.select_status, {prompt: t(".select_status")}, {class: "form-control"}) %>
+      <%= f.select(:status, Match.select_status, {}, {class: "form-control"}) %>
     </div>
   </div>
 
