@@ -5,7 +5,7 @@
     <div class="panel">
       <h2><%= t ".login" %></h2>
     </div>
-    <%= form_for :session, url: login_path do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "m-t", id: "login"}) do |f| %>
       <div class="form-group">
         <%= f.text_field :email, class: "form-control", id: "inputEmail", placeholder: t(".email") %>
       </div>
@@ -19,12 +19,12 @@
         <% end %>
       </div>
       <div class="forgot">
-        <%= link_to t(".forgot_pass"), new_password_reset_path %>
+        <%= link_to t(".forgot_pass"), "#" %>
       </div>
       <%= f.submit t(".login"), class: "btn btn-primary" %>
     <% end %>
   </div>
   <p>
-    <%= t ".new_user" %> <%= link_to t(".signup_now"), signup_path, class: "botto-text" %>
+    <%= t ".new_user" %> <%= link_to t(".signup_now"), new_user_registration_path, class: "botto-text" %>
   </p>
 </div>

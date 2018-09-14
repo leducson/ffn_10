@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  include SessionsHelper
   protect_from_forgery with: :exception
   before_action :load_locale
   rescue_from ActiveRecord::RecordNotFound, with: :not_found?
@@ -13,15 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def after_sign_in_path_for(resource)
+		root_path
+	end
 
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "notice.require_login"
-    redirect_to login_path
-  end
-
-  def correct_user
-    redirect_to login_path unless current_user.present?
+  def after_sign_out_path_for(resource_or_scope)
+    new_user_session_path
   end
 end

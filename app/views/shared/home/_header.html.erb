@@ -11,7 +11,7 @@
       <li><%= link_to t(".new"), football_news_index_path %></li>
       <li><%= link_to t(".team"), teams_path %></li>
       <li><%= link_to t(".rank_league"), rankings_path %></li>
-      <% if logged_in? %>
+      <% if user_signed_in? %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <%= t ".account" %> <b class="caret"></b>
@@ -20,12 +20,12 @@
             <li><%= link_to t(".profile"), profile_path(current_user) %></li>
             <li><%= link_to t(".setting"), edit_profile_path(current_user) %></li>
             <li class="divider"></li>
-            <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+            <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
           </ul>
         </li>
       <% else %>
-        <li><%= link_to t(".login"), login_path %></li>
-        <li><%= link_to t(".signup"), signup_path %></li>
+        <li><%= link_to t(".login"), new_user_session_path %></li>
+        <li><%= link_to t(".signup"), new_user_registration_path %></li>
       <% end %>
     </ul>
   </div>

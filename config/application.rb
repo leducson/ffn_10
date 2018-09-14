@@ -14,5 +14,9 @@ module FootballBet
     config.i18n.load_path += Dir[Rails.root.join("config", "locales", "**", "*.{rb,yml}")]
     config.i18n.available_locales = Settings.available_locales
     config.i18n.default_locale = Settings.default_locale
+
+    config.to_prepare do
+      Devise::SessionsController.layout "users"
+    end
   end
 end
