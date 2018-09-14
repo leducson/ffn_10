@@ -7,7 +7,8 @@ class ScoreSugest < ApplicationRecord
   scope :newest, ->{order created_at: :desc}
 
   def create_bet user, price
-    bet = score_bets.create match_id: match_id, price: price, user_id: user.id
+    bet = score_bets.create(match_id: match_id, price: price,
+      user_id: user.id, status: 2)
     create_notifies user.fullname, bet
     user.deduction price
   end
