@@ -1,7 +1,7 @@
 <% provide :title, t(".header") %>
 <header class="heading"><%= t ".header" %></header><hr></hr>
 <div class="row ">
-  <%= form_for @user, url: signup_path do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "shared/error_messages" %>
   <div class="col-sm-12">
       <div class="row">
@@ -44,22 +44,6 @@
       <div class="col-xs-8">
         <%= f.password_field :password_confirmation, class: "form-control", id: "password", placeholder: t(".place_confirm_pass") %>
      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-12">
-    <div class ="row">
-      <div class="col-xs-4 ">
-      <%= f.label t(".gender"), class: "gender" %>
-      </div>
-      <div class="col-xs-4 male">
-        <%= f.radio_button :gender, "male" %>
-        <%= label_tag(:gender_male, t(".male")) %>
-      </div>
-      <div class="col-xs-4 female">
-        <%= f.radio_button :gender, "female" %>
-        <%= label_tag(:gender_female, t(".female")) %>
-      </div>
     </div>
   </div>
 
