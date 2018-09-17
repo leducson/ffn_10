@@ -1,0 +1,7 @@
+<%= search_form_for [:admin, @q], class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :email_or_fullname_cont, class: "form-control col-sm-10 left", placeholder: t(".search") %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

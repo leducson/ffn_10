@@ -7,7 +7,9 @@ class Country < ApplicationRecord
 
   delegate :name, to: :continent, prefix: true
 
-  def self.load_continents
-    Continent.pluck(:name, :id)
+  class << self
+    def load_continents
+      Continent.pluck(:name, :id)
+    end
   end
 end

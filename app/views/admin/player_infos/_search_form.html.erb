@@ -1,0 +1,8 @@
+<%= search_form_for [:admin, @q], class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :name_cont, class: "form-control col-sm-5 left name_field", placeholder: t(".search") %>
+    <%= f.select(:team_id_eq, PlayerInfo.load_teams, {prompt: t(".by_team")}, {class: "form-control col-sm-5 left"}) %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= search_form_for [:admin, @q], class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :user_fullname_start, class: "form-control col-sm-4 left name_field", placeholder: t(".search") %>
+    <%= f.select(:match_team1_id_or_match_team2_id_eq, ScoreBet.load_teams, {prompt: t(".by_team")}, {class: "form-control col-sm-3 left name_field"}) %>
+    <%= f.select(:status_eq, ScoreBet.load_status, {prompt: t(".by_status")}, {class: "form-control col-sm-3 left"}) %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

@@ -9,15 +9,17 @@ class PlayerInfo < ApplicationRecord
 
   delegate :name, to: :team, prefix: true, allow_nil: true
 
-  def self.load_genders
-    genders.map{|g| [g[0].titleize, g[0]]}
-  end
+  class << self
+    def load_genders
+      genders.map{|g| [g[0].titleize, g[0]]}
+    end
 
-  def self.load_teams
-    Team.newest.pluck :name, :id
-  end
+    def load_teams
+      Team.newest.pluck :name, :id
+    end
 
-  def self.load_positions
-    positions.map{|p| [p[0].titleize, p[0]]}
+    def load_positions
+      positions.map{|p| [p[0].titleize, p[0]]}
+    end
   end
 end

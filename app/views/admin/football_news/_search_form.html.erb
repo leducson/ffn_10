@@ -1,0 +1,8 @@
+<%= search_form_for @q, url: admin_football_news_index_path,
+  class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :title_cont, class: "form-control col-sm-10 left", placeholder: t(".search") %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

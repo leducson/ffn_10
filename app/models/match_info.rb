@@ -11,10 +11,6 @@ class MatchInfo < ApplicationRecord
   delegate :name, to: :team, prefix: true, allow_nil: true
   delegate :name, :number, to: :player_info, prefix: true, allow_nil: true
 
-  def self.load_types
-    type_infos.map{|c| [c[0].titleize, c[0]]}
-  end
-
   def format_player
     "#{player_info_name} (#{player_info_number})" if player_info.present?
   end
@@ -28,6 +24,12 @@ class MatchInfo < ApplicationRecord
       team.player_infos.map{|p| ["#{p.name} (#{p.number})", p.id]}
     else
       []
+    end
+  end
+
+  class << self
+    def load_types
+      type_infos.map{|c| [c[0].titleize, c[0]]}
     end
   end
 end

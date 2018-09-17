@@ -1,0 +1,9 @@
+<%= search_form_for [:admin, @q], class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :name_cont, class: "form-control col-sm-4 left name_field", placeholder: t(".search") %>
+    <%= f.date_field :start_date_or_end_date_lteq, class: "form-control col-sm-3 name_field left" %>
+    <%= f.select(:continent_id_eq, League.load_continents, {prompt: t(".by_continent")}, {class: "form-control col-sm-3 left"}) %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

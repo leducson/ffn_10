@@ -22,6 +22,7 @@ gem "kaminari", "~> 1.1", ">= 1.1.1"
 gem "mini_magick", "4.7.0"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
+gem "ransack", "~> 2.0", ">= 2.0.1"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
 gem "social-share-button"

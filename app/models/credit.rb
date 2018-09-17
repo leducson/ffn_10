@@ -9,11 +9,13 @@ class Credit < ApplicationRecord
 
   delegate :fullname, to: :user, prefix: true
 
-  def self.load_types
-    credit_types.map{|t| [t[0].titleize, t[0]]}
-  end
+  class << self
+    def load_types
+      credit_types.map{|t| [t[0].titleize, t[0]]}
+    end
 
-  def self.load_users
-    User.newest.pluck :fullname, :id
+    def load_users
+      User.newest.pluck :fullname, :id
+    end
   end
 end

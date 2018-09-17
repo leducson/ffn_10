@@ -3,8 +3,8 @@ class Admin::ScoreBetsController < Admin::BaseController
   before_action :load_bet, except: %i(index new create)
 
   def index
-    @bets =
-      ScoreBet.load_includes.page(params[:page]).per Settings.bet_per
+    @q = ScoreBet.load_includes.ransack params[:q]
+    @bets = @q.result.page(params[:page]).per Settings.bet_per
   end
 
   def update

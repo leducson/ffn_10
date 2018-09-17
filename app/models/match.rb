@@ -22,10 +22,6 @@ class Match < ApplicationRecord
   delegate :name, to: :team2, prefix: true
   delegate :name, to: :round, prefix: true
 
-  def self.load_leagues
-    League.newest.pluck(:name, :id)
-  end
-
   def load_rounds
     return [[round_name, round_id]] if id.present?
     []
@@ -33,10 +29,6 @@ class Match < ApplicationRecord
 
   def load_teams
     Team.newest.pluck(:name, :id)
-  end
-
-  def self.select_status
-    statuses.map{|c| [c[0].titleize, c[0]]}
   end
 
   def load_teams_match_infos
@@ -74,5 +66,15 @@ class Match < ApplicationRecord
 
   def format_score_match
     [get_score_team1.score, get_score_team2.score]
+  end
+
+  class << self
+    def load_leagues
+      League.newest.pluck(:name, :id)
+    end
+
+    def select_status
+      statuses.map{|c| [c[0].titleize, c[0]]}
+    end
   end
 end

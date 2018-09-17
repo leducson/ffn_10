@@ -21,25 +21,27 @@ class Team < ApplicationRecord
   delegate :name, to: :continent, prefix: true
   delegate :name, to: :country, prefix: true
 
-  def self.load_continents
-    Continent.pluck(:name, :id)
-  end
-
   def load_countries
     return continent.countries.pluck(:name, :id) if id.present?
     []
   end
 
-  def self.load_leagues
-    League.newest.pluck(:name, :id)
-  end
-
-  def self.load_players
-    PlayerInfo.where(team_id: nil).newest.pluck :name, :id
-  end
-
   def create_ranking
     return unless league_id.present?
     rankings.create!(league_id: league_id, rank: 1)
+  end
+
+  class << self
+    def load_continents
+      Continent.pluck(:name, :id)
+    end
+
+    def load_leagues
+      League.newest.pluck(:name, :id)
+    end
+
+    def load_players
+      PlayerInfo.where(team_id: nil).newest.pluck :name, :id
+    end
   end
 end

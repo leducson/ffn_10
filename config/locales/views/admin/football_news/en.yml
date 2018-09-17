@@ -9,6 +9,9 @@ en:
         subject: "Title"
         time: "Time"
         action: "Action"
+      search_form:
+        search: "Search by Title ..."
+        search_submit: "Search"
       football_new:
         edit: "Edit"
         remove: "Remove"

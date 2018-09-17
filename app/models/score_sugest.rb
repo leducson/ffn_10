@@ -18,7 +18,7 @@ class ScoreSugest < ApplicationRecord
     match_team = "#{match.team1_name} - #{match.team2_name}"
     message = I18n.t("notifies.message", fullname: fullname,
       score: score, match_team: match_team)
-    admin_user = User.find_by admin: true
+    admin_user = User.find_by role: :admin
     bet.notifies.create!(user_id: admin_user.id, message: message)
   end
 end

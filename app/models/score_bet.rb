@@ -12,7 +12,17 @@ class ScoreBet < ApplicationRecord
   delegate :score_win, :score_lost, :ratio, to: :score_sugest, prefix: true
   delegate :fullname, :email, to: :user, prefix: true
 
-  def self.load_includes
-    includes(:user, :score_sugest, match: [:team1, :team2]).newest
+  class << self
+    def load_includes
+      includes(:user, :score_sugest, match: [:team1, :team2]).newest
+    end
+
+    def load_status
+      statuses.map{|k, v| [k, v]}
+    end
+
+    def load_teams
+      Team.newest.pluck :name, :id
+    end
   end
 end

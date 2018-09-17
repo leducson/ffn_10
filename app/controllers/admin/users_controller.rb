@@ -3,7 +3,8 @@ class Admin::UsersController < Admin::BaseController
   before_action :load_user, except: %i(index new create)
 
   def index
-    @users = User.newest.page(params[:page]).per(Settings.user_per)
+    @q = User.newest.ransack params[:q]
+    @users = @q.result.page(params[:page]).per(Settings.user_per)
   end
 
   def new

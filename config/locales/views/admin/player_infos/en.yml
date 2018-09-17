@@ -14,6 +14,10 @@ en:
         team: "Team"
         time: "Time"
         action: "Action"
+      search_form:
+        search: "Search by Name ..."
+        by_team: "Select Teams"
+        search_submit: "Search"
       new:
         title: "New Player"
       edit:

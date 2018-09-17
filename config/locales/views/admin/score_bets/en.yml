@@ -11,5 +11,10 @@ en:
         ratio: "Ratio"
         status: "Status"
         action: "Action"
+      search_form:
+        search: "Search by User FullName"
+        by_team: "Select Teams"
+        search_submit: "Search"
+        by_status: "Select Status"
       score_bet:
         edit: "Edit"
