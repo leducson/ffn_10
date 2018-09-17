@@ -480,7 +480,7 @@ function loadContryByContinent(continent_id, country_select){
 
 function loadRoundsByLeague(league_id){
   $.ajax({
-    url: '/admin/matches/load_rounds',
+    url: '/admin/matches/load_rounds_and_teams',
     type: 'GET',
     dataType: 'JSON',
     data: {
@@ -488,10 +488,20 @@ function loadRoundsByLeague(league_id){
     },
     success: function(res){
       var round = $('#match_round_id');
+      var team1 = $('#match_team1_id');
+      var team2 = $('#match_team2_id');
       round.empty();
-      for(var i in res){
-        var option = '<option value='+ res[i][1] +'>'+ res[i][0] +'</option>';
+      team1.empty();
+      team2.empty();
+      for(var i in res.rounds){
+        var option = '<option value='+ res.rounds[i][1] +'>'+ res.rounds[i][0] +'</option>';
         round.append(option);
+      }
+
+      for(var i in res.teams){
+        var option = '<option value='+ res.teams[i][1] +'>'+ res.teams[i][0] +'</option>';
+        team1.append(option);
+        team2.append(option);
       }
     }
   });

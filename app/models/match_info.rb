@@ -1,4 +1,5 @@
 class MatchInfo < ApplicationRecord
+  acts_as_paranoid
   enum type_info: [:goal, :goal_lost, :red_card, :yellow_card, :substitution]
 
   belongs_to :match

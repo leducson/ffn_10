@@ -1,4 +1,5 @@
 class ScoreSugest < ApplicationRecord
+  acts_as_paranoid
   belongs_to :match
   has_many :score_bets, dependent: :destroy
 

@@ -49,9 +49,10 @@ class Admin::MatchesController < Admin::BaseController
     redirect_to admin_matches_path
   end
 
-  def load_rounds
+  def load_rounds_and_teams
     @rounds = Round.by_league(params[:league_id]).pluck(:name, :id) || []
-    render json: @rounds
+    @teams = Team.by_league(params[:league_id]).pluck(:name, :id) || []
+    render json: {rounds: @rounds, teams: @teams}
   end
 
   private

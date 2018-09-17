@@ -1,4 +1,5 @@
 class ScoreBet < ApplicationRecord
+  acts_as_paranoid
   enum status: [:win, :lost, :pending]
   belongs_to :user
   belongs_to :match
@@ -24,5 +25,13 @@ class ScoreBet < ApplicationRecord
     def load_teams
       Team.newest.pluck :name, :id
     end
+  end
+
+  def self.load_status
+    statuses.map{|k, v| [k, v]}
+  end
+
+  def self.load_teams
+    Team.newest.pluck :name, :id
   end
 end

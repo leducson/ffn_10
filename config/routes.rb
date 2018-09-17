@@ -19,7 +19,7 @@ Rails.application.routes.draw do
       get "load_countries", on: :member
     end
     resources :matches do
-      get "load_rounds", on: :collection
+      get "load_rounds_and_teams", on: :collection
     end
     resources :match_infos, except: %i(index show new)
     resources :score_sugests, only: %i(create update destroy)

@@ -12,6 +12,6 @@ class CreateMatches < ActiveRecord::Migration[5.2]
     end
     add_index :matches, :team_id1
     add_index :matches, :team_id2
-    add_index :matches, [:team_id1, :team_id2], unique: true
+    add_index :matches, [:team_id1, :team_id2]
   end
 end

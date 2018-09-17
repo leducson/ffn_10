@@ -1,4 +1,5 @@
 class Credit < ApplicationRecord
+  acts_as_paranoid
   enum credit_type: [:pay_bet, :recharge, :request]
 
   belongs_to :user

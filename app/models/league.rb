@@ -1,4 +1,5 @@
 class League < ApplicationRecord
+  acts_as_paranoid
   mount_uploader :image, ImageUploader
 
   has_many :rounds, dependent: :destroy

@@ -4,24 +4,17 @@
   password = "password"
   User.create!(fullname: name,
     email: email,
-    gender: ["Male", "Female"].sample,
     password: password,
-    password_confirmation: password,
-    activated: true,
-    admin: false,
-    activated_at: Time.zone.now,
+    role: :customer,
     money: 300)
 end
 
-User.create!(fullname: "Admin",
+user = User.create!(fullname: "Admin",
   email: "admin@gmail.com",
-  gender: "Male",
   password: "password",
-  password_confirmation: "password",
-  activated: true,
-  admin: true,
-  activated_at: Time.zone.now,
+  role: :admin,
   money: 300)
+user.confirm
 
 ["Africa", "Asia", "Europe", "North America", "South America",
   "Antarctica", "Australia", "Oceania"].each do |con|

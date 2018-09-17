@@ -27,3 +27,4 @@ en:
   notifies:
     message: "%{fullname} are bet score %{score} in match %{match_team}"
   not_authorized: "You do not have permission to perform this action"
+  not_equal: "Team1 must be different from Team2"
