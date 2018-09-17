@@ -1,5 +1,5 @@
 class ScoreBet < ApplicationRecord
-  enum status: [:win, :lost]
+  enum status: [:win, :lost, :pending]
   belongs_to :user
   belongs_to :match
   belongs_to :score_sugest

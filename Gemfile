@@ -22,10 +22,10 @@ gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.0"
 gem "rubocop", "~> 0.54.0", require: false
 gem "sass-rails", "~> 5.0"
+gem "social-share-button"
 gem "turbolinks", "~> 5"
 gem "uglifier", ">= 1.3.0"
 gem "wysiwyg-rails", "2.6.0"
-gem "social-share-button"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
