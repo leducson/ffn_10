@@ -1,5 +1,7 @@
 class Admin::MatchesController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_match, only: %i(edit update destroy load_infos)
+  before_action :load_infos, only: :edit
 
   def index
     @matches = Match.newest.page(params[:page]).per Settings.match_per
@@ -20,9 +22,7 @@ class Admin::MatchesController < Admin::BaseController
     end
   end
 
-  def edit
-    load_infos
-  end
+  def edit; end
 
   def update
     @old_status = @match.finish?
@@ -32,7 +32,6 @@ class Admin::MatchesController < Admin::BaseController
       redirect_to admin_matches_path
     else
       flash[:danger] = t ".error"
-      load_infos
       render :edit
     end
   rescue ActiveRecord::RecordInvalid => ex

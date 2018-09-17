@@ -1,4 +1,5 @@
 class Admin::MatchResultsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_result, only: %i(update destroy)
 
   def create

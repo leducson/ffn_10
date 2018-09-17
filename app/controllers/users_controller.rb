@@ -1,31 +1,33 @@
 class UsersController < ApplicationController
-  layout "users"
+  load_and_authorize_resource
+  layout "home"
 
-  def signup
-    @user = User.new
+  before_action :load_user, only: %i(show edit update)
+
+  def show
+    @score_bets = current_user.score_bets
   end
 
-  def create
-    @user = User.new user_params
-    if @user.save
-      @user.send_activation_email
-      flash[:info] = t ".check_email"
-      redirect_to signup_path
+  def edit; end
+
+  def update
+    if @user.update_attributes user_params
+      sign_in @user, bypass: true
+      flash[:success] = t(".update_user")
+      redirect_to profile_path
     else
-      render :signup
+      render :edit
     end
-  end
-
-  def logged_in_user
-    return if logged_in?
-    store_location
-    redirect_to login_path
   end
 
   private
 
+  def load_user
+    @user = User.find params[:id]
+  end
+
   def user_params
-    params.require(:user).permit :fullname, :email, :gender,
-      :password, :password_confirmation
+    params.require(:user).permit :fullname,
+      :email, :password, :password_confirmation
   end
 end

@@ -3,7 +3,7 @@ en:
     admin:
       top_menu:
         dashboard: "Dashboard"
-        welcome_back: "Welcome back: %{user}"
+        welcome_back: "Welcome back: %{user} (Role - %{role})"
         logout: "Logout"
       footer:
         copyright: "Le Duc Son & Ho Viet Hieu, Football Bets"

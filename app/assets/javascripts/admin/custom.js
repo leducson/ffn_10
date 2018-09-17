@@ -176,6 +176,7 @@ $(document).ready(function(){
       $.ajax({
         url: '/admin/players/' + player_id + '/set_player_by_team',
         type: 'PATCH',
+        dataType: 'JSON',
         data: {
           id: player_id,
           team_id: team_id

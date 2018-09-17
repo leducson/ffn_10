@@ -1,4 +1,5 @@
 class Admin::CountriesController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_country, except: %i(index new create)
 
   def index

@@ -6,7 +6,9 @@
       <span class="navbar-toggler-bar burger-lines"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navigation">
-      <span class="text-secondary"><%= t ".welcome_back", user: current_user.email %></span>
+      <span class="text-secondary">
+        <%= t ".welcome_back", user: current_user.email, role: current_user.role %>
+      </span>
       <ul class="nav navbar-nav mr-auto">
         <li class="nav-item">
           <a href="#" class="nav-link" data-toggle="dropdown">

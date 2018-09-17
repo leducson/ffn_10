@@ -1,4 +1,5 @@
 class ScoreBetsController < ApplicationController
+  load_and_authorize_resource
   def create
     if logged_in?
       @bet_amount = params[:price]

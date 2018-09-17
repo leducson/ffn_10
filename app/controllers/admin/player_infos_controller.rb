@@ -1,4 +1,5 @@
 class Admin::PlayerInfosController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_player, except: %i(index new create)
 
   def index
@@ -32,12 +33,7 @@ class Admin::PlayerInfosController < Admin::BaseController
 
   def destroy
     if params[:team_id].present?
-      if @player.update_attributes team_id: nil
-        flash[:info] = t ".success"
-      else
-        flash[:danger] = t ".error"
-      end
-      redirect_to edit_admin_team_path(id: params[:team_id])
+      save_with_remove_team
     else
       if @player.destroy
         flash[:info] = t ".success"
@@ -57,6 +53,15 @@ class Admin::PlayerInfosController < Admin::BaseController
   end
 
   private
+
+  def save_with_remove_team
+    if @player.update_attributes team_id: nil
+      flash[:info] = t ".success"
+    else
+      flash[:danger] = t ".error"
+    end
+    redirect_to edit_admin_team_path(id: params[:team_id])
+  end
 
   def save_player player
     respond_to do |format|

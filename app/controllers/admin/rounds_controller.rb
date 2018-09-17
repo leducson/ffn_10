@@ -1,4 +1,5 @@
 class Admin::RoundsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_round, except: :create
 
   def create
