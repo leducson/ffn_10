@@ -1,6 +1,6 @@
 class Admin::BaseController < ApplicationController
   layout "admin"
-  before_action :logged_in_user, :authorize_admin!
+  before_action :authorize_admin!
 
   def authorize_admin!
     return if current_user.admin?

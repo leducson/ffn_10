@@ -37,11 +37,8 @@ Rails.application.routes.draw do
 
   root "home#index"
 
-  get "/signup", to: "users#signup"
-  post "/signup", to: "users#create"
-  get "/login", to: "sessions#login"
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+  devise_for :users
+  
   post "upload_image" => "upload_froala#upload_image_froala", as: :upload_image
 
   resources :account_activations, only: :edit
