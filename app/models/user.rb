@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  USER_PARAMS = [:email, :fullname, :password, :activated, :admin, :money]
+  USER_PARAMS = [:email, :fullname, :password, :activated,
+    :admin, :money].freeze
   devise :database_authenticatable, :registerable, :recoverable,
     :rememberable, :trackable, :validatable, :confirmable
   before_save :downcase_email

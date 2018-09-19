@@ -4,7 +4,9 @@ class MatchResult < ApplicationRecord
 
   validates :team_id, :match_id, presence: true
 
-  scope :check_score, ->(match_id, team_id){where(match_id: match_id, team_id: team_id)}
+  scope :check_score, (lambda do |match_id, team_id|
+    where(match_id: match_id, team_id: team_id)
+  end)
 
   delegate :name, to: :team, prefix: true, allow_nil: true
 end

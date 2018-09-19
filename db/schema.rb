@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_11_132508) do
+ActiveRecord::Schema.define(version: 2018_09_17_163937) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "message"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2018_09_11_132508) do
     t.datetime "date_of_match"
     t.integer "extra_time1"
     t.integer "extra_time2"
-    t.integer "time"
+    t.integer "time", default: 0
     t.integer "team1_id"
     t.integer "team2_id"
     t.datetime "created_at", null: false
