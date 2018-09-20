@@ -13,9 +13,10 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes user_params
       sign_in @user, bypass: true
-      flash[:success] = t(".update_user")
-      redirect_to profile_path
+      flash[:success] = t ".success"
+      redirect_to user_path
     else
+      flash[:danger] = t ".error"
       render :edit
     end
   end

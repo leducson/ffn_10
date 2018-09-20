@@ -14,6 +14,7 @@ class Ability
     else
       can [:read, :update], User, id: user.id
       can :create, ScoreBet
+      can :create, Comment
     end
   end
 end

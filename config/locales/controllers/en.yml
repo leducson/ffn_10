@@ -2,6 +2,9 @@ en:
   users:
     create:
       check_email: "Please check your email to activate your account!"
+    update:
+      success: "Update account information Successfully"
+      error: "Failed to update account"
   account_activations:
     edit:
       activated: "Account activated!"

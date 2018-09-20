@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 2018_09_20_014016) do
     t.datetime "deleted_at"
     t.index ["deleted_at"], name: "index_matches_on_deleted_at"
     t.index ["round_id"], name: "index_matches_on_round_id"
-    t.index ["team1_id", "team2_id"], name: "index_matches_on_team1_id_and_team2_id", unique: true
+    t.index ["team1_id", "team2_id"], name: "index_matches_on_team1_id_and_team2_id"
   end
 
   create_table "notifies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

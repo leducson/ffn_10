@@ -16,6 +16,8 @@
       <div class="body home football_new">
         <div class="row auto">
           <% flash.each do |message_type, message| %>
+            <% message_type = "success" if message_type == "notice" %>
+            <% message_type = "danger" if message_type == "alert" %>
             <div class="alert alert-<%= message_type %>"><%= message %></div>
           <% end %>
           <%= yield %>

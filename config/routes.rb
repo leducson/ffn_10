@@ -43,8 +43,6 @@ Rails.application.routes.draw do
 
   post "upload_image" => "upload_froala#upload_image_froala", as: :upload_image
 
-  resources :account_activations, only: :edit
-  resources :password_resets, except: :destroy
   resources :users, only: [:show, :edit, :update]
   resources :football_news, only: [:index, :show]
   resources :comment, only: :create
