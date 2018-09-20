@@ -1,4 +1,5 @@
 class Round < ApplicationRecord
+  acts_as_paranoid
   belongs_to :league
   has_many :matches, dependent: :destroy
 

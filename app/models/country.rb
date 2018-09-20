@@ -1,4 +1,5 @@
 class Country < ApplicationRecord
+  acts_as_paranoid
   belongs_to :continent
   has_many :teams, dependent: :destroy
   has_many :leagues, dependent: :destroy

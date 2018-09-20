@@ -1,4 +1,5 @@
 class PlayerInfo < ApplicationRecord
+  acts_as_paranoid
   enum gender: [:male, :female]
   enum position: [:goalkeeper, :defenders, :midfielders, :attackers]
 

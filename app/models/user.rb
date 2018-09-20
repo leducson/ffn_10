@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  acts_as_paranoid
   USER_PARAMS = [:email, :fullname, :password, :role, :money].freeze
 
   enum role: {admin: 0, staff: 1, customer: 2}

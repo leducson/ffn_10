@@ -1,4 +1,5 @@
 class Match < ApplicationRecord
+  acts_as_paranoid
   enum status: [:pending, :ready, :finish]
 
   belongs_to :team1, class_name: Team.name
@@ -12,6 +13,7 @@ class Match < ApplicationRecord
   validates :team1_id, presence: true
   validates :team2_id, presence: true
   validates :round_id, presence: true
+  validate :check_team_eq
 
   scope :newest, ->{order date_of_match: :desc}
   scope :ranger_date, (lambda do
@@ -22,13 +24,18 @@ class Match < ApplicationRecord
   delegate :name, to: :team2, prefix: true
   delegate :name, to: :round, prefix: true
 
+  def check_team_eq
+    errors.add(:team, I18n.t("not_equal")) if team1_id == team2_id
+  end
+
   def load_rounds
     return [[round_name, round_id]] if id.present?
     []
   end
 
   def load_teams
-    Team.newest.pluck(:name, :id)
+    return [[team1_name, team1_id], [team2_name, team2_id]] if id.present?
+    []
   end
 
   def load_teams_match_infos

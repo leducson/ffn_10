@@ -1,4 +1,5 @@
 class Team < ApplicationRecord
+  acts_as_paranoid
   mount_uploader :image, ImageUploader
 
   has_many :player_infos, dependent: :destroy
@@ -17,6 +18,7 @@ class Team < ApplicationRecord
 
   scope :newest, ->{order created_at: :desc}
   scope :by_country, ->(country_id){where(country_id: country_id)}
+  scope :by_league, ->(league_id){where(league_id: league_id)}
 
   delegate :name, to: :continent, prefix: true
   delegate :name, to: :country, prefix: true

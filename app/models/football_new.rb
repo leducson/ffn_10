@@ -1,4 +1,5 @@
 class FootballNew < ApplicationRecord
+  acts_as_paranoid
   mount_uploader :image, ImageUploader
 
   has_many :comments, dependent: :destroy
