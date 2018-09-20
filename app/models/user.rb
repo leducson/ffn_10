@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  USER_PARAMS = [:email, :fullname, :password, :activated,
-    :admin, :money].freeze
+  USER_PARAMS = [:email, :fullname, :password, :role, :money].freeze
+
+  enum role: {admin: 0, staff: 1, customer: 2}
+
   devise :database_authenticatable, :registerable, :recoverable,
     :rememberable, :trackable, :validatable, :confirmable
   before_save :downcase_email
@@ -16,8 +18,7 @@ class User < ApplicationRecord
   validates :email, presence: true,
     length: {maximum: Settings.user.maximum_email},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, presence: true,
-    length: {minimum: Settings.user.minimum_pass}, allow_nil: true
+  validates :password, presence: true, allow_nil: true
 
   scope :newest, ->{order created_at: :desc}
 
@@ -32,6 +33,10 @@ class User < ApplicationRecord
   def deduction bet_amount
     new_money = money - bet_amount
     update_attribute :money, new_money
+  end
+
+  def self.load_roles
+    roles.map{|r| [r[0].titleize, r[0]]}
   end
 
   private

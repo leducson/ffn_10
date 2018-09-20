@@ -1,4 +1,6 @@
 class Admin::FootballNewsController < Admin::BaseController
+  authorize_resource class: false
+
   before_action :load_football_new, except: %i(index new create)
 
   def index

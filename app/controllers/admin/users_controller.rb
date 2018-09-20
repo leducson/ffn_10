@@ -1,4 +1,5 @@
 class Admin::UsersController < Admin::BaseController
+  authorize_resource class: false
   before_action :load_user, except: %i(index new create)
 
   def index
@@ -48,7 +49,6 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def user_params
-    params.require(:user).permit :email, :fullname, :gender, :activated,
-      :admin, :money, :password, :password_confirmation
+    params.require(:user).permit User::USER_PARAMS
   end
 end

@@ -1,4 +1,5 @@
 class Admin::CreditsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_credit, except: %i(index new create)
 
   def index

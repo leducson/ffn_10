@@ -10,7 +10,7 @@ en:
         gender: "Gender"
         activated: "Activated"
         money: "Money"
-        admin: "Admin"
+        role: "Role"
         time: "Time"
         action: "Action"
       user:
@@ -25,7 +25,7 @@ en:
         email: "Email"
         fullname: "FullName"
         activated: "Activated"
-        admin: "Admin"
+        role: "Roles"
         password: "Password"
         gender: "Gender"
         money: "Money"

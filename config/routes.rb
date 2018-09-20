@@ -38,12 +38,12 @@ Rails.application.routes.draw do
   root "home#index"
 
   devise_for :users
-  
+
   post "upload_image" => "upload_froala#upload_image_froala", as: :upload_image
 
   resources :account_activations, only: :edit
   resources :password_resets, except: :destroy
-  resources :profiles, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update]
   resources :football_news, only: [:index, :show]
   resources :comment, only: :create
   resources :score_bets, only: :create

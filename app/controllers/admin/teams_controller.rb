@@ -1,15 +1,19 @@
 class Admin::TeamsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_team, except: %i(index new create)
 
   def index
     @teams = Team.newest.page(params[:page]).per(Settings.team_per)
+    authorize! :read, @teams
   end
 
   def new
     @team = Team.new
+    authorize! :read, @team
   end
 
   def create
+    authorize! :read, Team
     if params[:team][:league_id].present?
       check_team_size params[:team][:league_id]
     else
@@ -18,10 +22,12 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   def edit
+    authorize! :read, Team
     load_edit_params
   end
 
   def update
+    authorize! :read, Team
     if @team.update_attributes team_params
       flash[:info] = t ".success"
       redirect_to admin_teams_path
@@ -33,6 +39,7 @@ class Admin::TeamsController < Admin::BaseController
   end
 
   def destroy
+    authorize! :read, Team
     if params[:league_id].present?
       update_league_nil
     else

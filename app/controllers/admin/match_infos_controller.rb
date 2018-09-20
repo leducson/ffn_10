@@ -1,4 +1,5 @@
 class Admin::MatchInfosController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_match_info, except: :create
 
   def create

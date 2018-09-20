@@ -2,9 +2,8 @@
   <td><%= count_index_list user_counter %></td>
   <td><%= user.email %></td>
   <td><%= user.fullname %></td>
-  <td><%= user.gender %></td>
-  <td><%= user.activated %></td>
-  <td><%= user.admin %></td>
+  <td><%= user.confirmed? %></td>
+  <td><%= user.role.titleize %></td>
   <td><%= number_to_currency(user.money) %></td>
   <td><%= format_time user.created_at %></td>
   <td class="td-actions text-right">

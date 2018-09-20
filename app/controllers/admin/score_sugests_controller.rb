@@ -1,4 +1,5 @@
 class Admin::ScoreSugestsController < Admin::BaseController
+  load_and_authorize_resource
   before_action :load_sugest, only: [:update, :destroy]
 
   def create
