@@ -26,12 +26,4 @@ class ScoreBet < ApplicationRecord
       Team.newest.pluck :name, :id
     end
   end
-
-  def self.load_status
-    statuses.map{|k, v| [k, v]}
-  end
-
-  def self.load_teams
-    Team.newest.pluck :name, :id
-  end
 end

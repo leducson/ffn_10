@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboard#index"
     resources :football_news
-    resources :users
+    resources :users  do
+      patch "confirm_user", on: :member
+    end
     resources :leagues do
       resources :teams, only: [:create, :destroy]
     end

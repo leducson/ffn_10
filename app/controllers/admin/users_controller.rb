@@ -25,7 +25,7 @@ class Admin::UsersController < Admin::BaseController
   def edit; end
 
   def update
-    if @user.update user_params
+    if update_user
       flash[:info] = t ".update_success"
       redirect_to admin_users_path
     else
@@ -43,7 +43,21 @@ class Admin::UsersController < Admin::BaseController
     redirect_to admin_users_path
   end
 
+  def confirm_user
+    if @user.confirm
+      flash[:info] = t ".success"
+    else
+      flash[:danger] = t ".error"
+    end
+    redirect_to admin_users_path
+  end
+
   private
+
+  def update_user
+    @user.update user_params if user_params[:password].present?
+    @user.update_without_password user_params
+  end
 
   def load_user
     @user = User.find params[:id]
