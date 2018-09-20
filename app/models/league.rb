@@ -12,16 +12,18 @@ class League < ApplicationRecord
   delegate :name, to: :country, prefix: true
   delegate :name, to: :continent, prefix: true
 
-  def self.load_continents
-    Continent.pluck(:name, :id)
-  end
-
   def load_countries
     return continent.countries.pluck(:name, :id) if id.present?
     []
   end
 
-  def self.load_teams
-    Team.where(league_id: nil).newest.pluck(:name, :id)
+  class << self
+    def load_continents
+      Continent.pluck(:name, :id)
+    end
+    
+    def load_teams
+      Team.where(league_id: nil).newest.pluck(:name, :id)
+    end
   end
 end

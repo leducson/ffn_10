@@ -13,7 +13,7 @@ class Ability
       cannot :destroy, :all
     else
       can [:read, :update], User, id: user.id
-      can :create, :score_bet
+      can :create, ScoreBet
     end
   end
 end

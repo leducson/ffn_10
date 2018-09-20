@@ -9,6 +9,10 @@ en:
         continent: "Continent"
         time: "Date Created"
         action: "Action"
+      search_form:
+        search: "Search by Name ..."
+        by_continent: "Search by Continent Name ..."
+        search_submit: "Search"
       country:
         edit: "Edit"
         remove: "Remove"

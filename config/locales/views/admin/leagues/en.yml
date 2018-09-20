@@ -6,7 +6,7 @@ en:
         title: "Leagues Managements"
         add_new: "New League"
         name: "Name"
-        country: "Country"
+        country: "Continent"
         start_date: "Start Date"
         end_date: "End Date"
         matchs: "Matchs"
@@ -15,6 +15,10 @@ en:
         times: "Match Time"
         action: "Action"
         image: "Image"
+      search_form:
+        search: "Search by Name ..."
+        by_continent: "Select Continents"
+        search_submit: "Search"
       league:
         edit: "Edit"
         remove: "Remove"

@@ -35,8 +35,10 @@ class User < ApplicationRecord
     update_attribute :money, new_money
   end
 
-  def self.load_roles
-    roles.map{|r| [r[0].titleize, r[0]]}
+  class << self
+    def load_roles
+      roles.map{|r| [r[0].titleize, r[0]]}
+    end
   end
 
   private

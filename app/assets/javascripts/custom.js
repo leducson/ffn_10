@@ -17,6 +17,7 @@ $(document).ready(function(){
       $.ajax({
         url: '/score_bets',
         type: 'POST',
+        dataType: 'JSON',
         data: {
           sugest_id: id,
           price: price

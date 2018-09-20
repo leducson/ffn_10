@@ -382,3 +382,18 @@
 .update_rank_button, .edit_price_bet, .update_button_bet, .update_result, .input_match_result{
   display: none;
 }
+
+.search-submit{
+  margin-left: 20px;
+}
+
+.form-search{
+  border-bottom: $gray solid 1px;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-width: 50%;
+}
+
+.name_field{
+  margin-right: 10px;
+}

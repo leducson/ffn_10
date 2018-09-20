@@ -1,0 +1,8 @@
+<%= search_form_for [:admin, @q], class: "form-search" do |f| %>
+  <div>
+    <%= f.search_field :team1_name_or_team2_name_cont, class: "form-control col-sm-5 left name_field", placeholder: t(".search") %>
+    <%= f.date_field :date_of_match_lteq, class: "form-control col-sm-5 left", placeholder: t(".search_date") %>
+    <%= f.submit t(".search_submit"), class: "btn btn-info search-submit" %>
+    <div style="clear: both"></div>
+  </div>
+<% end %>

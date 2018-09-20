@@ -13,6 +13,9 @@ en:
         role: "Role"
         time: "Time"
         action: "Action"
+      search_form:
+        search: "Search by Email or FullName ..."
+        search_submit: "Search"
       user:
         are_you_sure: "Are you sure?"
         edit: "Edit"

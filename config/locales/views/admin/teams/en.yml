@@ -11,6 +11,11 @@ en:
         time: "Time"
         action: "Action"
         image: "Image"
+      search_form:
+        search: "Search by Name ..."
+        search_submit: "Search"
+        by_continent: "Select Continents"
+        by_country: "Select Countries"
       new:
         title: "New Team"
       edit:

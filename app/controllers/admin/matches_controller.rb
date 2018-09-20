@@ -4,7 +4,8 @@ class Admin::MatchesController < Admin::BaseController
   before_action :load_infos, only: :edit
 
   def index
-    @matches = Match.newest.page(params[:page]).per Settings.match_per
+    @q = Match.newest.includes(:team1, :team2).ransack params[:q]
+    @matches = @q.result.page(params[:page]).per Settings.match_per
   end
 
   def new
