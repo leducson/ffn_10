@@ -2,7 +2,15 @@
   <td><%= count_index_list user_counter %></td>
   <td><%= user.email %></td>
   <td><%= user.fullname %></td>
-  <td><%= user.confirmed? %></td>
+  <td>
+    <%= user.confirmed? %>
+    <% unless user.confirmed? %>
+      <%= link_to confirm_user_admin_user_path(user),
+        data: {method: :patch}, title: t(".confirm") do %>
+        <i class="fa fa-share"></i>
+      <% end %>
+    <% end %>
+  </td>
   <td><%= user.role.titleize %></td>
   <td><%= number_to_currency(user.money) %></td>
   <td><%= format_time user.created_at %></td>

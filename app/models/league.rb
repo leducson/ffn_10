@@ -22,7 +22,7 @@ class League < ApplicationRecord
     def load_continents
       Continent.pluck(:name, :id)
     end
-    
+
     def load_teams
       Team.where(league_id: nil).newest.pluck(:name, :id)
     end

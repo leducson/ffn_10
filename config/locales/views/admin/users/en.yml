@@ -20,6 +20,7 @@ en:
         are_you_sure: "Are you sure?"
         edit: "Edit"
         remove: "Remove"
+        confirm: "Confirm Account"
       new:
         title: "New User"
       edit:
